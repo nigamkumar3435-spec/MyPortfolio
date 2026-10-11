@@ -1,4 +1,4 @@
-# Nigam Kumar — Senior Developer & AI Engineer Portfolio
+# Nigam Kumar — CSE Student @ IIST Portfolio
 
 A production-grade, recruiter-optimized portfolio website built with **React 19**, **Vite**, **TypeScript**, and **Tailwind CSS**. Designed specifically for technical recruiters, hiring managers, and senior engineers to evaluate engineering depth, problem-solving maturity, and authentic project implementations within 30–60 seconds.
 
