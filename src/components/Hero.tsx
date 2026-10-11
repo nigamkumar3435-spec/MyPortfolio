@@ -76,28 +76,28 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               <span className="font-bold tracking-wide">{personal.availability}</span>
             </div>
 
-            {/* Name & Headline (Significantly Bigger Typography) */}
-            <div className="space-y-4">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl font-black tracking-tight text-white leading-[1.05]">
+            {/* Name & Headline (Balanced Sleek Typography) */}
+            <div className="space-y-3.5">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
                 Hi, I'm{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 via-violet-400 to-fuchsia-400 drop-shadow-[0_0_40px_rgba(56,189,248,0.45)]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 via-violet-400 to-fuchsia-400 drop-shadow-[0_0_30px_rgba(56,189,248,0.35)]">
                   {personal.name}
                 </span>
               </h1>
               
-              <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-100 tracking-tight leading-snug">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-100 tracking-tight leading-snug">
                 {personal.headline}
               </p>
             </div>
 
             {/* Compelling Hero Pitch */}
-            <div className="space-y-3 border-l-4 border-cyan-400 pl-6 py-1.5 text-slate-200 text-lg sm:text-xl lg:text-2xl leading-relaxed">
-              <p className="font-extrabold text-white text-xl sm:text-2xl tracking-tight">
+            <div className="space-y-2.5 border-l-3 border-cyan-400 pl-5 py-1 text-slate-200 text-base sm:text-lg leading-relaxed">
+              <p className="font-bold text-white text-base sm:text-lg tracking-tight">
                 Building useful software. Exploring intelligent systems.
               </p>
-              <p className="text-slate-300 font-normal leading-relaxed text-base sm:text-lg lg:text-xl">
+              <p className="text-slate-300 font-normal leading-relaxed text-sm sm:text-base">
                 I'm a Computer Science Engineering student at{' '}
-                <span className="text-cyan-300 font-bold underline decoration-cyan-400/50 underline-offset-4">
+                <span className="text-cyan-300 font-semibold underline decoration-cyan-400/50 underline-offset-4">
                   IIST Indore
                 </span>{' '}
                 (Graduating 2027) who enjoys turning ideas into working products—from full-stack applications with clean database architectures to empirical machine learning pipelines and intelligent automation.
@@ -105,7 +105,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
             </div>
 
             {/* Floating 3D Micro Tech Stack Bar */}
-            <div className="flex flex-wrap items-center gap-2.5 pt-1">
+            <div className="flex flex-wrap items-center gap-2 pt-1">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mr-1">Core Tech:</span>
               {[
                 { name: 'Java', color: 'border-orange-500/40 text-orange-300 bg-orange-950/30' },
@@ -118,34 +118,34 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               ].map((tech) => (
                 <span
                   key={tech.name}
-                  className={`px-3 py-1 rounded-lg text-xs font-mono font-semibold border ${tech.color} shadow-sm transition-all hover:scale-105 cursor-default`}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-mono font-medium border ${tech.color} shadow-sm transition-all hover:scale-105 cursor-default`}
                 >
                   {tech.name}
                 </span>
               ))}
             </div>
 
-            {/* Primary & Secondary CTAs (Bigger, Bolder Buttons) */}
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            {/* Primary & Secondary CTAs (Refined Buttons) */}
+            <div className="pt-2 flex flex-wrap items-center gap-3.5">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-3 px-8 py-4.5 rounded-xl text-lg font-bold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 hover:from-cyan-300 hover:to-blue-400 transition-all shadow-xl shadow-cyan-500/35 hover:shadow-cyan-500/60 hover:scale-[1.03] focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-bold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 hover:from-cyan-300 hover:to-blue-400 transition-all shadow-xl shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
               >
                 <span>Explore My Projects</span>
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4" />
               </a>
 
               <button
                 onClick={onOpenResume}
-                className="inline-flex items-center gap-3 px-7 py-4.5 rounded-xl text-lg font-bold text-slate-100 bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-cyan-400/60 transition-all shadow-lg shadow-black/50 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-cyan-500/30"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-semibold text-slate-100 bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-cyan-400/50 transition-all shadow-lg shadow-black/40 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-cyan-500/30"
               >
-                <FileText className="w-5 h-5 text-cyan-400" />
+                <FileText className="w-4 h-4 text-cyan-400" />
                 <span>Download Resume</span>
               </button>
 
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2.5 px-7 py-4.5 rounded-xl text-lg font-semibold text-slate-200 hover:text-white hover:bg-white/10 transition-all border border-white/10 hover:border-white/25"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-slate-200 hover:text-white hover:bg-white/10 transition-all border border-white/10 hover:border-white/25"
               >
                 <span>Get in Touch</span>
               </a>

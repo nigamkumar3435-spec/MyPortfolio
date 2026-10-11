@@ -52,19 +52,19 @@ export const About: React.FC = () => {
     <section id="about" className="py-24 relative">
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
-        {/* Section Heading (Bigger Typography & Neon Badge) */}
-        <div className="space-y-3 mb-14">
+        {/* Section Heading (Balanced Sleek Typography) */}
+        <div className="space-y-3 mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-bold shadow-sm shadow-cyan-500/20">
             <Compass className="w-4 h-4 text-cyan-400" />
             <span>01 // PROFESSIONAL BACKGROUND</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
             About Me &amp;{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-violet-400">
               Engineering Focus
             </span>
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg max-w-3xl leading-relaxed">
+          <p className="text-slate-300 text-base max-w-3xl leading-relaxed">
             A transparent look into my academic foundation, problem-solving mindset, and software craftsmanship.
           </p>
         </div>
@@ -72,15 +72,15 @@ export const About: React.FC = () => {
         {/* Narrative & Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
-          {/* Left Column: Authentic Personal Narrative (Larger & More Readable) */}
-          <div className="lg:col-span-6 space-y-6 text-slate-200 text-base sm:text-lg lg:text-xl leading-relaxed">
+          {/* Left Column: Authentic Personal Narrative */}
+          <div className="lg:col-span-6 space-y-5 text-slate-200 text-base sm:text-lg leading-relaxed">
             {personal.bioParagraphs.map((paragraph, index) => (
-              <p key={index} className="text-slate-200/95 font-normal">
+              <p key={index} className="text-slate-200/90 font-normal">
                 {paragraph}
               </p>
             ))}
 
-            <div className="p-6 rounded-2xl bg-slate-900/80 border border-white/10 space-y-3.5 font-mono text-sm shadow-xl shadow-black/40">
+            <div className="p-5 rounded-2xl bg-slate-900/80 border border-white/10 space-y-3 font-mono text-sm shadow-xl shadow-black/40">
               <div className="text-slate-300 uppercase tracking-wider font-bold flex items-center gap-2 text-xs">
                 <CheckCircle className="w-4 h-4 text-emerald-400" />
                 <span>What Recruiters Can Expect From Me</span>
@@ -105,40 +105,40 @@ export const About: React.FC = () => {
           {/* Right Column: Bento Grid of Core Pillars & Stats */}
           <div className="lg:col-span-6 space-y-5">
             
-            {/* Quick Stat Bar (Enlarged with 3D Tilt & Neon Glowing Gradients) */}
-            <div className="grid grid-cols-3 gap-4">
+            {/* Quick Stat Bar (Balanced 3D Tilt Stats) */}
+            <div className="grid grid-cols-3 gap-3.5 sm:gap-4">
               <TiltCard
                 glareColor="rgba(56, 189, 248, 0.25)"
-                className="p-6 rounded-2xl bg-slate-900/90 border border-cyan-500/40 text-center shadow-xl shadow-cyan-950/40 tilt-pop"
+                className="p-5 rounded-2xl bg-slate-900/90 border border-cyan-500/40 text-center shadow-xl shadow-cyan-950/40 tilt-pop"
               >
-                <div className="text-4xl sm:text-5xl lg:text-6xl font-black font-mono text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-sky-300">
+                <div className="text-3xl sm:text-4xl font-black font-mono text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-sky-300">
                   27
                 </div>
-                <div className="text-sm sm:text-base text-slate-200 font-mono font-bold mt-1.5">
+                <div className="text-xs sm:text-sm text-slate-200 font-mono font-semibold mt-1">
                   Public Repos
                 </div>
               </TiltCard>
 
               <TiltCard
                 glareColor="rgba(59, 130, 246, 0.25)"
-                className="p-6 rounded-2xl bg-slate-900/90 border border-blue-500/40 text-center shadow-xl shadow-blue-950/40 tilt-pop"
+                className="p-5 rounded-2xl bg-slate-900/90 border border-blue-500/40 text-center shadow-xl shadow-blue-950/40 tilt-pop"
               >
-                <div className="text-4xl sm:text-5xl lg:text-6xl font-black font-mono text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300">
+                <div className="text-3xl sm:text-4xl font-black font-mono text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300">
                   {personal.cgpa}
                 </div>
-                <div className="text-sm sm:text-base text-slate-200 font-mono font-bold mt-1.5">
+                <div className="text-xs sm:text-sm text-slate-200 font-mono font-semibold mt-1">
                   Verified CGPA
                 </div>
               </TiltCard>
 
               <TiltCard
                 glareColor="rgba(168, 85, 247, 0.25)"
-                className="p-6 rounded-2xl bg-slate-900/90 border border-violet-500/40 text-center shadow-xl shadow-violet-950/40 tilt-pop"
+                className="p-5 rounded-2xl bg-slate-900/90 border border-violet-500/40 text-center shadow-xl shadow-violet-950/40 tilt-pop"
               >
-                <div className="text-4xl sm:text-5xl lg:text-6xl font-black font-mono text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400">
+                <div className="text-3xl sm:text-4xl font-black font-mono text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400">
                   5
                 </div>
-                <div className="text-sm sm:text-base text-slate-200 font-mono font-bold mt-1.5">
+                <div className="text-xs sm:text-sm text-slate-200 font-mono font-semibold mt-1">
                   Certifications
                 </div>
               </TiltCard>

@@ -98,19 +98,19 @@ export const RecruiterBar: React.FC<RecruiterBarProps> = ({ onOpenResume }) => {
             return (
               <div
                 key={index}
-                className={`p-5 rounded-2xl border ${cardBgColors[index]} flex items-start gap-4 transition-all shadow-xl hover:scale-[1.02]`}
+                className={`p-4 sm:p-4.5 rounded-2xl border ${cardBgColors[index]} flex items-start gap-3.5 transition-all shadow-xl hover:scale-[1.02]`}
               >
-                <div className={`p-3.5 rounded-xl border ${item.color} shrink-0 shadow-md`}>
-                  <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
+                <div className={`p-3 rounded-xl border ${item.color} shrink-0 shadow-md`}>
+                  <Icon className="w-5 h-5" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs sm:text-sm font-mono text-slate-300 uppercase tracking-wider font-bold">
+                  <div className="text-xs font-mono text-slate-300 uppercase tracking-wider font-bold">
                     {item.label}
                   </div>
-                  <div className="text-lg sm:text-xl font-black text-white truncate mt-1">
+                  <div className="text-base sm:text-lg font-bold text-white truncate mt-0.5">
                     {item.value}
                   </div>
-                  <div className="text-xs sm:text-sm text-slate-200 truncate mt-0.5 font-medium">
+                  <div className="text-xs text-slate-300 truncate mt-0.5 font-medium">
                     {item.subtext}
                   </div>
                 </div>
