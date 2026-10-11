@@ -116,20 +116,20 @@ export const InteractiveLab: React.FC = () => {
   return (
     <section id="interactive-lab" className="py-24 relative bg-black/60">
       {/* Dynamic Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-r from-blue-600/10 via-cyan-500/10 to-sky-600/10 blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-r from-red-600/10 via-amber-500/10 to-yellow-600/10 blur-[150px] pointer-events-none -z-10" />
 
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
         {/* Section Heading (Bigger Typography & Neon Accents) */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-bold shadow-sm shadow-cyan-500/20">
-              <Sparkles className="w-4 h-4 text-cyan-400" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-950/60 border border-red-500/40 text-red-300 text-xs font-mono font-bold shadow-sm shadow-red-500/20">
+              <Sparkles className="w-4 h-4 text-red-400" />
               <span>05 // LIVE RECRUITER LAB</span>
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
               Interactive Technical{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-sky-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-amber-300 to-yellow-300">
                 Sandbox
               </span>
             </h2>
@@ -144,7 +144,7 @@ export const InteractiveLab: React.FC = () => {
               onClick={() => setActiveTab('ml')}
               className={`px-4 py-2.5 rounded-xl transition-all flex items-center gap-2 font-bold cursor-pointer ${
                 activeTab === 'ml'
-                  ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 shadow-md shadow-cyan-500/30'
+                  ? 'bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 text-slate-950 shadow-md shadow-red-500/30'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -156,7 +156,7 @@ export const InteractiveLab: React.FC = () => {
               onClick={() => setActiveTab('sql')}
               className={`px-4 py-2.5 rounded-xl transition-all flex items-center gap-2 font-bold cursor-pointer ${
                 activeTab === 'sql'
-                  ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-slate-950 shadow-md shadow-blue-500/30'
+                  ? 'bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 text-slate-950 shadow-md shadow-red-500/30'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -168,7 +168,7 @@ export const InteractiveLab: React.FC = () => {
               onClick={() => setActiveTab('agent')}
               className={`px-4 py-2.5 rounded-xl transition-all flex items-center gap-2 font-bold cursor-pointer ${
                 activeTab === 'agent'
-                  ? 'bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-md shadow-blue-500/30'
+                  ? 'bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 text-slate-950 shadow-md shadow-red-500/30'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -184,7 +184,7 @@ export const InteractiveLab: React.FC = () => {
             {/* Left Column: Clinical Parameters */}
             <div className="lg:col-span-7 space-y-7">
               <div className="flex items-center justify-between pb-4 border-b border-white/10">
-                <span className="text-sm font-mono font-bold uppercase text-cyan-400 tracking-wider">
+                <span className="text-sm font-mono font-bold uppercase text-amber-400 tracking-wider">
                   Clinical Input Parameters
                 </span>
                 <span className="text-xs text-slate-400 font-mono">
@@ -196,7 +196,7 @@ export const InteractiveLab: React.FC = () => {
               <div className="space-y-2.5">
                 <div className="flex justify-between text-sm font-semibold">
                   <span className="text-slate-200">Patient Age (Years)</span>
-                  <span className="font-mono text-cyan-300 text-base font-bold">{age} years</span>
+                  <span className="font-mono text-amber-300 text-base font-bold">{age} years</span>
                 </div>
                 <input
                   type="range"
@@ -204,7 +204,7 @@ export const InteractiveLab: React.FC = () => {
                   max="80"
                   value={age}
                   onChange={(e) => setAge(Number(e.target.value))}
-                  className="w-full accent-cyan-400 bg-slate-800 h-2.5 rounded-lg cursor-pointer"
+                  className="w-full accent-amber-400 bg-slate-800 h-2.5 rounded-lg cursor-pointer"
                 />
               </div>
 
@@ -212,7 +212,7 @@ export const InteractiveLab: React.FC = () => {
               <div className="space-y-2.5">
                 <div className="flex justify-between text-sm font-semibold">
                   <span className="text-slate-200">Resting Blood Pressure (mm Hg)</span>
-                  <span className="font-mono text-cyan-300 text-base font-bold">{restingBp} mm Hg</span>
+                  <span className="font-mono text-amber-300 text-base font-bold">{restingBp} mm Hg</span>
                 </div>
                 <input
                   type="range"
@@ -220,7 +220,7 @@ export const InteractiveLab: React.FC = () => {
                   max="200"
                   value={restingBp}
                   onChange={(e) => setRestingBp(Number(e.target.value))}
-                  className="w-full accent-cyan-400 bg-slate-800 h-2.5 rounded-lg cursor-pointer"
+                  className="w-full accent-amber-400 bg-slate-800 h-2.5 rounded-lg cursor-pointer"
                 />
               </div>
 
@@ -228,7 +228,7 @@ export const InteractiveLab: React.FC = () => {
               <div className="space-y-2.5">
                 <div className="flex justify-between text-sm font-semibold">
                   <span className="text-slate-200">Serum Cholesterol (mg/dl)</span>
-                  <span className="font-mono text-cyan-300 text-base font-bold">{cholesterol} mg/dl</span>
+                  <span className="font-mono text-amber-300 text-base font-bold">{cholesterol} mg/dl</span>
                 </div>
                 <input
                   type="range"
@@ -236,7 +236,7 @@ export const InteractiveLab: React.FC = () => {
                   max="380"
                   value={cholesterol}
                   onChange={(e) => setCholesterol(Number(e.target.value))}
-                  className="w-full accent-cyan-400 bg-slate-800 h-2.5 rounded-lg cursor-pointer"
+                  className="w-full accent-amber-400 bg-slate-800 h-2.5 rounded-lg cursor-pointer"
                 />
               </div>
 
@@ -244,7 +244,7 @@ export const InteractiveLab: React.FC = () => {
               <div className="space-y-2.5">
                 <div className="flex justify-between text-sm font-semibold">
                   <span className="text-slate-200">Maximum Heart Rate Achieved (bpm)</span>
-                  <span className="font-mono text-cyan-300 text-base font-bold">{maxHeartRate} bpm</span>
+                  <span className="font-mono text-amber-300 text-base font-bold">{maxHeartRate} bpm</span>
                 </div>
                 <input
                   type="range"
@@ -252,7 +252,7 @@ export const InteractiveLab: React.FC = () => {
                   max="210"
                   value={maxHeartRate}
                   onChange={(e) => setMaxHeartRate(Number(e.target.value))}
-                  className="w-full accent-cyan-400 bg-slate-800 h-2.5 rounded-lg cursor-pointer"
+                  className="w-full accent-amber-400 bg-slate-800 h-2.5 rounded-lg cursor-pointer"
                 />
               </div>
 
@@ -271,7 +271,7 @@ export const InteractiveLab: React.FC = () => {
                       onClick={() => setChestPain(item.id)}
                       className={`p-3 rounded-xl border transition-all text-center cursor-pointer font-bold ${
                         chestPain === item.id
-                          ? 'bg-cyan-950/70 border-cyan-400 text-cyan-300 shadow-md shadow-cyan-500/20'
+                          ? 'bg-amber-950/70 border-amber-400 text-amber-300 shadow-md shadow-amber-500/20'
                           : 'bg-slate-900/60 border-white/10 text-slate-400 hover:text-white'
                       }`}
                     >
@@ -289,23 +289,23 @@ export const InteractiveLab: React.FC = () => {
                   <span className="text-xs font-mono text-slate-300 uppercase font-bold">
                     Model Inference Output
                   </span>
-                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-emerald-950/60 text-emerald-300 border border-emerald-500/40 font-bold">
+                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-amber-950/60 text-amber-300 border border-amber-500/40 font-bold">
                     Live Logistic Pipeline
                   </span>
                 </div>
 
                 {/* Score Dial (Extra Large & Glowing) */}
                 <div className="text-center py-6 space-y-3">
-                  <div className="text-6xl sm:text-7xl lg:text-8xl font-black font-mono tracking-tight text-white drop-shadow-[0_0_30px_rgba(56,189,248,0.4)]">
+                  <div className="text-6xl sm:text-7xl lg:text-8xl font-black font-mono tracking-tight text-white drop-shadow-[0_0_30px_rgba(245,158,11,0.4)]">
                     {riskScore}%
                   </div>
                   <div
                     className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-mono font-bold ${
                       riskScore >= 65
-                        ? 'bg-rose-950/70 text-rose-300 border border-rose-500/50 shadow-md shadow-rose-900/30'
+                        ? 'bg-red-950/80 text-red-300 border border-red-500/50 shadow-md shadow-red-900/30'
                         : riskScore >= 40
-                        ? 'bg-amber-950/70 text-amber-300 border border-amber-500/50 shadow-md shadow-amber-900/30'
-                        : 'bg-emerald-950/70 text-emerald-300 border border-emerald-500/50 shadow-md shadow-emerald-900/30'
+                        ? 'bg-amber-950/80 text-amber-300 border border-amber-500/50 shadow-md shadow-amber-900/30'
+                        : 'bg-yellow-950/80 text-yellow-300 border border-yellow-500/50 shadow-md shadow-yellow-900/30'
                     }`}
                   >
                     <span>{riskCategory}</span>
@@ -322,15 +322,15 @@ export const InteractiveLab: React.FC = () => {
                   </div>
                   <div className="flex justify-between text-slate-300">
                     <span>Heart Rate Deficit:</span>
-                    <span className="text-cyan-300 font-bold">Weight: +0.65</span>
+                    <span className="text-amber-300 font-bold">Weight: +0.65</span>
                   </div>
                   <div className="flex justify-between text-slate-300">
                     <span>Age Factor (Scaled):</span>
-                    <span className="text-cyan-300 font-bold">Weight: +0.55</span>
+                    <span className="text-amber-300 font-bold">Weight: +0.55</span>
                   </div>
                   <div className="flex justify-between text-slate-300">
                     <span>Resting BP Factor:</span>
-                    <span className="text-cyan-300 font-bold">Weight: +0.42</span>
+                    <span className="text-amber-300 font-bold">Weight: +0.42</span>
                   </div>
                 </div>
               </div>
@@ -354,12 +354,12 @@ export const InteractiveLab: React.FC = () => {
           <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/15 space-y-7 shadow-2xl">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-white/10 gap-3">
               <div className="flex items-center gap-2.5">
-                <Database className="w-5 h-5 text-blue-400" />
+                <Database className="w-5 h-5 text-amber-400" />
                 <span className="text-base font-mono font-bold text-slate-100">
                   Blood Bank MySQL 8.0 Schema Query Runner
                 </span>
               </div>
-              <span className="text-xs font-mono text-emerald-400 font-bold">
+              <span className="text-xs font-mono text-amber-400 font-bold">
                 Connected • InnoDB Engine • ACID Isolation
               </span>
             </div>
@@ -372,7 +372,7 @@ export const InteractiveLab: React.FC = () => {
                   onClick={() => setSelectedSqlIndex(idx)}
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-bold transition-all border cursor-pointer ${
                     selectedSqlIndex === idx
-                      ? 'bg-blue-950/70 border-blue-400 text-blue-200 shadow-md shadow-blue-500/20'
+                      ? 'bg-red-950/70 border-red-400 text-red-200 shadow-md shadow-red-500/20'
                       : 'bg-slate-900/60 border-white/10 text-slate-400 hover:text-white'
                   }`}
                 >
@@ -385,9 +385,9 @@ export const InteractiveLab: React.FC = () => {
             <div className="p-5 rounded-2xl bg-black/80 border border-white/10 font-mono text-sm space-y-2.5 shadow-inner">
               <div className="flex items-center justify-between text-slate-400 text-xs font-bold">
                 <span>SQL QUERY (PREPARED STATEMENT COMPATIBLE)</span>
-                <span className="text-cyan-400">Execution time: ~8ms</span>
+                <span className="text-amber-400">Execution time: ~8ms</span>
               </div>
-              <pre className="text-cyan-300 whitespace-pre-wrap leading-relaxed text-xs sm:text-sm">
+              <pre className="text-amber-300 whitespace-pre-wrap leading-relaxed text-xs sm:text-sm">
                 {sqlQueries[selectedSqlIndex].query}
               </pre>
             </div>
@@ -429,7 +429,7 @@ export const InteractiveLab: React.FC = () => {
           <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/15 space-y-7 shadow-2xl">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-white/10 gap-4">
               <div>
-                <span className="text-base font-mono font-bold text-sky-300 uppercase">
+                <span className="text-base font-mono font-bold text-amber-300 uppercase">
                   FoodWise-AI Autonomous Agent Workflow (Prototype)
                 </span>
                 <p className="text-sm text-slate-300 mt-1">
@@ -441,7 +441,7 @@ export const InteractiveLab: React.FC = () => {
                 <button
                   onClick={runAgentSimulation}
                   disabled={agentRunning}
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-sky-400 via-blue-500 to-cyan-400 hover:from-sky-300 hover:to-cyan-300 disabled:opacity-50 transition-all shadow-lg shadow-sky-500/20 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 hover:from-red-400 hover:to-yellow-300 disabled:opacity-50 transition-all shadow-lg shadow-red-500/20 cursor-pointer"
                 >
                   <Play className="w-4 h-4" />
                   <span>{agentRunning ? 'Agent Running...' : 'Run Surplus Agent'}</span>
@@ -462,15 +462,15 @@ export const InteractiveLab: React.FC = () => {
               <div
                 className={`p-5 rounded-2xl border transition-all ${
                   agentStep >= 1
-                    ? 'bg-slate-900/80 border-sky-500/50 text-slate-200'
+                    ? 'bg-slate-900/80 border-red-500/50 text-slate-200'
                     : 'bg-black/30 border-white/5 text-slate-500 opacity-60'
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <div className="font-mono text-sm font-bold text-sky-300">
+                  <div className="font-mono text-sm font-bold text-red-300">
                     STEP 01: SENSOR &amp; INVENTORY TELEMETRY
                   </div>
-                  {agentStep >= 1 && <span className="text-emerald-400 text-xs font-bold font-mono">✓ Completed</span>}
+                  {agentStep >= 1 && <span className="text-amber-400 text-xs font-bold font-mono">✓ Completed</span>}
                 </div>
                 <p className="text-xs sm:text-sm text-slate-300 mt-1.5 font-mono">
                   &gt; Ingesting institutional dining hall logs: 42.5 kg perishable prepared meals remaining at 20:30 hrs.
@@ -481,15 +481,15 @@ export const InteractiveLab: React.FC = () => {
               <div
                 className={`p-5 rounded-2xl border transition-all ${
                   agentStep >= 2
-                    ? 'bg-slate-900/80 border-cyan-500/50 text-slate-200'
+                    ? 'bg-slate-900/80 border-amber-500/50 text-slate-200'
                     : 'bg-black/30 border-white/5 text-slate-500 opacity-60'
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <div className="font-mono text-sm font-bold text-cyan-300">
+                  <div className="font-mono text-sm font-bold text-amber-300">
                     STEP 02: DEMAND PREDICTION VS SURPLUS THRESHOLD
                   </div>
-                  {agentStep >= 2 && <span className="text-emerald-400 text-xs font-bold font-mono">✓ Completed</span>}
+                  {agentStep >= 2 && <span className="text-amber-400 text-xs font-bold font-mono">✓ Completed</span>}
                 </div>
                 <p className="text-xs sm:text-sm text-slate-300 mt-1.5 font-mono">
                   &gt; Projected consumption: 12.0 kg. Net surplus: 30.5 kg (&gt;15% trigger condition met). Autonomous dispatch protocol engaged.
@@ -500,15 +500,15 @@ export const InteractiveLab: React.FC = () => {
               <div
                 className={`p-5 rounded-2xl border transition-all ${
                   agentStep >= 3
-                    ? 'bg-slate-900/80 border-amber-500/50 text-slate-200'
+                    ? 'bg-slate-900/80 border-yellow-500/50 text-slate-200'
                     : 'bg-black/30 border-white/5 text-slate-500 opacity-60'
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <div className="font-mono text-sm font-bold text-amber-300">
+                  <div className="font-mono text-sm font-bold text-yellow-300">
                     STEP 03: GEOLOCATION TOOL QUERY &amp; NGO MATCH
                   </div>
-                  {agentStep >= 3 && <span className="text-emerald-400 text-xs font-bold font-mono">✓ Completed</span>}
+                  {agentStep >= 3 && <span className="text-amber-400 text-xs font-bold font-mono">✓ Completed</span>}
                 </div>
                 <p className="text-xs sm:text-sm text-slate-300 mt-1.5 font-mono">
                   &gt; Querying Haversine geo-index within 5.0 km radius. Matched Partner: "Annapurna Food Bank" (3.2 km away, capacity: 50 kg).
@@ -519,13 +519,13 @@ export const InteractiveLab: React.FC = () => {
               <div
                 className={`p-5 rounded-2xl border transition-all ${
                   agentStep >= 4
-                    ? 'bg-blue-950/40 border-blue-400 text-slate-200 shadow-xl shadow-blue-500/10'
+                    ? 'bg-amber-950/40 border-amber-400 text-slate-200 shadow-xl shadow-amber-500/10'
                     : 'bg-black/30 border-white/5 text-slate-500 opacity-60'
                 }`}
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
-                    <div className="font-mono text-sm font-bold text-emerald-300">
+                    <div className="font-mono text-sm font-bold text-yellow-300">
                       STEP 04: HUMAN-IN-THE-LOOP APPROVAL CHECKPOINT
                     </div>
                     <p className="text-sm text-slate-200 mt-1 font-medium">
@@ -536,7 +536,7 @@ export const InteractiveLab: React.FC = () => {
                   {agentStep === 4 && !managerApproved && (
                     <button
                       onClick={approveDispatch}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 transition-colors shadow-lg shadow-emerald-500/20 cursor-pointer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-yellow-400 hover:from-amber-300 hover:to-yellow-300 transition-colors shadow-lg shadow-amber-500/20 cursor-pointer"
                     >
                       <Check className="w-5 h-5" />
                       <span>Authorize Dispatch</span>
@@ -544,7 +544,7 @@ export const InteractiveLab: React.FC = () => {
                   )}
 
                   {managerApproved && (
-                    <span className="text-sm font-mono text-emerald-400 flex items-center gap-1.5 font-bold">
+                    <span className="text-sm font-mono text-amber-400 flex items-center gap-1.5 font-bold">
                       <CheckCircle2 className="w-5 h-5" /> Authorized by Kitchen Supervisor
                     </span>
                   )}
@@ -553,8 +553,8 @@ export const InteractiveLab: React.FC = () => {
 
               {/* Step 5 */}
               {agentStep >= 5 && (
-                <div className="p-5 rounded-2xl bg-emerald-950/50 border border-emerald-400 text-emerald-200 font-mono text-sm space-y-1.5 animate-in fade-in duration-300 shadow-lg shadow-emerald-900/30">
-                  <div className="font-bold flex items-center gap-2 text-emerald-300 text-base">
+                <div className="p-5 rounded-2xl bg-amber-950/50 border border-amber-400 text-amber-200 font-mono text-sm space-y-1.5 animate-in fade-in duration-300 shadow-lg shadow-amber-900/30">
+                  <div className="font-bold flex items-center gap-2 text-yellow-300 text-base">
                     <CheckCircle2 className="w-5 h-5" />
                     <span>DISPATCH SUCCESSFUL (DISPATCH TOKEN #FW-9921)</span>
                   </div>

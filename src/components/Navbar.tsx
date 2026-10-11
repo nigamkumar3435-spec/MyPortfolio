@@ -59,16 +59,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
           {/* Brand Monogram & Name */}
           <a
             href="#hero"
-            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg p-1"
+            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-red-500 rounded-lg p-1"
             aria-label="Nigam Kumar Portfolio Home"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 via-blue-600/30 to-blue-800/30 border border-cyan-500/40 flex items-center justify-center font-mono font-bold text-cyan-400 group-hover:border-cyan-400 group-hover:scale-105 transition-all shadow-sm shadow-cyan-500/20">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600/30 via-amber-600/30 to-yellow-500/20 border border-red-500/40 flex items-center justify-center font-mono font-bold text-yellow-400 group-hover:border-yellow-400 group-hover:scale-105 transition-all shadow-sm shadow-red-500/20">
               NK
             </div>
             <div className="flex flex-col">
-              <span className="font-semibold text-slate-100 text-sm tracking-tight flex items-center gap-2 group-hover:text-cyan-300 transition-colors">
+              <span className="font-semibold text-slate-100 text-sm tracking-tight flex items-center gap-2 group-hover:text-yellow-300 transition-colors">
                 {personal.name}
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" title="Available for Opportunities" />
+                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" title="Available for Opportunities" />
               </span>
               <span className="text-[11px] font-mono text-slate-400">
                 CSE @ IIST '27
@@ -84,13 +84,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
                 href={link.href}
                 className={`text-xs font-medium px-3 py-1.5 rounded-full transition-all relative flex items-center gap-1.5 ${
                   link.highlight
-                    ? 'text-cyan-300 hover:text-cyan-200 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30'
+                    ? 'text-yellow-300 hover:text-yellow-200 bg-red-950/40 hover:bg-red-900/40 border border-amber-500/30'
                     : 'text-slate-300 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {link.label}
                 {link.badge && (
-                  <span className="text-[10px] font-mono px-1.5 py-0.2 rounded-full bg-slate-800 text-cyan-400 border border-slate-700">
+                  <span className="text-[10px] font-mono px-1.5 py-0.2 rounded-full bg-slate-800 text-yellow-400 border border-amber-500/30">
                     {link.badge}
                   </span>
                 )}
@@ -102,16 +102,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
           <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={onOpenResume}
-              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium rounded-lg text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 transition-all focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium rounded-lg text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 hover:border-amber-500/40 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500"
               aria-label="View and Download Resume"
             >
-              <FileText className="w-3.5 h-3.5 text-cyan-400" />
+              <FileText className="w-3.5 h-3.5 text-yellow-400" />
               <span>Resume</span>
             </button>
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg text-slate-950 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 transition-all shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/30 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-lg text-slate-950 bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 hover:from-red-400 hover:to-yellow-300 transition-all shadow-md shadow-red-500/25 hover:shadow-red-500/35 focus:outline-none focus:ring-2 focus:ring-amber-400"
             >
               <Send className="w-3.5 h-3.5" />
               <span>Let's Connect</span>
@@ -121,18 +121,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+            className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-amber-500"
             aria-expanded={mobileMenuOpen}
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5 text-cyan-400" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? <X className="w-5 h-5 text-yellow-400" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0c0e14]/95 border-b border-white/10 backdrop-blur-xl px-4 pt-3 pb-6 space-y-3 animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="lg:hidden bg-[#120a0d]/95 border-b border-white/10 backdrop-blur-xl px-4 pt-3 pb-6 space-y-3 animate-in fade-in slide-in-from-top-4 duration-200">
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <a
@@ -141,13 +141,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium ${
                   link.highlight
-                    ? 'text-cyan-300 bg-cyan-950/40 border border-cyan-800/40'
+                    ? 'text-yellow-300 bg-red-950/50 border border-amber-500/40'
                     : 'text-slate-200 hover:bg-white/5'
                 }`}
               >
                 <span>{link.label}</span>
                 {link.badge && (
-                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-cyan-400">
+                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-yellow-400">
                     {link.badge}
                   </span>
                 )}
@@ -161,16 +161,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
                 setMobileMenuOpen(false)
                 onOpenResume()
               }}
-              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium text-slate-200 bg-slate-800 border border-slate-700"
+              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold text-slate-200 bg-slate-800/90 border border-white/10 hover:border-amber-400"
             >
-              <FileText className="w-4 h-4 text-cyan-400" />
+              <FileText className="w-4 h-4 text-amber-400" />
               <span>View &amp; Download Resume</span>
             </button>
 
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-blue-500"
+              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 shadow-md shadow-red-500/20"
             >
               <Send className="w-4 h-4" />
               <span>Let's Connect</span>

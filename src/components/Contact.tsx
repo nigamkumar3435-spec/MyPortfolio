@@ -73,7 +73,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
         particleCount: 80,
         spread: 70,
         origin: { y: 0.75 },
-        colors: ['#38bdf8', '#2563eb', '#34d399', '#f59e0b']
+        colors: ['#ef4444', '#f59e0b', '#facc15', '#fbbf24']
       })
 
       setSubmitSuccess(true)
@@ -98,21 +98,21 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
   )}`
 
   return (
-    <section id="contact" className="py-24 relative bg-slate-950/70">
+    <section id="contact" className="py-24 relative bg-black/60">
       {/* Background Chromatic Accent */}
-      <div className="absolute bottom-10 left-1/3 w-[600px] h-[350px] bg-gradient-to-tr from-cyan-500/10 via-blue-600/10 to-sky-600/10 blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 left-1/3 w-[600px] h-[350px] bg-gradient-to-tr from-red-600/10 via-amber-500/10 to-yellow-600/10 blur-[150px] pointer-events-none -z-10" />
 
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
         {/* Section Heading (Bigger Typography & Neon Accents) */}
         <div className="space-y-3 mb-14 text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-bold shadow-sm shadow-cyan-500/20">
-            <Mail className="w-4 h-4 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-950/60 border border-red-500/40 text-red-300 text-xs font-mono font-bold shadow-sm shadow-red-500/20">
+            <Mail className="w-4 h-4 text-red-400" />
             <span>07 // GET IN TOUCH</span>
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
             Let's Discuss{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-sky-300">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-amber-300 to-yellow-300">
               Opportunities
             </span>
           </h2>
@@ -141,7 +141,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                   Primary Professional Email:
                 </span>
                 <div className="flex items-center justify-between gap-3">
-                  <span className="text-base sm:text-lg font-mono font-bold text-cyan-300 truncate">
+                  <span className="text-base sm:text-lg font-mono font-bold text-yellow-300 truncate">
                     {personal.email}
                   </span>
                   <button
@@ -149,7 +149,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                     className="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 transition-colors shrink-0 cursor-pointer shadow-sm"
                     title="Copy Email Address"
                   >
-                    {copiedEmail ? <Check className="w-5 h-5 text-emerald-400" /> : <Copy className="w-5 h-5" />}
+                    {copiedEmail ? <Check className="w-5 h-5 text-amber-400" /> : <Copy className="w-5 h-5" />}
                   </button>
                 </div>
               </div>
@@ -158,56 +158,56 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
               <div className="space-y-3 pt-1">
                 <a
                   href={mailtoHref}
-                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-cyan-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md group"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-amber-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md group"
                 >
                   <span className="flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-cyan-400" />
+                    <Mail className="w-5 h-5 text-amber-400" />
                     <span>Launch Local Email Client (mailto)</span>
                   </span>
-                  <span className="text-cyan-400 font-mono text-sm group-hover:translate-x-1 transition-transform">&gt;</span>
+                  <span className="text-amber-400 font-mono text-sm group-hover:translate-x-1 transition-transform">&gt;</span>
                 </a>
 
                 <a
                   href={personal.linkedinUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-blue-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md group"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-amber-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md group"
                 >
                   <span className="flex items-center gap-3">
-                    <LinkedinIcon className="w-5 h-5 text-blue-400" />
+                    <LinkedinIcon className="w-5 h-5 text-amber-400" />
                     <span>LinkedIn Profile</span>
                   </span>
-                  <span className="text-blue-400 font-mono text-sm group-hover:translate-x-1 transition-transform">&gt;</span>
+                  <span className="text-amber-400 font-mono text-sm group-hover:translate-x-1 transition-transform">&gt;</span>
                 </a>
 
                 <a
                   href={personal.githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-sky-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md group"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-red-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md group"
                 >
                   <span className="flex items-center gap-3">
-                    <GithubIcon className="w-5 h-5 text-sky-400" />
+                    <GithubIcon className="w-5 h-5 text-red-400" />
                     <span>GitHub Profile (27 Repos)</span>
                   </span>
-                  <span className="text-sky-400 font-mono text-sm group-hover:translate-x-1 transition-transform">&gt;</span>
+                  <span className="text-red-400 font-mono text-sm group-hover:translate-x-1 transition-transform">&gt;</span>
                 </a>
 
                 <button
                   onClick={onOpenResume}
-                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-emerald-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md cursor-pointer group"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-yellow-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md cursor-pointer group"
                 >
                   <span className="flex items-center gap-3">
-                    <FileText className="w-5 h-5 text-emerald-400" />
+                    <FileText className="w-5 h-5 text-yellow-400" />
                     <span>View &amp; Download ATS Resume</span>
                   </span>
-                  <span className="text-emerald-400 font-mono text-sm group-hover:translate-x-1 transition-transform">&gt;</span>
+                  <span className="text-yellow-400 font-mono text-sm group-hover:translate-x-1 transition-transform">&gt;</span>
                 </button>
               </div>
 
               {/* Turnaround Time SLA */}
               <div className="pt-3 border-t border-white/10 flex items-center gap-2.5 text-xs sm:text-sm font-mono text-slate-300 font-medium">
-                <Clock className="w-4 h-4 text-cyan-400" />
+                <Clock className="w-4 h-4 text-amber-400" />
                 <span>Turnaround: Typical reply within 24 hours.</span>
               </div>
             </div>
@@ -219,7 +219,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
               <div className="space-y-1.5">
                 <h3 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2.5">
                   <span>Send a Direct Message</span>
-                  <Sparkles className="w-5 h-5 text-cyan-400" />
+                  <Sparkles className="w-5 h-5 text-amber-400" />
                 </h3>
                 <p className="text-sm text-slate-300">
                   Whether discussing an internship opportunity or asking about my projects, drop a note below.
@@ -227,8 +227,8 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
               </div>
 
               {submitSuccess ? (
-                <div className="p-8 rounded-2xl bg-emerald-950/50 border border-emerald-400 space-y-4 text-center animate-in fade-in duration-300 shadow-xl shadow-emerald-950/30">
-                  <div className="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto shadow-sm shadow-emerald-500/30">
+                <div className="p-8 rounded-2xl bg-amber-950/50 border border-amber-400 space-y-4 text-center animate-in fade-in duration-300 shadow-xl shadow-amber-950/30">
+                  <div className="w-14 h-14 rounded-full bg-amber-500/20 text-yellow-400 flex items-center justify-center mx-auto shadow-sm shadow-amber-500/30">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h4 className="text-xl font-bold text-white">
@@ -239,7 +239,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                   </p>
                   <button
                     onClick={() => setSubmitSuccess(false)}
-                    className="mt-3 text-sm font-mono text-emerald-400 font-bold hover:underline cursor-pointer"
+                    className="mt-3 text-sm font-mono text-amber-400 font-bold hover:underline cursor-pointer"
                   >
                     Send another message
                   </button>
@@ -247,7 +247,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   {submitError && (
-                    <div className="p-4 rounded-xl bg-rose-950/60 border border-rose-500 text-rose-200 text-sm flex items-center gap-2.5">
+                    <div className="p-4 rounded-xl bg-red-950/60 border border-red-500 text-red-200 text-sm flex items-center gap-2.5">
                       <AlertCircle className="w-5 h-5 shrink-0" />
                       <span>{submitError}</span>
                     </div>
@@ -256,7 +256,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                   {/* Name Field */}
                   <div className="space-y-2">
                     <label htmlFor="contact-name" className="text-sm font-mono font-semibold text-slate-200 block">
-                      Your Name / Organization <span className="text-cyan-400">*</span>
+                      Your Name / Organization <span className="text-red-400">*</span>
                     </label>
                     <input
                       id="contact-name"
@@ -264,19 +264,19 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g., Sarah Chen (Tech Recruiter @ Company)"
-                      className={`w-full px-4 py-3.5 rounded-2xl bg-slate-900 border text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-cyan-500/30 focus:border-cyan-400 transition-all ${
-                        formErrors.name ? 'border-rose-500' : 'border-white/15'
+                      className={`w-full px-4 py-3.5 rounded-2xl bg-slate-900 border text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-red-500/30 focus:border-red-400 transition-all ${
+                        formErrors.name ? 'border-red-500' : 'border-white/15'
                       }`}
                     />
                     {formErrors.name && (
-                      <p className="text-xs text-rose-400 font-mono font-medium">{formErrors.name}</p>
+                      <p className="text-xs text-red-400 font-mono font-medium">{formErrors.name}</p>
                     )}
                   </div>
 
                   {/* Email Field */}
                   <div className="space-y-2">
                     <label htmlFor="contact-email" className="text-sm font-mono font-semibold text-slate-200 block">
-                      Your Email Address <span className="text-cyan-400">*</span>
+                      Your Email Address <span className="text-red-400">*</span>
                     </label>
                     <input
                       id="contact-email"
@@ -284,12 +284,12 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="e.g., recruiter@company.com"
-                      className={`w-full px-4 py-3.5 rounded-2xl bg-slate-900 border text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-cyan-500/30 focus:border-cyan-400 transition-all ${
-                        formErrors.email ? 'border-rose-500' : 'border-white/15'
+                      className={`w-full px-4 py-3.5 rounded-2xl bg-slate-900 border text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-red-500/30 focus:border-red-400 transition-all ${
+                        formErrors.email ? 'border-red-500' : 'border-white/15'
                       }`}
                     />
                     {formErrors.email && (
-                      <p className="text-xs text-rose-400 font-mono font-medium">{formErrors.email}</p>
+                      <p className="text-xs text-red-400 font-mono font-medium">{formErrors.email}</p>
                     )}
                   </div>
 
@@ -302,7 +302,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                       id="contact-role"
                       value={formData.role}
                       onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                      className="w-full px-4 py-3.5 rounded-2xl bg-slate-900 border border-white/15 text-sm sm:text-base text-white focus:outline-none focus:ring-4 focus:ring-cyan-500/30 focus:border-cyan-400 transition-all"
+                      className="w-full px-4 py-3.5 rounded-2xl bg-slate-900 border border-white/15 text-sm sm:text-base text-white focus:outline-none focus:ring-4 focus:ring-red-500/30 focus:border-red-400 transition-all"
                     >
                       <option value="Software Development Intern">Software Development Intern (SDE)</option>
                       <option value="Full-Stack Developer Intern">Full-Stack Developer Intern</option>
@@ -315,7 +315,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                   {/* Message Field */}
                   <div className="space-y-2">
                     <label htmlFor="contact-message" className="text-sm font-mono font-semibold text-slate-200 block">
-                      Message / Role Details <span className="text-cyan-400">*</span>
+                      Message / Role Details <span className="text-red-400">*</span>
                     </label>
                     <textarea
                       id="contact-message"
@@ -323,12 +323,12 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell me a bit about your team, tech stack, or the opportunity..."
-                      className={`w-full px-4 py-3.5 rounded-2xl bg-slate-900 border text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-cyan-500/30 focus:border-cyan-400 transition-all resize-none ${
-                        formErrors.message ? 'border-rose-500' : 'border-white/15'
+                      className={`w-full px-4 py-3.5 rounded-2xl bg-slate-900 border text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-red-500/30 focus:border-red-400 transition-all resize-none ${
+                        formErrors.message ? 'border-red-500' : 'border-white/15'
                       }`}
                     />
                     {formErrors.message && (
-                      <p className="text-xs text-rose-400 font-mono font-medium">{formErrors.message}</p>
+                      <p className="text-xs text-red-400 font-mono font-medium">{formErrors.message}</p>
                     )}
                   </div>
 
@@ -337,7 +337,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full inline-flex items-center justify-center gap-3 py-4 px-8 rounded-2xl text-base font-bold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 hover:from-cyan-300 hover:to-blue-400 disabled:opacity-60 transition-all shadow-xl shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:scale-[1.01] cursor-pointer"
+                      className="w-full inline-flex items-center justify-center gap-3 py-4 px-8 rounded-2xl text-base font-bold text-slate-950 bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 hover:from-red-400 hover:to-yellow-300 disabled:opacity-60 transition-all shadow-xl shadow-red-500/30 hover:shadow-red-500/50 hover:scale-[1.01] cursor-pointer"
                     >
                       <Send className="w-5 h-5" />
                       <span>{isSubmitting ? 'Transmitting Message...' : "Let's Connect"}</span>

@@ -27,20 +27,20 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
   return (
     <section id="projects" className="py-24 relative">
       {/* Background Chromatic Accent */}
-      <div className="absolute top-1/2 right-1/4 w-[600px] h-[350px] bg-gradient-to-l from-blue-600/10 via-cyan-500/10 to-transparent blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[350px] bg-gradient-to-l from-red-600/10 via-amber-500/10 to-transparent blur-[140px] pointer-events-none -z-10" />
 
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
         {/* Section Header (Enlarged Typography & Neon Tag) */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-bold shadow-sm shadow-cyan-500/20">
-              <FolderGit2 className="w-4 h-4 text-cyan-400" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-950/60 border border-red-500/40 text-red-300 text-xs font-mono font-bold shadow-sm shadow-red-500/20">
+              <FolderGit2 className="w-4 h-4 text-red-400" />
               <span>02 // FEATURED ENGINEERING WORK</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
               Featured Software &amp;{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-sky-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-amber-300 to-yellow-300">
                 ML Systems
               </span>
             </h2>
@@ -55,7 +55,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
               onClick={() => setActiveFilter('all')}
               className={`px-3.5 py-1.5 rounded-xl transition-all cursor-pointer ${
                 activeFilter === 'all'
-                  ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold shadow-md shadow-cyan-500/30'
+                  ? 'bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 text-slate-950 font-bold shadow-md shadow-red-500/30'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -65,7 +65,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
               onClick={() => setActiveFilter('fullstack')}
               className={`px-3.5 py-1.5 rounded-xl transition-all cursor-pointer ${
                 activeFilter === 'fullstack'
-                  ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold shadow-md shadow-cyan-500/30'
+                  ? 'bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 text-slate-950 font-bold shadow-md shadow-red-500/30'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -75,7 +75,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
               onClick={() => setActiveFilter('ml')}
               className={`px-3.5 py-1.5 rounded-xl transition-all cursor-pointer ${
                 activeFilter === 'ml'
-                  ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold shadow-md shadow-cyan-500/30'
+                  ? 'bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 text-slate-950 font-bold shadow-md shadow-red-500/30'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -85,7 +85,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
               onClick={() => setActiveFilter('agent')}
               className={`px-3.5 py-1.5 rounded-xl transition-all cursor-pointer ${
                 activeFilter === 'agent'
-                  ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold shadow-md shadow-cyan-500/30'
+                  ? 'bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 text-slate-950 font-bold shadow-md shadow-red-500/30'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -105,27 +105,27 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
             ].slice(0, 6)
 
             // Individual Project Color Identity
-            let cardThemeClass = 'card-theme-emerald'
-            let glareColor = 'rgba(16, 185, 129, 0.3)'
-            let titleHoverClass = 'group-hover:text-emerald-300'
-            let accentBorderClass = 'border-emerald-500/40'
-            let buttonColorClass = 'text-emerald-300 hover:text-emerald-200'
+            let cardThemeClass = 'card-theme-flame'
+            let glareColor = 'rgba(239, 68, 68, 0.3)'
+            let titleHoverClass = 'group-hover:text-amber-300'
+            let accentBorderClass = 'border-red-500/40'
+            let buttonColorClass = 'text-amber-300 hover:text-yellow-200'
 
             if (project.id === 'blood-bank') {
-              cardThemeClass = 'card-theme-cyan'
-              glareColor = 'rgba(6, 182, 212, 0.3)'
-              titleHoverClass = 'group-hover:text-cyan-300'
-              accentBorderClass = 'border-cyan-500/40'
-              buttonColorClass = 'text-cyan-300 hover:text-cyan-200'
+              cardThemeClass = 'card-theme-red'
+              glareColor = 'rgba(239, 68, 68, 0.35)'
+              titleHoverClass = 'group-hover:text-red-300'
+              accentBorderClass = 'border-red-500/40'
+              buttonColorClass = 'text-red-300 hover:text-red-200'
             } else if (project.id === 'disease-risk') {
-              cardThemeClass = 'card-theme-blue'
-              glareColor = 'rgba(37, 99, 235, 0.3)'
-              titleHoverClass = 'group-hover:text-sky-300'
-              accentBorderClass = 'border-blue-500/40'
-              buttonColorClass = 'text-sky-300 hover:text-sky-200'
+              cardThemeClass = 'card-theme-yellow'
+              glareColor = 'rgba(250, 204, 21, 0.35)'
+              titleHoverClass = 'group-hover:text-yellow-300'
+              accentBorderClass = 'border-yellow-500/40'
+              buttonColorClass = 'text-yellow-300 hover:text-yellow-200'
             } else if (project.id === 'foodwise-ai') {
               cardThemeClass = 'card-theme-amber'
-              glareColor = 'rgba(245, 158, 11, 0.3)'
+              glareColor = 'rgba(245, 158, 11, 0.35)'
               titleHoverClass = 'group-hover:text-amber-300'
               accentBorderClass = 'border-amber-500/40'
               buttonColorClass = 'text-amber-300 hover:text-amber-200'
@@ -133,10 +133,10 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
 
             const statusColor =
               project.status === 'Verified'
-                ? 'bg-emerald-950/80 text-emerald-300 border-emerald-400/60 shadow-md shadow-emerald-500/25'
+                ? 'bg-red-950/80 text-red-300 border-red-400/60 shadow-md shadow-red-500/25'
                 : project.status === 'Completed'
-                ? 'bg-cyan-950/80 text-cyan-300 border-cyan-400/60 shadow-md shadow-cyan-500/25'
-                : 'bg-blue-950/80 text-blue-300 border-blue-400/60 shadow-md shadow-blue-500/25'
+                ? 'bg-amber-950/80 text-amber-300 border-amber-400/60 shadow-md shadow-amber-500/25'
+                : 'bg-yellow-950/80 text-yellow-300 border-yellow-400/60 shadow-md shadow-yellow-500/25'
 
             return (
               <TiltCard
@@ -175,8 +175,8 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
 
                   {/* Key Highlights */}
                   <div className="p-4 rounded-2xl bg-black/60 border border-white/10 space-y-2 text-sm text-slate-200 tilt-pop shadow-inner">
-                    <div className="text-xs font-mono uppercase tracking-wider font-extrabold flex items-center gap-2 text-cyan-300">
-                      <CheckCircle2 className="w-4 h-4 text-cyan-400" />
+                    <div className="text-xs font-mono uppercase tracking-wider font-extrabold flex items-center gap-2 text-amber-300">
+                      <CheckCircle2 className="w-4 h-4 text-amber-400" />
                       Key Core Capability:
                     </div>
                     <p className="text-slate-100 font-medium leading-relaxed text-xs sm:text-sm">
@@ -193,8 +193,8 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                   )}
 
                   {project.id === 'foodwise-ai' && (
-                    <div className="flex items-center gap-2 text-xs font-mono text-sky-300 bg-sky-950/50 px-3.5 py-1.5 rounded-xl border border-sky-500/50">
-                      <Sparkles className="w-4 h-4 text-sky-400 shrink-0" />
+                    <div className="flex items-center gap-2 text-xs font-mono text-yellow-300 bg-yellow-950/50 px-3.5 py-1.5 rounded-xl border border-yellow-500/50">
+                      <Sparkles className="w-4 h-4 text-yellow-400 shrink-0" />
                       <span>Prototyping &amp; exploration lab: Multi-step ReAct agent simulation.</span>
                     </div>
                   )}
@@ -204,7 +204,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                     {allStackTags.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 rounded-xl bg-slate-900/90 text-slate-100 text-xs font-mono font-medium border border-white/15 hover:border-cyan-400 hover:text-cyan-300 hover:scale-105 transition-all shadow-sm"
+                        className="px-3 py-1 rounded-xl bg-slate-900/90 text-slate-100 text-xs font-mono font-medium border border-white/15 hover:border-amber-400 hover:text-amber-300 hover:scale-105 transition-all shadow-sm"
                       >
                         {tech}
                       </span>
@@ -228,7 +228,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-white/15 hover:border-cyan-400 text-slate-200 hover:text-white transition-all shadow-lg hover:scale-110"
+                      className="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-white/15 hover:border-amber-400 text-slate-200 hover:text-amber-300 transition-all shadow-lg hover:scale-110"
                       title="View GitHub Repository"
                       aria-label={`${project.title} GitHub repository`}
                     >

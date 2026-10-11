@@ -37,21 +37,21 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     mount.appendChild(renderer.domElement)
 
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.9)
+    // Lighting - Fiery Crimson & Solar Gold
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.85)
     scene.add(ambientLight)
 
-    const cyanPointLight = new THREE.PointLight(0x00f2fe, 4, 50)
-    cyanPointLight.position.set(5, 5, 5)
-    scene.add(cyanPointLight)
+    const redPointLight = new THREE.PointLight(0xef4444, 4.5, 50)
+    redPointLight.position.set(5, 5, 5)
+    scene.add(redPointLight)
 
-    const bluePointLight = new THREE.PointLight(0x2563eb, 3.5, 50)
-    bluePointLight.position.set(-5, -5, 4)
-    scene.add(bluePointLight)
+    const yellowPointLight = new THREE.PointLight(0xfacc15, 4.0, 50)
+    yellowPointLight.position.set(-5, -5, 4)
+    scene.add(yellowPointLight)
 
-    const skyPointLight = new THREE.PointLight(0x38bdf8, 2.5, 40)
-    skyPointLight.position.set(0, 4, -3)
-    scene.add(skyPointLight)
+    const amberPointLight = new THREE.PointLight(0xf59e0b, 3.0, 40)
+    amberPointLight.position.set(0, 4, -3)
+    scene.add(amberPointLight)
 
     // Group to hold model-specific objects
     const modelGroup = new THREE.Group()
@@ -63,27 +63,27 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
     if (model === 'neural') {
       const geo = new THREE.IcosahedronGeometry(2.0, 1)
       const mat = new THREE.MeshStandardMaterial({
-        color: 0x38bdf8,
+        color: 0xef4444,
         wireframe: true,
         roughness: 0.1,
         metalness: 0.9,
-        emissive: 0x0284c7,
-        emissiveIntensity: 0.5
+        emissive: 0xb91c1c,
+        emissiveIntensity: 0.6
       })
       const mesh = new THREE.Mesh(geo, mat)
       modelGroup.add(mesh)
       disposables.push(geo, mat)
 
-      // Inner Glowing Core
+      // Inner Glowing Core (Solar Yellow)
       const coreGeo = new THREE.SphereGeometry(1.2, 28, 28)
       const coreMat = new THREE.MeshStandardMaterial({
-        color: 0x1d4ed8,
+        color: 0xf59e0b,
         roughness: 0.1,
         metalness: 0.6,
         transparent: true,
-        opacity: 0.7,
-        emissive: 0x2563eb,
-        emissiveIntensity: 0.8
+        opacity: 0.75,
+        emissive: 0xd97706,
+        emissiveIntensity: 0.9
       })
       const coreMesh = new THREE.Mesh(coreGeo, coreMat)
       modelGroup.add(coreMesh)
@@ -92,18 +92,18 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
       // Outer Orbiting Rings
       const ringGeo = new THREE.TorusGeometry(2.6, 0.035, 16, 100)
       const ringMat1 = new THREE.MeshBasicMaterial({
-        color: 0x06b6d4,
+        color: 0xfacc15,
         transparent: true,
-        opacity: 0.6
+        opacity: 0.7
       })
       const ring1 = new THREE.Mesh(ringGeo, ringMat1)
       ring1.rotation.x = Math.PI / 3
       modelGroup.add(ring1)
 
       const ringMat2 = new THREE.MeshBasicMaterial({
-        color: 0x10b981,
+        color: 0xef4444,
         transparent: true,
-        opacity: 0.6
+        opacity: 0.7
       })
       const ring2 = new THREE.Mesh(ringGeo, ringMat2)
       ring2.rotation.y = Math.PI / 4
@@ -115,25 +115,25 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
     if (model === 'torus') {
       const knotGeo = new THREE.TorusKnotGeometry(1.5, 0.42, 128, 32, 2, 3)
       const knotMat = new THREE.MeshStandardMaterial({
-        color: 0x2563eb,
+        color: 0xef4444,
         roughness: 0.2,
         metalness: 0.8,
         wireframe: true,
-        emissive: 0x1d4ed8,
-        emissiveIntensity: 0.4
+        emissive: 0xdc2626,
+        emissiveIntensity: 0.5
       })
       const knotMesh = new THREE.Mesh(knotGeo, knotMat)
       modelGroup.add(knotMesh)
 
       const solidGeo = new THREE.TorusKnotGeometry(1.47, 0.38, 100, 24, 2, 3)
       const solidMat = new THREE.MeshStandardMaterial({
-        color: 0x06b6d4,
+        color: 0xfacc15,
         roughness: 0.3,
         metalness: 0.9,
         transparent: true,
-        opacity: 0.65,
-        emissive: 0x0891b2,
-        emissiveIntensity: 0.3
+        opacity: 0.7,
+        emissive: 0xd97706,
+        emissiveIntensity: 0.4
       })
       const solidMesh = new THREE.Mesh(solidGeo, solidMat)
       modelGroup.add(solidMesh)
@@ -144,11 +144,11 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
     if (model === 'cube') {
       const outerBoxGeo = new THREE.BoxGeometry(2.3, 2.3, 2.3)
       const outerBoxMat = new THREE.MeshStandardMaterial({
-        color: 0x38bdf8,
+        color: 0xef4444,
         wireframe: true,
         roughness: 0.1,
         metalness: 0.8,
-        emissive: 0x0284c7,
+        emissive: 0xb91c1c,
         emissiveIntensity: 0.6
       })
       const outerBox = new THREE.Mesh(outerBoxGeo, outerBoxMat)
@@ -156,11 +156,11 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
 
       const innerBoxGeo = new THREE.BoxGeometry(1.3, 1.3, 1.3)
       const innerBoxMat = new THREE.MeshStandardMaterial({
-        color: 0x10b981,
+        color: 0xf59e0b,
         wireframe: true,
         roughness: 0.2,
         metalness: 0.9,
-        emissive: 0x059669,
+        emissive: 0xd97706,
         emissiveIntensity: 0.7
       })
       const innerBox = new THREE.Mesh(innerBoxGeo, innerBoxMat)
@@ -168,9 +168,9 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
 
       const coreGeo = new THREE.OctahedronGeometry(0.7, 0)
       const coreMat = new THREE.MeshStandardMaterial({
-        color: 0xf59e0b,
-        emissive: 0xd97706,
-        emissiveIntensity: 0.8,
+        color: 0xfacc15,
+        emissive: 0xeab308,
+        emissiveIntensity: 0.9,
         metalness: 0.9,
         roughness: 0.1
       })
@@ -201,11 +201,11 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
         galaxyPositions[i3 + 1] = randomY
         galaxyPositions[i3 + 2] = Math.sin(branchAngle + spinAngle) * radius + randomZ
 
-        // Technical Blueprint Sky to Deep Cobalt gradient colors
+        // Fiery Crimson to Solar Yellow gradient
         const mixRatio = radius / 3.0
-        galaxyColors[i3] = 0.05 + 0.15 * mixRatio // R (low red for clean cool tone)
-        galaxyColors[i3 + 1] = 0.65 + 0.25 * (1 - mixRatio) // G (teal/cyan touch)
-        galaxyColors[i3 + 2] = 0.95 // B (electric blue)
+        galaxyColors[i3] = 1.0 // High Red
+        galaxyColors[i3 + 1] = 0.2 + 0.75 * mixRatio // Green ramp creates Yellow at rim
+        galaxyColors[i3 + 2] = 0.05 // Low Blue for pure flame
       }
 
       galaxyGeo.setAttribute('position', new THREE.BufferAttribute(galaxyPositions, 3))
@@ -237,7 +237,7 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3))
     const particlesMaterial = new THREE.PointsMaterial({
       size: 0.05,
-      color: 0x38bdf8,
+      color: 0xfacc15,
       transparent: true,
       opacity: 0.75,
       blending: THREE.AdditiveBlending

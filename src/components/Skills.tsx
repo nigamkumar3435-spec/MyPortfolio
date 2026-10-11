@@ -26,22 +26,22 @@ export const Skills: React.FC = () => {
     .filter((category) => category.skills.length > 0)
 
   return (
-    <section id="skills" className="py-24 relative bg-slate-950/50">
+    <section id="skills" className="py-24 relative bg-black/40">
       {/* Background Accent Glow */}
-      <div className="absolute top-1/3 left-10 w-[500px] h-[350px] bg-cyan-500/10 blur-[130px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 left-10 w-[500px] h-[350px] bg-red-500/10 blur-[130px] pointer-events-none -z-10" />
 
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
         {/* Section Header (Bigger Typography & Search) */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-bold shadow-sm shadow-cyan-500/20">
-              <Cpu className="w-4 h-4 text-cyan-400" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-950/60 border border-red-500/40 text-red-300 text-xs font-mono font-bold shadow-sm shadow-red-500/20">
+              <Cpu className="w-4 h-4 text-red-400" />
               <span>03 // TECHNICAL ARSENAL</span>
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
               Verified Technical{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-sky-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-amber-300 to-yellow-300">
                 Skills
               </span>
             </h2>
@@ -58,7 +58,7 @@ export const Skills: React.FC = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Filter skills (e.g., SQL, Java, React)..."
-              className="w-full pl-12 pr-4 py-3 rounded-2xl bg-slate-900 border border-white/15 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-cyan-500/30 focus:border-cyan-400 transition-all shadow-lg shadow-black/40"
+              className="w-full pl-12 pr-4 py-3 rounded-2xl bg-slate-900 border border-white/15 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-red-500/30 focus:border-red-400 transition-all shadow-lg shadow-black/40"
             />
             {searchQuery && (
               <button
@@ -74,19 +74,19 @@ export const Skills: React.FC = () => {
         {/* Legend for Honest Proficiency (Enlarged Badges) */}
         <div className="mb-10 p-4 sm:p-5 rounded-2xl bg-black/50 border border-white/10 flex flex-wrap items-center gap-6 text-sm text-slate-300 font-mono shadow-md">
           <span className="text-white font-bold flex items-center gap-1.5">
-            <Sparkles className="w-4 h-4 text-cyan-400" />
+            <Sparkles className="w-4 h-4 text-amber-400" />
             Proficiency Standard:
           </span>
           <div className="flex items-center gap-2.5">
-            <span className="w-3 h-3 rounded-full bg-cyan-400 shadow-sm shadow-cyan-400"></span>
+            <span className="w-3 h-3 rounded-full bg-yellow-400 shadow-sm shadow-yellow-400"></span>
             <span className="font-medium">Core Competency (Interview-Ready, Tested in Code)</span>
           </div>
           <div className="flex items-center gap-2.5">
-            <span className="w-3 h-3 rounded-full bg-blue-400 shadow-sm shadow-blue-400"></span>
+            <span className="w-3 h-3 rounded-full bg-amber-400 shadow-sm shadow-amber-400"></span>
             <span className="font-medium">Working Knowledge (Practical Hands-On Usage)</span>
           </div>
           <div className="flex items-center gap-2.5">
-            <span className="w-3 h-3 rounded-full bg-amber-400 shadow-sm shadow-amber-400"></span>
+            <span className="w-3 h-3 rounded-full bg-red-400 shadow-sm shadow-red-400"></span>
             <span className="font-medium">Active Exploration (Foundations &amp; Prototyping)</span>
           </div>
         </div>
@@ -107,7 +107,7 @@ export const Skills: React.FC = () => {
                     {category.description}
                   </p>
                 </div>
-                <span className="text-xs font-mono font-bold text-cyan-300 self-start sm:self-auto bg-cyan-950/60 px-3.5 py-1 rounded-full border border-cyan-500/40 shadow-sm">
+                <span className="text-xs font-mono font-bold text-amber-300 self-start sm:self-auto bg-amber-950/60 px-3.5 py-1 rounded-full border border-amber-500/40 shadow-sm">
                   {category.skills.length} skills listed
                 </span>
               </div>
@@ -117,18 +117,18 @@ export const Skills: React.FC = () => {
                 {category.skills.map((skill, sIdx) => {
                   const badgeColor =
                     skill.proficiency === 'Core Competency'
-                      ? 'bg-cyan-950/80 text-cyan-300 border-cyan-400/60 shadow-sm shadow-cyan-500/30'
+                      ? 'bg-yellow-950/80 text-yellow-300 border-yellow-400/60 shadow-sm shadow-yellow-500/30'
                       : skill.proficiency === 'Working Knowledge'
-                      ? 'bg-emerald-950/80 text-emerald-300 border-emerald-400/60 shadow-sm shadow-emerald-500/30'
-                      : 'bg-amber-950/80 text-amber-300 border-amber-400/60 shadow-sm shadow-amber-500/30'
+                      ? 'bg-amber-950/80 text-amber-300 border-amber-400/60 shadow-sm shadow-amber-500/30'
+                      : 'bg-red-950/80 text-red-300 border-red-400/60 shadow-sm shadow-red-500/30'
 
                   return (
                     <div
                       key={sIdx}
-                      className="p-5 rounded-2xl bg-black/60 border border-white/15 hover:border-cyan-400/70 hover:bg-slate-900/90 transition-all flex flex-col justify-between space-y-3.5 group shadow-lg hover:scale-[1.02]"
+                      className="p-5 rounded-2xl bg-black/60 border border-white/15 hover:border-amber-400/70 hover:bg-slate-900/90 transition-all flex flex-col justify-between space-y-3.5 group shadow-lg hover:scale-[1.02]"
                     >
                       <div className="flex items-start justify-between gap-2.5">
-                        <span className="text-lg sm:text-xl font-black text-slate-100 group-hover:text-cyan-300 transition-colors">
+                        <span className="text-lg sm:text-xl font-black text-slate-100 group-hover:text-amber-300 transition-colors">
                           {skill.name}
                         </span>
                         <span

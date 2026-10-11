@@ -14,21 +14,21 @@ export const Footer: React.FC = () => {
   }
 
   return (
-    <footer className="border-t border-white/10 bg-[#06080b] py-12 text-xs text-slate-400">
+    <footer className="border-t border-white/10 bg-[#080506] py-12 text-xs text-slate-400">
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 space-y-8">
         
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-white/5">
           {/* Logo & Headline */}
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-cyan-950/80 border border-cyan-500/40 flex items-center justify-center font-mono font-bold text-cyan-400 text-xs">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-red-500 to-yellow-400 flex items-center justify-center font-mono font-black text-slate-950 text-xs shadow-md shadow-red-500/20">
                 NK
               </div>
               <span className="font-semibold text-slate-200 text-sm">
                 {personal.name}
               </span>
               <span className="text-slate-600">•</span>
-              <span className="font-mono text-cyan-400 text-xs">
+              <span className="font-mono text-yellow-400 text-xs font-bold">
                 IIST Indore ('27)
               </span>
             </div>
@@ -73,7 +73,7 @@ export const Footer: React.FC = () => {
               aria-label="Scroll back to top"
             >
               <span>Back to Top</span>
-              <ArrowUp className="w-3.5 h-3.5 text-cyan-400" />
+              <ArrowUp className="w-3.5 h-3.5 text-amber-400" />
             </button>
           </div>
         </div>
@@ -81,7 +81,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Credits & Integrity Standard */}
         <div className="flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-3 font-mono">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
             <span>All systems verified • Zero fabricated metrics or experience claims</span>
           </div>
 

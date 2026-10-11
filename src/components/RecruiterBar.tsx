@@ -23,28 +23,28 @@ export const RecruiterBar: React.FC<RecruiterBarProps> = ({ onOpenResume }) => {
       label: 'Degree & Track',
       value: `${personal.degree}`,
       subtext: `${personal.institution} ('27)`,
-      color: 'text-cyan-400 bg-cyan-950/50 border-cyan-500/30'
+      color: 'text-red-400 bg-red-950/50 border-red-500/30'
     },
     {
       icon: Award,
       label: 'Verified CGPA',
       value: `${personal.cgpa} / ${personal.cgpaScale}`,
       subtext: 'B.Tech CSE Track',
-      color: 'text-amber-400 bg-amber-950/50 border-amber-500/30'
+      color: 'text-yellow-400 bg-yellow-950/50 border-yellow-500/30'
     },
     {
       icon: Briefcase,
       label: 'Target Roles',
       value: 'SDE & Full-Stack Intern',
       subtext: 'AI/ML & Automation',
-      color: 'text-emerald-400 bg-emerald-950/50 border-emerald-500/30'
+      color: 'text-amber-400 bg-amber-950/50 border-amber-500/30'
     },
     {
       icon: MapPin,
       label: 'Location & Work',
       value: 'Indore, MP, India',
       subtext: 'Open to Remote / Relocation',
-      color: 'text-sky-400 bg-sky-950/50 border-sky-500/30'
+      color: 'text-rose-400 bg-rose-950/50 border-rose-500/30'
     }
   ]
 
@@ -55,9 +55,9 @@ export const RecruiterBar: React.FC<RecruiterBarProps> = ({ onOpenResume }) => {
         {/* Top Fast-Track Notice */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 mb-5 border-b border-white/10 gap-4">
           <div className="flex items-center gap-3">
-            <span className="flex h-3 w-3 rounded-full bg-cyan-400 shadow-sm shadow-cyan-400/80 animate-pulse"></span>
-            <span className="text-sm font-mono font-bold uppercase tracking-wider text-cyan-300 flex items-center gap-1.5">
-              <Zap className="w-4 h-4 text-cyan-400" />
+            <span className="flex h-3 w-3 rounded-full bg-amber-400 shadow-sm shadow-amber-400/80 animate-pulse"></span>
+            <span className="text-sm font-mono font-bold uppercase tracking-wider text-yellow-300 flex items-center gap-1.5">
+              <Zap className="w-4 h-4 text-amber-400" />
               30-Second Recruiter Fast-Track
             </span>
             <span className="text-slate-500 text-sm hidden sm:inline">•</span>
@@ -69,30 +69,30 @@ export const RecruiterBar: React.FC<RecruiterBarProps> = ({ onOpenResume }) => {
           <div className="flex items-center gap-3 self-start sm:self-auto">
             <button
               onClick={onOpenResume}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-slate-200 bg-white/10 hover:bg-white/15 border border-white/15 transition-all shadow-sm cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-slate-200 bg-white/10 hover:bg-white/15 border border-white/15 hover:border-amber-500/40 transition-all shadow-sm cursor-pointer"
             >
-              <FileText className="w-4 h-4 text-cyan-400" />
+              <FileText className="w-4 h-4 text-yellow-400" />
               <span>Full ATS Resume</span>
             </button>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-cyan-300 bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-400/40 transition-all shadow-sm shadow-cyan-500/20"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 hover:from-red-400 hover:to-yellow-300 transition-all shadow-sm shadow-red-500/25"
             >
-              <Mail className="w-4 h-4 text-cyan-400" />
+              <Mail className="w-4 h-4 text-slate-950" />
               <span>Contact Directly</span>
             </a>
           </div>
         </div>
 
-        {/* 4 Key Metric Cards (Enlarged with 3D Tilt & Vibrant Neon Border Accents) */}
+        {/* 4 Key Metric Cards (Enlarged with 3D Tilt & Vibrant Red/Yellow Border Accents) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {recruiterHighlights.map((item, index) => {
             const Icon = item.icon
             const cardBgColors = [
-              'border-cyan-500/40 bg-gradient-to-br from-cyan-950/30 to-black/60',
+              'border-red-500/40 bg-gradient-to-br from-red-950/30 to-black/60',
+              'border-yellow-500/40 bg-gradient-to-br from-yellow-950/30 to-black/60',
               'border-amber-500/40 bg-gradient-to-br from-amber-950/30 to-black/60',
-              'border-emerald-500/40 bg-gradient-to-br from-emerald-950/30 to-black/60',
-              'border-sky-500/40 bg-gradient-to-br from-sky-950/30 to-black/60'
+              'border-rose-500/40 bg-gradient-to-br from-rose-950/30 to-black/60'
             ]
 
             return (

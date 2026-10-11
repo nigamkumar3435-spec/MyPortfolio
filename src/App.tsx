@@ -19,7 +19,7 @@ export function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-[#08090d] text-slate-100 flex flex-col selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="min-h-screen bg-[#0a0708] text-slate-100 flex flex-col selection:bg-red-500/30 selection:text-yellow-200">
       {/* Fixed Header */}
       <Navbar onOpenResume={() => setIsResumeOpen(true)} />
 

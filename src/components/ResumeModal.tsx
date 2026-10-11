@@ -126,13 +126,13 @@ CERTIFICATIONS
       aria-labelledby="resume-modal-title"
     >
       <div
-        className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-2xl glass-panel border border-white/10 p-5 sm:p-8 space-y-6 shadow-2xl bg-[#090b10]"
+        className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-2xl glass-panel border border-red-500/20 p-5 sm:p-8 space-y-6 shadow-2xl bg-[#0d090a]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Top Control Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-white/10 gap-3">
           <div className="flex items-center gap-2">
-            <FileText className="w-5 h-5 text-cyan-400" />
+            <FileText className="w-5 h-5 text-red-400" />
             <h2 id="resume-modal-title" className="text-lg font-bold text-white">
               Curriculum Vitae / ATS-Formatted Resume
             </h2>
@@ -141,7 +141,7 @@ CERTIFICATIONS
           <div className="flex items-center gap-2 self-start sm:self-auto">
             <button
               onClick={handleDownload}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 transition-all shadow-sm"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-slate-950 bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 hover:from-red-400 hover:to-yellow-300 transition-all shadow-md shadow-red-500/20"
               title="Download ATS text resume"
             >
               <Download className="w-3.5 h-3.5" />
@@ -150,10 +150,10 @@ CERTIFICATIONS
 
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-slate-900 hover:bg-slate-800 border border-slate-700 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 bg-slate-900 hover:bg-slate-800 border border-slate-700 transition-colors"
               title="Print or Save as PDF"
             >
-              <Printer className="w-3.5 h-3.5 text-cyan-400" />
+              <Printer className="w-3.5 h-3.5 text-amber-400" />
               <span>Print / PDF</span>
             </button>
 
@@ -162,7 +162,7 @@ CERTIFICATIONS
               className="p-1.5 rounded-lg text-slate-400 hover:text-white bg-slate-900 border border-slate-700 transition-colors"
               title="Copy Recruiter One-Line Bio"
             >
-              {copiedSummary ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+              {copiedSummary ? <Check className="w-5 h-5 text-amber-400" /> : <Copy className="w-5 h-5" />}
             </button>
 
             <button
@@ -183,23 +183,23 @@ CERTIFICATIONS
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white uppercase">
               {personal.name}
             </h1>
-            <p className="text-xs sm:text-sm text-cyan-300 font-medium">
+            <p className="text-xs sm:text-sm text-amber-300 font-medium">
               {personal.headline}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-400 pt-1 font-mono">
               <span className="flex items-center gap-1">
-                <Mail className="w-3 h-3 text-cyan-400" /> {personal.email}
+                <Mail className="w-3 h-3 text-amber-400" /> {personal.email}
               </span>
               <span>•</span>
               <span className="flex items-center gap-1">
-                <MapPin className="w-3 h-3 text-cyan-400" /> {personal.location}
+                <MapPin className="w-3 h-3 text-amber-400" /> {personal.location}
               </span>
               <span>•</span>
-              <a href={personal.githubUrl} target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline">
+              <a href={personal.githubUrl} target="_blank" rel="noreferrer" className="text-amber-400 hover:underline">
                 github.com/{personal.githubUsername}
               </a>
               <span>•</span>
-              <a href={personal.linkedinUrl} target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline">
+              <a href={personal.linkedinUrl} target="_blank" rel="noreferrer" className="text-amber-400 hover:underline">
                 linkedin.com/in/nigamkumar3435
               </a>
             </div>
@@ -207,7 +207,7 @@ CERTIFICATIONS
 
           {/* Education */}
           <div className="space-y-2">
-            <h3 className="text-xs font-bold font-mono uppercase tracking-wider text-cyan-400 pb-1 border-b border-slate-800">
+            <h3 className="text-xs font-bold font-mono uppercase tracking-wider text-amber-400 pb-1 border-b border-slate-800">
               Education
             </h3>
             <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs sm:text-sm">
@@ -216,15 +216,15 @@ CERTIFICATIONS
                 <div className="text-slate-400">{personal.institution}</div>
               </div>
               <div className="text-left sm:text-right mt-1 sm:mt-0 font-mono text-xs">
-                <span className="text-cyan-300 font-semibold">2023 – 2027 (Expected)</span>
-                <div className="text-emerald-400 font-bold">CGPA: {personal.cgpa} / {personal.cgpaScale}</div>
+                <span className="text-amber-300 font-semibold">2023 – 2027 (Expected)</span>
+                <div className="text-yellow-400 font-bold">CGPA: {personal.cgpa} / {personal.cgpaScale}</div>
               </div>
             </div>
           </div>
 
           {/* Technical Skills */}
           <div className="space-y-2 text-xs">
-            <h3 className="text-xs font-bold font-mono uppercase tracking-wider text-cyan-400 pb-1 border-b border-slate-800">
+            <h3 className="text-xs font-bold font-mono uppercase tracking-wider text-amber-400 pb-1 border-b border-slate-800">
               Technical Skills
             </h3>
             <div className="space-y-1.5 text-slate-300">
@@ -248,7 +248,7 @@ CERTIFICATIONS
 
           {/* Key Projects */}
           <div className="space-y-3 text-xs">
-            <h3 className="text-xs font-bold font-mono uppercase tracking-wider text-cyan-400 pb-1 border-b border-slate-800">
+            <h3 className="text-xs font-bold font-mono uppercase tracking-wider text-amber-400 pb-1 border-b border-slate-800">
               Technical Projects
             </h3>
             
@@ -306,7 +306,7 @@ CERTIFICATIONS
 
           {/* Certifications */}
           <div className="space-y-2 text-xs">
-            <h3 className="text-xs font-bold font-mono uppercase tracking-wider text-cyan-400 pb-1 border-b border-slate-800">
+            <h3 className="text-xs font-bold font-mono uppercase tracking-wider text-amber-400 pb-1 border-b border-slate-800">
               Verified Certifications
             </h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1 text-slate-300">
