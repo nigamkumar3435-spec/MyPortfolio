@@ -148,7 +148,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                   
                   {/* Card Top Pill Bar */}
                   <div className="flex items-center justify-between tilt-pop">
-                    <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-slate-900/90 text-white border border-white/20 shadow-md">
+                    <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-black/80 text-white border border-white/20 shadow-md">
                       {project.badge}
                     </span>
                     <span

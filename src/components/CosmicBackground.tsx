@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import { ThreeBackground } from './ThreeBackground'
 
 export const CosmicBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -138,6 +139,9 @@ export const CosmicBackground: React.FC = () => {
 
       {/* Bottom Center Horizon Glow: Warm Golden Hearth */}
       <div className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.18)_0%,rgba(239,68,68,0.15)_45%,transparent_75%)] blur-[160px] animate-pulse-halo" />
+
+      {/* 2.5 Dynamic 3D WebGL Floating Polyhedrons & Cosmic Space Particles */}
+      <ThreeBackground />
 
       {/* 3. High-Tech Cybernetic Dual-Tone Grid Matrix */}
       <div

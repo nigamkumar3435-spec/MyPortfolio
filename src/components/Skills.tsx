@@ -5,6 +5,7 @@ import {
   Sparkles
 } from 'lucide-react'
 import { portfolioData } from '../data/portfolioData'
+import { TiltCard } from './TiltCard'
 
 export const Skills: React.FC = () => {
   const { skillCategories } = portfolioData
@@ -91,14 +92,17 @@ export const Skills: React.FC = () => {
           </div>
         </div>
 
-        {/* Categorized Bento Skill Grid */}
-        <div className="space-y-10">
+        {/* Categorized Bento Skill Grid with 3D TiltCards */}
+        <div className="space-y-10 preserve-3d">
           {filteredCategories.map((category, catIdx) => (
-            <div
+            <TiltCard
               key={catIdx}
-              className="p-7 sm:p-9 rounded-3xl glass-card border border-white/10 space-y-6 shadow-xl shadow-black/40"
+              maxTilt={4.5}
+              scale={1.01}
+              glareColor="rgba(245, 158, 11, 0.18)"
+              className="p-7 sm:p-9 rounded-3xl glass-card border border-white/10 space-y-6 shadow-2xl shadow-black/50"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-white/10 gap-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-white/10 gap-3 tilt-pop">
                 <div>
                   <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
                     {category.title}
@@ -112,8 +116,8 @@ export const Skills: React.FC = () => {
                 </span>
               </div>
 
-              {/* Skills Cards Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4.5 pt-2">
+              {/* Skills Cards Grid with 3D Pop Out */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4.5 pt-2 preserve-3d">
                 {category.skills.map((skill, sIdx) => {
                   const badgeColor =
                     skill.proficiency === 'Core Competency'
@@ -125,7 +129,7 @@ export const Skills: React.FC = () => {
                   return (
                     <div
                       key={sIdx}
-                      className="p-5 rounded-2xl bg-black/60 border border-white/15 hover:border-amber-400/70 hover:bg-black/80 transition-all flex flex-col justify-between space-y-3.5 group shadow-lg hover:scale-[1.02]"
+                      className="p-5 rounded-2xl bg-black/60 border border-white/15 hover:border-amber-400/70 hover:bg-black/80 transition-all flex flex-col justify-between space-y-3.5 group shadow-lg hover:shadow-red-500/20 hover:-translate-y-1.5 cursor-default tilt-pop-sm"
                     >
                       <div className="flex items-start justify-between gap-2.5">
                         <span className="text-lg sm:text-xl font-black text-slate-100 group-hover:text-amber-300 transition-colors">
@@ -144,7 +148,7 @@ export const Skills: React.FC = () => {
                   )
                 })}
               </div>
-            </div>
+            </TiltCard>
           ))}
         </div>
 

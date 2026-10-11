@@ -159,7 +159,7 @@ export const About: React.FC = () => {
                         <div className={`p-3 rounded-xl border ${pillar.color} shadow-md`}>
                           <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                         </div>
-                        <span className="text-xs sm:text-sm font-mono font-bold px-3 py-1 rounded-full bg-slate-900/90 text-slate-200 border border-white/15">
+                        <span className="text-xs sm:text-sm font-mono font-bold px-3 py-1 rounded-full bg-black/80 text-slate-200 border border-white/15">
                           {pillar.tag}
                         </span>
                       </div>

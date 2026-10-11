@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   Check
 } from 'lucide-react'
+import { TiltCard } from './TiltCard'
 
 export const InteractiveLab: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'ml' | 'sql' | 'agent'>('ml')
@@ -180,17 +181,23 @@ export const InteractiveLab: React.FC = () => {
 
         {/* Tab 1: ML Risk Predictor Sandbox */}
         {activeTab === 'ml' && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 glass-panel p-8 sm:p-10 rounded-3xl border border-white/15 shadow-2xl">
-            {/* Left Column: Clinical Parameters */}
-            <div className="lg:col-span-7 space-y-7">
-              <div className="flex items-center justify-between pb-4 border-b border-white/10">
-                <span className="text-sm font-mono font-bold uppercase text-amber-400 tracking-wider">
-                  Clinical Input Parameters
-                </span>
-                <span className="text-xs text-slate-400 font-mono">
-                  Standardized Scaler Applied
-                </span>
-              </div>
+          <TiltCard
+            maxTilt={3.5}
+            scale={1.005}
+            glareColor="rgba(245, 158, 11, 0.18)"
+            className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/15 shadow-2xl"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 preserve-3d">
+              {/* Left Column: Clinical Parameters */}
+              <div className="lg:col-span-7 space-y-7 tilt-pop-sm">
+                <div className="flex items-center justify-between pb-4 border-b border-white/10">
+                  <span className="text-sm font-mono font-bold uppercase text-amber-400 tracking-wider">
+                    Clinical Input Parameters
+                  </span>
+                  <span className="text-xs text-slate-400 font-mono">
+                    Standardized Scaler Applied
+                  </span>
+                </div>
 
               {/* Slider 1: Age */}
               <div className="space-y-2.5">
@@ -283,7 +290,7 @@ export const InteractiveLab: React.FC = () => {
             </div>
 
             {/* Right Column: Model Output & Responsible Disclaimer */}
-            <div className="lg:col-span-5 flex flex-col justify-between space-y-7 bg-black/60 p-7 sm:p-8 rounded-3xl border border-white/10 shadow-xl">
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-7 bg-black/60 p-7 sm:p-8 rounded-3xl border border-white/10 shadow-xl tilt-pop">
               <div className="space-y-5">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono text-slate-300 uppercase font-bold">
@@ -316,7 +323,7 @@ export const InteractiveLab: React.FC = () => {
                 </div>
 
                 {/* Contributing Weights Breakdown */}
-                <div className="space-y-2.5 text-xs font-mono bg-slate-900/80 p-4 rounded-2xl border border-white/10">
+                <div className="space-y-2.5 text-xs font-mono bg-black/70 p-4 rounded-2xl border border-white/10 tilt-pop-sm">
                   <div className="text-xs text-slate-300 font-bold">
                     Decision Boundary Feature Weights:
                   </div>
@@ -336,7 +343,7 @@ export const InteractiveLab: React.FC = () => {
               </div>
 
               {/* Responsible Use Notice */}
-              <div className="p-4 rounded-2xl bg-slate-950 border border-amber-500/30 text-xs space-y-1.5 text-slate-300 shadow-md">
+              <div className="p-4 rounded-2xl bg-black/80 border border-amber-500/30 text-xs space-y-1.5 text-slate-300 shadow-md tilt-pop-sm">
                 <div className="flex items-center gap-2 text-amber-300 font-bold text-sm">
                   <ShieldCheck className="w-4 h-4 text-amber-400" />
                   <span>Responsible AI / Ethical Scope:</span>
@@ -346,13 +353,19 @@ export const InteractiveLab: React.FC = () => {
                 </p>
               </div>
             </div>
-          </div>
+            </div>
+          </TiltCard>
         )}
 
         {/* Tab 2: SQL Schema Explorer */}
         {activeTab === 'sql' && (
-          <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/15 space-y-7 shadow-2xl">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-white/10 gap-3">
+          <TiltCard
+            maxTilt={3}
+            scale={1.005}
+            glareColor="rgba(239, 68, 68, 0.18)"
+            className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/15 space-y-7 shadow-2xl"
+          >
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-white/10 gap-3 tilt-pop">
               <div className="flex items-center gap-2.5">
                 <Database className="w-5 h-5 text-amber-400" />
                 <span className="text-base font-mono font-bold text-slate-100">
@@ -365,15 +378,15 @@ export const InteractiveLab: React.FC = () => {
             </div>
 
             {/* Preset Query Buttons */}
-            <div className="flex flex-wrap gap-2.5">
+            <div className="flex flex-wrap gap-2.5 tilt-pop-sm">
               {sqlQueries.map((item, idx) => (
                 <button
                   key={idx}
                   onClick={() => setSelectedSqlIndex(idx)}
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-bold transition-all border cursor-pointer ${
                     selectedSqlIndex === idx
-                      ? 'bg-red-950/70 border-red-400 text-red-200 shadow-md shadow-red-500/20'
-                      : 'bg-slate-900/60 border-white/10 text-slate-400 hover:text-white'
+                      ? 'bg-red-950/80 border-red-400 text-red-200 shadow-lg shadow-red-500/25 -translate-y-0.5'
+                      : 'bg-black/60 border-white/10 text-slate-300 hover:text-white hover:bg-black/80'
                   }`}
                 >
                   {item.name}
@@ -382,7 +395,7 @@ export const InteractiveLab: React.FC = () => {
             </div>
 
             {/* Query Preview Terminal */}
-            <div className="p-5 rounded-2xl bg-black/80 border border-white/10 font-mono text-sm space-y-2.5 shadow-inner">
+            <div className="p-5 rounded-2xl bg-black/80 border border-white/10 font-mono text-sm space-y-2.5 shadow-inner tilt-pop">
               <div className="flex items-center justify-between text-slate-400 text-xs font-bold">
                 <span>SQL QUERY (PREPARED STATEMENT COMPATIBLE)</span>
                 <span className="text-amber-400">Execution time: ~8ms</span>
@@ -393,7 +406,7 @@ export const InteractiveLab: React.FC = () => {
             </div>
 
             {/* Results Table (Larger font) */}
-            <div className="overflow-x-auto rounded-2xl border border-white/10 bg-slate-950/70 shadow-md">
+            <div className="overflow-x-auto rounded-2xl border border-white/10 bg-black/70 shadow-xl tilt-pop-sm">
               <table className="w-full text-left font-mono text-xs sm:text-sm">
                 <thead className="bg-white/10 text-slate-200 uppercase text-xs border-b border-white/10 font-bold">
                   <tr>
@@ -421,12 +434,17 @@ export const InteractiveLab: React.FC = () => {
             <div className="text-xs sm:text-sm text-slate-400 font-mono">
               Schema enforces 3NF normalization, foreign key constraints (CASCADE / RESTRICT), and prepared parameter binding.
             </div>
-          </div>
+          </TiltCard>
         )}
 
         {/* Tab 3: Agentic Dispatch Runner (FoodWise-AI) */}
         {activeTab === 'agent' && (
-          <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/15 space-y-7 shadow-2xl">
+          <TiltCard
+            maxTilt={3}
+            scale={1.005}
+            glareColor="rgba(250, 204, 21, 0.18)"
+            className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/15 space-y-7 shadow-2xl"
+          >
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-white/10 gap-4">
               <div>
                 <span className="text-base font-mono font-bold text-amber-300 uppercase">
@@ -568,7 +586,7 @@ export const InteractiveLab: React.FC = () => {
             <div className="text-xs sm:text-sm text-slate-400 font-mono">
               Demonstrates why autonomous agents in physical domains require explicit human-in-the-loop checkpoints and defensive fallback policies.
             </div>
-          </div>
+          </TiltCard>
         )}
 
       </div>

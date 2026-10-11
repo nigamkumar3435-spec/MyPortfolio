@@ -56,19 +56,22 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
   }
 
   return (
-    <section id="hero" className="relative pt-32 pb-24 lg:pt-40 lg:pb-36 overflow-hidden">
+    <section id="hero" className="relative pt-32 pb-24 lg:pt-40 lg:pb-36 overflow-hidden preserve-3d">
       {/* Dynamic Ambient Red & Yellow Glows */}
       <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] bg-gradient-to-tr from-red-600/15 via-amber-600/15 to-yellow-950/20 blur-[160px] pointer-events-none -z-10 rounded-full animate-pulse-halo" />
       <div className="absolute top-20 right-10 w-[650px] h-[450px] bg-gradient-to-bl from-amber-600/15 via-red-600/10 to-slate-900/20 blur-[150px] pointer-events-none -z-10" />
 
-      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
+      {/* 3D Cyber Horizon Floor Matrix */}
+      <div className="cyber-3d-floor" />
+
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           
           {/* Left Column: Personal Brand & Hero Copy */}
           <div className="lg:col-span-7 space-y-8">
             
             {/* Factual Availability Pill */}
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-slate-900/95 border border-amber-500/40 text-yellow-300 text-sm sm:text-base font-mono shadow-xl shadow-amber-950/30 backdrop-blur-md">
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-black/80 border border-amber-500/50 text-yellow-300 text-sm sm:text-base font-mono shadow-[0_4px_16px_rgba(245,158,11,0.25)] backdrop-blur-xl hover:-translate-y-0.5 transition-transform">
               <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-80"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-400"></span>
@@ -125,11 +128,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               ))}
             </div>
 
-            {/* Primary & Secondary CTAs (Fiery Red & Solar Gold Buttons) */}
-            <div className="pt-2 flex flex-wrap items-center gap-3.5">
+            {/* Primary & Secondary CTAs (3D Tactile Fiery Red & Solar Gold Buttons) */}
+            <div className="pt-2 flex flex-wrap items-center gap-3.5 preserve-3d">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-bold text-slate-950 bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 hover:from-red-400 hover:to-yellow-300 transition-all shadow-xl shadow-red-600/30 hover:shadow-red-600/50 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-amber-400/40"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-bold text-slate-950 bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 hover:from-red-400 hover:to-yellow-300 transition-all btn-3d-primary focus:outline-none focus:ring-4 focus:ring-amber-400/40"
               >
                 <span>Explore My Projects</span>
                 <ArrowRight className="w-4 h-4" />
@@ -137,7 +140,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
               <button
                 onClick={onOpenResume}
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-semibold text-slate-100 bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-amber-400/50 transition-all shadow-lg shadow-black/40 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-amber-500/30"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-semibold text-slate-100 bg-black/80 hover:bg-black/90 border border-white/20 hover:border-amber-400/60 transition-all btn-3d-secondary focus:outline-none focus:ring-4 focus:ring-amber-500/30 cursor-pointer"
               >
                 <FileText className="w-4 h-4 text-yellow-400" />
                 <span>Download Resume</span>
@@ -145,19 +148,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-slate-200 hover:text-white hover:bg-white/10 transition-all border border-white/10 hover:border-amber-400/30"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-slate-200 hover:text-white bg-black/40 hover:bg-black/60 transition-all border border-white/15 hover:border-amber-400/50 shadow-md shadow-black/50 hover:-translate-y-0.5 active:translate-y-0.5"
               >
                 <span>Get in Touch</span>
               </a>
             </div>
 
-            {/* Social & Contact Proof */}
+            {/* Social & Contact Proof with 3D Elevated Chips */}
             <div className="pt-1 flex flex-wrap items-center gap-4 text-sm sm:text-base font-mono text-slate-300">
               <a
                 href={personal.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 hover:border-yellow-400/70 hover:text-yellow-300 hover:shadow-lg hover:shadow-yellow-500/20 transition-all"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-black/70 backdrop-blur-xl border border-white/15 hover:border-yellow-400/70 hover:text-yellow-300 shadow-[0_4px_12px_rgba(0,0,0,0.6)] hover:shadow-yellow-500/25 hover:-translate-y-1 transition-all"
                 aria-label="GitHub Profile"
               >
                 <GithubIcon className="w-4 h-4 text-yellow-400" />
@@ -168,7 +171,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 href={personal.linkedinUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 hover:border-amber-400/70 hover:text-amber-300 hover:shadow-lg hover:shadow-amber-500/20 transition-all"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-black/70 backdrop-blur-xl border border-white/15 hover:border-amber-400/70 hover:text-amber-300 shadow-[0_4px_12px_rgba(0,0,0,0.6)] hover:shadow-amber-500/25 hover:-translate-y-1 transition-all"
                 aria-label="LinkedIn Profile"
               >
                 <LinkedinIcon className="w-4 h-4 text-amber-400" />
@@ -177,7 +180,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
               <button
                 onClick={handleCopyEmail}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 hover:border-red-400/70 hover:text-red-300 hover:shadow-lg hover:shadow-red-500/20 transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-black/70 backdrop-blur-xl border border-white/15 hover:border-red-400/70 hover:text-red-300 shadow-[0_4px_12px_rgba(0,0,0,0.6)] hover:shadow-red-500/25 hover:-translate-y-1 transition-all cursor-pointer"
                 title="Click to copy email address"
               >
                 {copiedEmail ? (
@@ -187,7 +190,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   </>
                 ) : (
                   <>
-                    <Mail className="w-4 h-4 text-sky-400" />
+                    <Mail className="w-4 h-4 text-red-400" />
                     <span>{personal.email}</span>
                     <Copy className="w-3.5 h-3.5 text-slate-500" />
                   </>
