@@ -1,0 +1,5 @@
+# robots.txt for Nigam Kumar's Developer Portfolio
+User-agent: *
+Allow: /
+
+Sitemap: https://nigamkumar.dev/sitemap.xml
