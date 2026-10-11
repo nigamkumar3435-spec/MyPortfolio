@@ -5,7 +5,8 @@ import {
   Briefcase,
   MapPin,
   FileText,
-  Mail
+  Mail,
+  Zap
 } from 'lucide-react'
 import { portfolioData } from '../data/portfolioData'
 
@@ -19,89 +20,97 @@ export const RecruiterBar: React.FC<RecruiterBarProps> = ({ onOpenResume }) => {
   const recruiterHighlights = [
     {
       icon: GraduationCap,
-      label: 'Education',
+      label: 'Degree & Track',
       value: `${personal.degree}`,
       subtext: `${personal.institution} ('27)`,
-      color: 'text-cyan-400'
+      color: 'text-cyan-400 bg-cyan-950/50 border-cyan-500/30'
     },
     {
       icon: Award,
       label: 'Verified CGPA',
       value: `${personal.cgpa} / ${personal.cgpaScale}`,
       subtext: 'B.Tech CSE Track',
-      color: 'text-amber-400'
+      color: 'text-amber-400 bg-amber-950/50 border-amber-500/30'
     },
     {
       icon: Briefcase,
       label: 'Target Roles',
       value: 'SDE & Full-Stack Intern',
       subtext: 'AI/ML & Automation',
-      color: 'text-emerald-400'
+      color: 'text-emerald-400 bg-emerald-950/50 border-emerald-500/30'
     },
     {
       icon: MapPin,
       label: 'Location & Work',
       value: 'Indore, MP, India',
       subtext: 'Open to Remote / Relocation',
-      color: 'text-violet-400'
+      color: 'text-violet-400 bg-violet-950/50 border-violet-500/30'
     }
   ]
 
   return (
-    <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 -mt-4 mb-16">
-      <div className="glass-panel rounded-2xl p-4 sm:p-5 border border-white/10 shadow-xl bg-slate-900/70">
+    <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 -mt-6 mb-20">
+      <div className="glass-panel rounded-3xl p-5 sm:p-7 border border-white/15 shadow-2xl bg-slate-900/80">
         
         {/* Top Fast-Track Notice */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-white/10 gap-3">
-          <div className="flex items-center gap-2">
-            <span className="flex h-2 w-2 rounded-full bg-cyan-400"></span>
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-cyan-300">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 mb-5 border-b border-white/10 gap-4">
+          <div className="flex items-center gap-3">
+            <span className="flex h-3 w-3 rounded-full bg-cyan-400 shadow-sm shadow-cyan-400/80 animate-pulse"></span>
+            <span className="text-sm font-mono font-bold uppercase tracking-wider text-cyan-300 flex items-center gap-1.5">
+              <Zap className="w-4 h-4 text-cyan-400" />
               30-Second Recruiter Fast-Track
             </span>
-            <span className="text-slate-500 text-xs hidden sm:inline">•</span>
-            <span className="text-xs text-slate-400 hidden sm:inline">
-              Core credentials and availability at a glance
+            <span className="text-slate-500 text-sm hidden sm:inline">•</span>
+            <span className="text-sm text-slate-300 hidden sm:inline font-medium">
+              Core credentials, verified CGPA, and availability at a glance
             </span>
           </div>
 
-          <div className="flex items-center gap-2 self-start sm:self-auto">
+          <div className="flex items-center gap-3 self-start sm:self-auto">
             <button
               onClick={onOpenResume}
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-slate-200 bg-white/10 hover:bg-white/15 border border-white/15 transition-all shadow-sm cursor-pointer"
             >
-              <FileText className="w-3.5 h-3.5 text-cyan-400" />
+              <FileText className="w-4 h-4 text-cyan-400" />
               <span>Full ATS Resume</span>
             </button>
             <a
               href="#contact"
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium text-cyan-300 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-cyan-300 bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-400/40 transition-all shadow-sm shadow-cyan-500/20"
             >
-              <Mail className="w-3.5 h-3.5" />
+              <Mail className="w-4 h-4 text-cyan-400" />
               <span>Contact Directly</span>
             </a>
           </div>
         </div>
 
-        {/* 4 Key Metric Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* 4 Key Metric Cards (Enlarged with 3D Tilt & Vibrant Neon Border Accents) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {recruiterHighlights.map((item, index) => {
             const Icon = item.icon
+            const cardBgColors = [
+              'border-cyan-500/40 bg-gradient-to-br from-cyan-950/30 to-black/60',
+              'border-amber-500/40 bg-gradient-to-br from-amber-950/30 to-black/60',
+              'border-emerald-500/40 bg-gradient-to-br from-emerald-950/30 to-black/60',
+              'border-violet-500/40 bg-gradient-to-br from-violet-950/30 to-black/60'
+            ]
+
             return (
               <div
                 key={index}
-                className="p-3.5 rounded-xl bg-black/40 border border-white/5 flex items-start gap-3.5 hover:border-white/10 transition-colors"
+                className={`p-5 rounded-2xl border ${cardBgColors[index]} flex items-start gap-4 transition-all shadow-xl hover:scale-[1.02]`}
               >
-                <div className={`p-2 rounded-lg bg-white/5 ${item.color}`}>
-                  <Icon className="w-4 h-4" />
+                <div className={`p-3.5 rounded-xl border ${item.color} shrink-0 shadow-md`}>
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
+                  <div className="text-xs sm:text-sm font-mono text-slate-300 uppercase tracking-wider font-bold">
                     {item.label}
                   </div>
-                  <div className="text-sm font-semibold text-slate-100 truncate mt-0.5">
+                  <div className="text-lg sm:text-xl font-black text-white truncate mt-1">
                     {item.value}
                   </div>
-                  <div className="text-xs text-slate-400 truncate">
+                  <div className="text-xs sm:text-sm text-slate-200 truncate mt-0.5 font-medium">
                     {item.subtext}
                   </div>
                 </div>

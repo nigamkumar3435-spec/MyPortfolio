@@ -70,10 +70,10 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
 
       // Trigger celebratory recruiter confetti
       confetti({
-        particleCount: 65,
-        spread: 60,
-        origin: { y: 0.8 },
-        colors: ['#38bdf8', '#818cf8', '#34d399']
+        particleCount: 80,
+        spread: 70,
+        origin: { y: 0.75 },
+        colors: ['#38bdf8', '#818cf8', '#34d399', '#f472b6']
       })
 
       setSubmitSuccess(true)
@@ -98,158 +98,164 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
   )}`
 
   return (
-    <section id="contact" className="py-20 relative bg-slate-950/60">
+    <section id="contact" className="py-24 relative bg-slate-950/70">
+      {/* Background Chromatic Accent */}
+      <div className="absolute bottom-10 left-1/3 w-[600px] h-[350px] bg-gradient-to-tr from-cyan-500/10 via-violet-600/10 to-fuchsia-600/10 blur-[150px] pointer-events-none -z-10" />
+
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
-        {/* Section Heading */}
-        <div className="space-y-2 mb-12 text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-800/40 text-cyan-300 text-xs font-mono">
-            <Mail className="w-3.5 h-3.5" />
+        {/* Section Heading (Bigger Typography & Neon Accents) */}
+        <div className="space-y-3 mb-14 text-center max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-bold shadow-sm shadow-cyan-500/20">
+            <Mail className="w-4 h-4 text-cyan-400" />
             <span>07 // GET IN TOUCH</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            Let's Discuss Opportunities
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+            Let's Discuss{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-violet-400">
+              Opportunities
+            </span>
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base">
+          <p className="text-slate-300 text-base sm:text-lg lg:text-xl leading-relaxed">
             Have an interesting problem to solve? I'd love to discuss how I can contribute.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* Left Column: Direct Recruiter Quick Reach */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-6 rounded-2xl glass-card border border-white/10 space-y-5">
-              <div className="space-y-1">
-                <h3 className="text-lg font-bold text-white">
+            <div className="p-7 sm:p-9 rounded-3xl glass-card border border-white/15 space-y-6 shadow-2xl">
+              <div className="space-y-1.5">
+                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                   Direct Communication Channels
                 </h3>
-                <p className="text-xs text-slate-400">
+                <p className="text-sm text-slate-300">
                   Feel free to reach out directly via email, LinkedIn, or explore my GitHub.
                 </p>
               </div>
 
-              {/* Email Copy Card */}
-              <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-2">
-                <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">
+              {/* Email Copy Card (Enlarged) */}
+              <div className="p-5 rounded-2xl bg-black/60 border border-white/10 space-y-2.5 shadow-md">
+                <span className="text-xs font-mono text-slate-400 uppercase tracking-wider font-semibold block">
                   Primary Professional Email:
                 </span>
-                <div className="flex items-center justify-between gap-2">
-                  <span className="text-sm font-mono text-cyan-300 truncate">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-base sm:text-lg font-mono font-bold text-cyan-300 truncate">
                     {personal.email}
                   </span>
                   <button
                     onClick={handleCopyEmail}
-                    className="p-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 transition-colors shrink-0"
+                    className="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 transition-colors shrink-0 cursor-pointer shadow-sm"
                     title="Copy Email Address"
                   >
-                    {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                    {copiedEmail ? <Check className="w-5 h-5 text-emerald-400" /> : <Copy className="w-5 h-5" />}
                   </button>
                 </div>
               </div>
 
-              {/* Direct Links */}
-              <div className="space-y-2 pt-1">
+              {/* Direct Action Links (Larger Text & Borders) */}
+              <div className="space-y-3 pt-1">
                 <a
                   href={mailtoHref}
-                  className="w-full flex items-center justify-between p-3 rounded-xl bg-slate-900/60 hover:bg-slate-900 border border-white/5 hover:border-cyan-500/30 text-xs font-medium text-slate-200 transition-all"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-cyan-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md group"
                 >
-                  <span className="flex items-center gap-2.5">
-                    <Mail className="w-4 h-4 text-cyan-400" />
+                  <span className="flex items-center gap-3">
+                    <Mail className="w-5 h-5 text-cyan-400" />
                     <span>Launch Local Email Client (mailto)</span>
                   </span>
-                  <span className="text-cyan-400 font-mono text-[11px]">&gt;</span>
+                  <span className="text-cyan-400 font-mono text-sm group-hover:translate-x-1 transition-transform">&gt;</span>
                 </a>
 
                 <a
                   href={personal.linkedinUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full flex items-center justify-between p-3 rounded-xl bg-slate-900/60 hover:bg-slate-900 border border-white/5 hover:border-blue-500/30 text-xs font-medium text-slate-200 transition-all"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-blue-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md group"
                 >
-                  <span className="flex items-center gap-2.5">
-                    <LinkedinIcon className="w-4 h-4 text-blue-400" />
+                  <span className="flex items-center gap-3">
+                    <LinkedinIcon className="w-5 h-5 text-blue-400" />
                     <span>LinkedIn Profile</span>
                   </span>
-                  <span className="text-blue-400 font-mono text-[11px]">&gt;</span>
+                  <span className="text-blue-400 font-mono text-sm group-hover:translate-x-1 transition-transform">&gt;</span>
                 </a>
 
                 <a
                   href={personal.githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full flex items-center justify-between p-3 rounded-xl bg-slate-900/60 hover:bg-slate-900 border border-white/5 hover:border-violet-500/30 text-xs font-medium text-slate-200 transition-all"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-violet-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md group"
                 >
-                  <span className="flex items-center gap-2.5">
-                    <GithubIcon className="w-4 h-4 text-violet-400" />
+                  <span className="flex items-center gap-3">
+                    <GithubIcon className="w-5 h-5 text-violet-400" />
                     <span>GitHub Profile (27 Repos)</span>
                   </span>
-                  <span className="text-violet-400 font-mono text-[11px]">&gt;</span>
+                  <span className="text-violet-400 font-mono text-sm group-hover:translate-x-1 transition-transform">&gt;</span>
                 </a>
 
                 <button
                   onClick={onOpenResume}
-                  className="w-full flex items-center justify-between p-3 rounded-xl bg-slate-900/60 hover:bg-slate-900 border border-white/5 hover:border-emerald-500/30 text-xs font-medium text-slate-200 transition-all"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-emerald-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md cursor-pointer group"
                 >
-                  <span className="flex items-center gap-2.5">
-                    <FileText className="w-4 h-4 text-emerald-400" />
+                  <span className="flex items-center gap-3">
+                    <FileText className="w-5 h-5 text-emerald-400" />
                     <span>View &amp; Download ATS Resume</span>
                   </span>
-                  <span className="text-emerald-400 font-mono text-[11px]">&gt;</span>
+                  <span className="text-emerald-400 font-mono text-sm group-hover:translate-x-1 transition-transform">&gt;</span>
                 </button>
               </div>
 
               {/* Turnaround Time SLA */}
-              <div className="pt-2 border-t border-white/5 flex items-center gap-2 text-xs font-mono text-slate-400">
-                <Clock className="w-3.5 h-3.5 text-cyan-400" />
+              <div className="pt-3 border-t border-white/10 flex items-center gap-2.5 text-xs sm:text-sm font-mono text-slate-300 font-medium">
+                <Clock className="w-4 h-4 text-cyan-400" />
                 <span>Turnaround: Typical reply within 24 hours.</span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Direct Contact Form */}
+          {/* Right Column: Direct Contact Form (Enlarged) */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded-2xl glass-panel border border-white/10 space-y-6">
-              <div className="space-y-1">
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">
+            <div className="p-7 sm:p-10 rounded-3xl glass-panel border border-white/15 space-y-7 shadow-2xl">
+              <div className="space-y-1.5">
+                <h3 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2.5">
                   <span>Send a Direct Message</span>
-                  <Sparkles className="w-4 h-4 text-cyan-400" />
+                  <Sparkles className="w-5 h-5 text-cyan-400" />
                 </h3>
-                <p className="text-xs text-slate-400">
+                <p className="text-sm text-slate-300">
                   Whether discussing an internship opportunity or asking about my projects, drop a note below.
                 </p>
               </div>
 
               {submitSuccess ? (
-                <div className="p-6 rounded-xl bg-emerald-950/40 border border-emerald-500/40 space-y-3 text-center animate-in fade-in duration-300">
-                  <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-6 h-6" />
+                <div className="p-8 rounded-2xl bg-emerald-950/50 border border-emerald-400 space-y-4 text-center animate-in fade-in duration-300 shadow-xl shadow-emerald-950/30">
+                  <div className="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto shadow-sm shadow-emerald-500/30">
+                    <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h4 className="text-base font-bold text-white">
+                  <h4 className="text-xl font-bold text-white">
                     Thank You for Reaching Out!
                   </h4>
-                  <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-200 max-w-md mx-auto leading-relaxed">
                     Your message has been captured. I will review your inquiry and follow up promptly via your provided email address.
                   </p>
                   <button
                     onClick={() => setSubmitSuccess(false)}
-                    className="mt-2 text-xs font-mono text-emerald-400 hover:underline"
+                    className="mt-3 text-sm font-mono text-emerald-400 font-bold hover:underline cursor-pointer"
                   >
                     Send another message
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   {submitError && (
-                    <div className="p-3 rounded-lg bg-rose-950/50 border border-rose-800 text-rose-300 text-xs flex items-center gap-2">
-                      <AlertCircle className="w-4 h-4 shrink-0" />
+                    <div className="p-4 rounded-xl bg-rose-950/60 border border-rose-500 text-rose-200 text-sm flex items-center gap-2.5">
+                      <AlertCircle className="w-5 h-5 shrink-0" />
                       <span>{submitError}</span>
                     </div>
                   )}
 
                   {/* Name Field */}
-                  <div className="space-y-1.5">
-                    <label htmlFor="contact-name" className="text-xs font-mono text-slate-300 block">
+                  <div className="space-y-2">
+                    <label htmlFor="contact-name" className="text-sm font-mono font-semibold text-slate-200 block">
                       Your Name / Organization <span className="text-cyan-400">*</span>
                     </label>
                     <input
@@ -258,18 +264,18 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g., Sarah Chen (Tech Recruiter @ Company)"
-                      className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border text-xs sm:text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all ${
-                        formErrors.name ? 'border-rose-500' : 'border-white/10'
+                      className={`w-full px-4 py-3.5 rounded-2xl bg-slate-900 border text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-cyan-500/30 focus:border-cyan-400 transition-all ${
+                        formErrors.name ? 'border-rose-500' : 'border-white/15'
                       }`}
                     />
                     {formErrors.name && (
-                      <p className="text-[11px] text-rose-400 font-mono">{formErrors.name}</p>
+                      <p className="text-xs text-rose-400 font-mono font-medium">{formErrors.name}</p>
                     )}
                   </div>
 
                   {/* Email Field */}
-                  <div className="space-y-1.5">
-                    <label htmlFor="contact-email" className="text-xs font-mono text-slate-300 block">
+                  <div className="space-y-2">
+                    <label htmlFor="contact-email" className="text-sm font-mono font-semibold text-slate-200 block">
                       Your Email Address <span className="text-cyan-400">*</span>
                     </label>
                     <input
@@ -278,25 +284,25 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="e.g., recruiter@company.com"
-                      className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border text-xs sm:text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all ${
-                        formErrors.email ? 'border-rose-500' : 'border-white/10'
+                      className={`w-full px-4 py-3.5 rounded-2xl bg-slate-900 border text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-cyan-500/30 focus:border-cyan-400 transition-all ${
+                        formErrors.email ? 'border-rose-500' : 'border-white/15'
                       }`}
                     />
                     {formErrors.email && (
-                      <p className="text-[11px] text-rose-400 font-mono">{formErrors.email}</p>
+                      <p className="text-xs text-rose-400 font-mono font-medium">{formErrors.email}</p>
                     )}
                   </div>
 
                   {/* Role / Inquiry Scope */}
-                  <div className="space-y-1.5">
-                    <label htmlFor="contact-role" className="text-xs font-mono text-slate-300 block">
+                  <div className="space-y-2">
+                    <label htmlFor="contact-role" className="text-sm font-mono font-semibold text-slate-200 block">
                       Opportunity / Discussion Scope
                     </label>
                     <select
                       id="contact-role"
                       value={formData.role}
                       onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all"
+                      className="w-full px-4 py-3.5 rounded-2xl bg-slate-900 border border-white/15 text-sm sm:text-base text-white focus:outline-none focus:ring-4 focus:ring-cyan-500/30 focus:border-cyan-400 transition-all"
                     >
                       <option value="Software Development Intern">Software Development Intern (SDE)</option>
                       <option value="Full-Stack Developer Intern">Full-Stack Developer Intern</option>
@@ -307,33 +313,33 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                   </div>
 
                   {/* Message Field */}
-                  <div className="space-y-1.5">
-                    <label htmlFor="contact-message" className="text-xs font-mono text-slate-300 block">
+                  <div className="space-y-2">
+                    <label htmlFor="contact-message" className="text-sm font-mono font-semibold text-slate-200 block">
                       Message / Role Details <span className="text-cyan-400">*</span>
                     </label>
                     <textarea
                       id="contact-message"
-                      rows={4}
+                      rows={5}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell me a bit about your team, tech stack, or the opportunity..."
-                      className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border text-xs sm:text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all resize-none ${
-                        formErrors.message ? 'border-rose-500' : 'border-white/10'
+                      className={`w-full px-4 py-3.5 rounded-2xl bg-slate-900 border text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-cyan-500/30 focus:border-cyan-400 transition-all resize-none ${
+                        formErrors.message ? 'border-rose-500' : 'border-white/15'
                       }`}
                     />
                     {formErrors.message && (
-                      <p className="text-[11px] text-rose-400 font-mono">{formErrors.message}</p>
+                      <p className="text-xs text-rose-400 font-mono font-medium">{formErrors.message}</p>
                     )}
                   </div>
 
-                  {/* Submit Button */}
+                  {/* Submit Button (Enlarged) */}
                   <div className="pt-2">
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 disabled:opacity-60 transition-all shadow-md shadow-cyan-500/20"
+                      className="w-full inline-flex items-center justify-center gap-3 py-4 px-8 rounded-2xl text-base font-bold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 hover:from-cyan-300 hover:to-blue-400 disabled:opacity-60 transition-all shadow-xl shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:scale-[1.01] cursor-pointer"
                     >
-                      <Send className="w-4 h-4" />
+                      <Send className="w-5 h-5" />
                       <span>{isSubmitting ? 'Transmitting Message...' : "Let's Connect"}</span>
                     </button>
                   </div>

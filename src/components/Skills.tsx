@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import {
   Cpu,
-  Search
+  Search,
+  Sparkles
 } from 'lucide-react'
 import { portfolioData } from '../data/portfolioData'
 
@@ -25,38 +26,44 @@ export const Skills: React.FC = () => {
     .filter((category) => category.skills.length > 0)
 
   return (
-    <section id="skills" className="py-20 relative bg-slate-950/40">
+    <section id="skills" className="py-24 relative bg-slate-950/50">
+      {/* Background Accent Glow */}
+      <div className="absolute top-1/3 left-10 w-[500px] h-[350px] bg-cyan-500/10 blur-[130px] pointer-events-none -z-10" />
+
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-800/40 text-cyan-300 text-xs font-mono">
-              <Cpu className="w-3.5 h-3.5" />
+        {/* Section Header (Bigger Typography & Search) */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-bold shadow-sm shadow-cyan-500/20">
+              <Cpu className="w-4 h-4 text-cyan-400" />
               <span>03 // TECHNICAL ARSENAL</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-              Verified Technical Skills
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+              Verified Technical{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-violet-400">
+                Skills
+              </span>
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base max-w-2xl">
+            <p className="text-slate-300 text-base sm:text-lg max-w-3xl leading-relaxed">
               Honest representation of technologies I can explain in depth during a technical interview. No arbitrary 95% percentage bars.
             </p>
           </div>
 
-          {/* Real-time Search Box */}
-          <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          {/* Real-time Search Box (Enlarged) */}
+          <div className="relative w-full md:w-80">
+            <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Filter skills (e.g., SQL, Java, React)..."
-              className="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-900 border border-white/10 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+              className="w-full pl-12 pr-4 py-3 rounded-2xl bg-slate-900 border border-white/15 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-cyan-500/30 focus:border-cyan-400 transition-all shadow-lg shadow-black/40"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-500 hover:text-white"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-white font-mono cursor-pointer"
               >
                 Clear
               </button>
@@ -64,70 +71,73 @@ export const Skills: React.FC = () => {
           </div>
         </div>
 
-        {/* Legend for Honest Proficiency */}
-        <div className="mb-8 p-3 rounded-xl bg-black/40 border border-white/5 flex flex-wrap items-center gap-6 text-xs text-slate-400 font-mono">
-          <span className="text-slate-300 font-semibold">Proficiency Standard:</span>
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
-            <span>Core Competency (Interview-Ready, Tested in Code)</span>
+        {/* Legend for Honest Proficiency (Enlarged Badges) */}
+        <div className="mb-10 p-4 sm:p-5 rounded-2xl bg-black/50 border border-white/10 flex flex-wrap items-center gap-6 text-sm text-slate-300 font-mono shadow-md">
+          <span className="text-white font-bold flex items-center gap-1.5">
+            <Sparkles className="w-4 h-4 text-cyan-400" />
+            Proficiency Standard:
+          </span>
+          <div className="flex items-center gap-2.5">
+            <span className="w-3 h-3 rounded-full bg-cyan-400 shadow-sm shadow-cyan-400"></span>
+            <span className="font-medium">Core Competency (Interview-Ready, Tested in Code)</span>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-blue-400"></span>
-            <span>Working Knowledge (Practical Hands-On Usage)</span>
+          <div className="flex items-center gap-2.5">
+            <span className="w-3 h-3 rounded-full bg-blue-400 shadow-sm shadow-blue-400"></span>
+            <span className="font-medium">Working Knowledge (Practical Hands-On Usage)</span>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-violet-400"></span>
-            <span>Active Exploration (Foundations &amp; Prototyping)</span>
+          <div className="flex items-center gap-2.5">
+            <span className="w-3 h-3 rounded-full bg-violet-400 shadow-sm shadow-violet-400"></span>
+            <span className="font-medium">Active Exploration (Foundations &amp; Prototyping)</span>
           </div>
         </div>
 
         {/* Categorized Bento Skill Grid */}
-        <div className="space-y-8">
+        <div className="space-y-10">
           {filteredCategories.map((category, catIdx) => (
             <div
               key={catIdx}
-              className="p-6 rounded-2xl glass-card border border-white/10 space-y-4"
+              className="p-7 sm:p-9 rounded-3xl glass-card border border-white/10 space-y-6 shadow-xl shadow-black/40"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-white/5 gap-2">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-white/10 gap-3">
                 <div>
-                  <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
                     {category.title}
                   </h3>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-sm sm:text-base text-slate-300 mt-1">
                     {category.description}
                   </p>
                 </div>
-                <span className="text-[11px] font-mono text-cyan-400 self-start sm:self-auto bg-cyan-950/40 px-2.5 py-0.5 rounded border border-cyan-800/40">
+                <span className="text-xs font-mono font-bold text-cyan-300 self-start sm:self-auto bg-cyan-950/60 px-3.5 py-1 rounded-full border border-cyan-500/40 shadow-sm">
                   {category.skills.length} skills listed
                 </span>
               </div>
 
               {/* Skills Cards Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3 pt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4.5 pt-2">
                 {category.skills.map((skill, sIdx) => {
                   const badgeColor =
                     skill.proficiency === 'Core Competency'
-                      ? 'bg-cyan-950/50 text-cyan-300 border-cyan-800/50'
+                      ? 'bg-cyan-950/80 text-cyan-300 border-cyan-400/60 shadow-sm shadow-cyan-500/30'
                       : skill.proficiency === 'Working Knowledge'
-                      ? 'bg-blue-950/50 text-blue-300 border-blue-800/50'
-                      : 'bg-violet-950/50 text-violet-300 border-violet-800/50'
+                      ? 'bg-emerald-950/80 text-emerald-300 border-emerald-400/60 shadow-sm shadow-emerald-500/30'
+                      : 'bg-violet-950/80 text-violet-300 border-violet-400/60 shadow-sm shadow-violet-500/30'
 
                   return (
                     <div
                       key={sIdx}
-                      className="p-3.5 rounded-xl bg-black/40 border border-white/5 hover:border-white/15 transition-all flex flex-col justify-between space-y-2 group"
+                      className="p-5 rounded-2xl bg-black/60 border border-white/15 hover:border-cyan-400/70 hover:bg-slate-900/90 transition-all flex flex-col justify-between space-y-3.5 group shadow-lg hover:scale-[1.02]"
                     >
-                      <div className="flex items-start justify-between gap-2">
-                        <span className="text-sm font-semibold text-slate-100 group-hover:text-cyan-300 transition-colors">
+                      <div className="flex items-start justify-between gap-2.5">
+                        <span className="text-lg sm:text-xl font-black text-slate-100 group-hover:text-cyan-300 transition-colors">
                           {skill.name}
                         </span>
                         <span
-                          className={`text-[10px] font-mono px-2 py-0.5 rounded border ${badgeColor} shrink-0`}
+                          className={`text-xs font-mono font-bold px-2.5 py-1 rounded-full border ${badgeColor} shrink-0`}
                         >
                           {skill.proficiency}
                         </span>
                       </div>
-                      <p className="text-[11px] text-slate-400 leading-relaxed font-mono">
+                      <p className="text-sm text-slate-200 leading-relaxed font-mono">
                         {skill.context}
                       </p>
                     </div>
