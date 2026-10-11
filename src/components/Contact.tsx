@@ -13,7 +13,6 @@ import {
 import confetti from 'canvas-confetti'
 import { portfolioData } from '../data/portfolioData'
 import { GithubIcon, LinkedinIcon } from './Icons'
-import { TiltCard } from './TiltCard'
 
 interface ContactProps {
   onOpenResume: () => void
@@ -122,17 +121,12 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start preserve-3d">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* Left Column: Direct Recruiter Quick Reach */}
-          <div className="lg:col-span-5 space-y-6 preserve-3d">
-            <TiltCard
-              maxTilt={4.5}
-              scale={1.015}
-              glareColor="rgba(245, 158, 11, 0.2)"
-              className="p-7 sm:p-9 rounded-3xl glass-card border border-white/15 space-y-6 shadow-2xl"
-            >
-              <div className="space-y-1.5 tilt-pop">
+          <div className="lg:col-span-5 space-y-6">
+            <div className="p-7 sm:p-9 rounded-3xl glass-card border border-white/15 space-y-6 shadow-2xl">
+              <div className="space-y-1.5">
                 <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                   Direct Communication Channels
                 </h3>
@@ -142,7 +136,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
               </div>
 
               {/* Email Copy Card (Enlarged) */}
-              <div className="p-5 rounded-2xl bg-black/60 border border-white/10 space-y-2.5 shadow-md tilt-pop-sm">
+              <div className="p-5 rounded-2xl bg-black/60 border border-white/10 space-y-2.5 shadow-md">
                 <span className="text-xs font-mono text-slate-400 uppercase tracking-wider font-semibold block">
                   Primary Professional Email:
                 </span>
@@ -152,7 +146,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                   </span>
                   <button
                     onClick={handleCopyEmail}
-                    className="p-2.5 rounded-xl bg-black/80 hover:bg-black text-slate-300 hover:text-white border border-white/15 transition-colors shrink-0 cursor-pointer shadow-sm"
+                    className="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 transition-colors shrink-0 cursor-pointer shadow-sm"
                     title="Copy Email Address"
                   >
                     {copiedEmail ? <Check className="w-5 h-5 text-amber-400" /> : <Copy className="w-5 h-5" />}
@@ -161,10 +155,10 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
               </div>
 
               {/* Direct Action Links (Larger Text & Borders) */}
-              <div className="space-y-3 pt-1 preserve-3d">
+              <div className="space-y-3 pt-1">
                 <a
                   href={mailtoHref}
-                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-black/60 hover:bg-black/85 border border-white/15 hover:border-amber-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md backdrop-blur-xl group tilt-pop-sm hover:-translate-y-1"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-black/60 hover:bg-black/85 border border-white/15 hover:border-amber-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md backdrop-blur-xl group"
                 >
                   <span className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-amber-400" />
@@ -177,7 +171,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                   href={personal.linkedinUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-black/60 hover:bg-black/85 border border-white/15 hover:border-amber-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md backdrop-blur-xl group tilt-pop-sm hover:-translate-y-1"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-black/60 hover:bg-black/85 border border-white/15 hover:border-amber-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md backdrop-blur-xl group"
                 >
                   <span className="flex items-center gap-3">
                     <LinkedinIcon className="w-5 h-5 text-amber-400" />
@@ -190,7 +184,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                   href={personal.githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-black/60 hover:bg-black/85 border border-white/15 hover:border-red-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md backdrop-blur-xl group tilt-pop-sm hover:-translate-y-1"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-black/60 hover:bg-black/85 border border-white/15 hover:border-red-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md backdrop-blur-xl group"
                 >
                   <span className="flex items-center gap-3">
                     <GithubIcon className="w-5 h-5 text-red-400" />
@@ -201,7 +195,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
 
                 <button
                   onClick={onOpenResume}
-                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-black/60 hover:bg-black/85 border border-white/15 hover:border-yellow-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md backdrop-blur-xl cursor-pointer group tilt-pop-sm hover:-translate-y-1"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-black/60 hover:bg-black/85 border border-white/15 hover:border-yellow-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md backdrop-blur-xl cursor-pointer group"
                 >
                   <span className="flex items-center gap-3">
                     <FileText className="w-5 h-5 text-yellow-400" />
@@ -216,17 +210,12 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                 <Clock className="w-4 h-4 text-amber-400" />
                 <span>Turnaround: Typical reply within 24 hours.</span>
               </div>
-            </TiltCard>
+            </div>
           </div>
 
           {/* Right Column: Direct Contact Form (Enlarged) */}
-          <div className="lg:col-span-7 preserve-3d">
-            <TiltCard
-              maxTilt={3.5}
-              scale={1.01}
-              glareColor="rgba(239, 68, 68, 0.2)"
-              className="p-7 sm:p-10 rounded-3xl glass-panel border border-white/15 space-y-7 shadow-2xl"
-            >
+          <div className="lg:col-span-7">
+            <div className="p-7 sm:p-10 rounded-3xl glass-panel border border-white/15 space-y-7 shadow-2xl">
               <div className="space-y-1.5">
                 <h3 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2.5">
                   <span>Send a Direct Message</span>
@@ -343,12 +332,12 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                     )}
                   </div>
 
-                  {/* Submit Button with 3D tactile press */}
+                  {/* Submit Button (Enlarged) */}
                   <div className="pt-2">
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full inline-flex items-center justify-center gap-3 py-4 px-8 rounded-2xl text-base font-bold text-slate-950 bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 hover:from-red-400 hover:to-yellow-300 disabled:opacity-60 transition-all btn-3d-primary cursor-pointer"
+                      className="w-full inline-flex items-center justify-center gap-3 py-4 px-8 rounded-2xl text-base font-bold text-slate-950 bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 hover:from-red-400 hover:to-yellow-300 disabled:opacity-60 transition-all shadow-xl shadow-red-500/30 hover:shadow-red-500/50 hover:scale-[1.01] cursor-pointer"
                     >
                       <Send className="w-5 h-5" />
                       <span>{isSubmitting ? 'Transmitting Message...' : "Let's Connect"}</span>
@@ -357,7 +346,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                 </form>
               )}
 
-            </TiltCard>
+            </div>
           </div>
 
         </div>
