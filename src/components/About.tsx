@@ -80,7 +80,7 @@ export const About: React.FC = () => {
               </p>
             ))}
 
-            <div className="p-5 rounded-2xl bg-slate-900/80 border border-white/10 space-y-3 font-mono text-sm shadow-xl shadow-black/40">
+            <div className="p-5 rounded-2xl bg-black/60 backdrop-blur-xl border border-amber-500/30 space-y-3 font-mono text-sm shadow-xl shadow-black/50">
               <div className="text-slate-300 uppercase tracking-wider font-bold flex items-center gap-2 text-xs">
                 <CheckCircle className="w-4 h-4 text-amber-400" />
                 <span>What Recruiters Can Expect From Me</span>
@@ -108,8 +108,8 @@ export const About: React.FC = () => {
             {/* Quick Stat Bar (Balanced 3D Tilt Stats) */}
             <div className="grid grid-cols-3 gap-3.5 sm:gap-4">
               <TiltCard
-                glareColor="rgba(239, 68, 68, 0.25)"
-                className="p-5 rounded-2xl bg-slate-900/90 border border-red-500/40 text-center shadow-xl shadow-red-950/40 tilt-pop"
+                glareColor="rgba(239, 68, 68, 0.3)"
+                className="p-5 rounded-2xl bg-black/60 backdrop-blur-xl border border-red-500/40 text-center shadow-xl shadow-red-950/40 tilt-pop"
               >
                 <div className="text-3xl sm:text-4xl font-black font-mono text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-amber-300">
                   27
@@ -120,8 +120,8 @@ export const About: React.FC = () => {
               </TiltCard>
 
               <TiltCard
-                glareColor="rgba(250, 204, 21, 0.25)"
-                className="p-5 rounded-2xl bg-slate-900/90 border border-yellow-500/40 text-center shadow-xl shadow-yellow-950/40 tilt-pop"
+                glareColor="rgba(250, 204, 21, 0.3)"
+                className="p-5 rounded-2xl bg-black/60 backdrop-blur-xl border border-yellow-500/40 text-center shadow-xl shadow-yellow-950/40 tilt-pop"
               >
                 <div className="text-3xl sm:text-4xl font-black font-mono text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-300 to-red-400">
                   {personal.cgpa}
@@ -132,8 +132,8 @@ export const About: React.FC = () => {
               </TiltCard>
 
               <TiltCard
-                glareColor="rgba(245, 158, 11, 0.25)"
-                className="p-5 rounded-2xl bg-slate-900/90 border border-amber-500/40 text-center shadow-xl shadow-amber-950/40 tilt-pop"
+                glareColor="rgba(245, 158, 11, 0.3)"
+                className="p-5 rounded-2xl bg-black/60 backdrop-blur-xl border border-amber-500/40 text-center shadow-xl shadow-amber-950/40 tilt-pop"
               >
                 <div className="text-3xl sm:text-4xl font-black font-mono text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300">
                   5

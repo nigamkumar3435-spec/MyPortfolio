@@ -158,7 +158,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
               <div className="space-y-3 pt-1">
                 <a
                   href={mailtoHref}
-                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-amber-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md group"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-black/60 hover:bg-black/85 border border-white/15 hover:border-amber-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md backdrop-blur-xl group"
                 >
                   <span className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-amber-400" />
@@ -171,7 +171,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                   href={personal.linkedinUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-amber-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md group"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-black/60 hover:bg-black/85 border border-white/15 hover:border-amber-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md backdrop-blur-xl group"
                 >
                   <span className="flex items-center gap-3">
                     <LinkedinIcon className="w-5 h-5 text-amber-400" />
@@ -184,7 +184,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                   href={personal.githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-red-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md group"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-black/60 hover:bg-black/85 border border-white/15 hover:border-red-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md backdrop-blur-xl group"
                 >
                   <span className="flex items-center gap-3">
                     <GithubIcon className="w-5 h-5 text-red-400" />
@@ -195,7 +195,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
 
                 <button
                   onClick={onOpenResume}
-                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-yellow-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md cursor-pointer group"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-black/60 hover:bg-black/85 border border-white/15 hover:border-yellow-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md backdrop-blur-xl cursor-pointer group"
                 >
                   <span className="flex items-center gap-3">
                     <FileText className="w-5 h-5 text-yellow-400" />
@@ -264,7 +264,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g., Sarah Chen (Tech Recruiter @ Company)"
-                      className={`w-full px-4 py-3.5 rounded-2xl bg-slate-900 border text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-red-500/30 focus:border-red-400 transition-all ${
+                      className={`w-full px-4 py-3.5 rounded-2xl bg-black/60 backdrop-blur-xl border text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-red-500/30 focus:border-red-400 transition-all ${
                         formErrors.name ? 'border-red-500' : 'border-white/15'
                       }`}
                     />
@@ -284,7 +284,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="e.g., recruiter@company.com"
-                      className={`w-full px-4 py-3.5 rounded-2xl bg-slate-900 border text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-red-500/30 focus:border-red-400 transition-all ${
+                      className={`w-full px-4 py-3.5 rounded-2xl bg-black/60 backdrop-blur-xl border text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-red-500/30 focus:border-red-400 transition-all ${
                         formErrors.email ? 'border-red-500' : 'border-white/15'
                       }`}
                     />
@@ -302,7 +302,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                       id="contact-role"
                       value={formData.role}
                       onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                      className="w-full px-4 py-3.5 rounded-2xl bg-slate-900 border border-white/15 text-sm sm:text-base text-white focus:outline-none focus:ring-4 focus:ring-red-500/30 focus:border-red-400 transition-all"
+                      className="w-full px-4 py-3.5 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/15 text-sm sm:text-base text-white focus:outline-none focus:ring-4 focus:ring-red-500/30 focus:border-red-400 transition-all"
                     >
                       <option value="Software Development Intern">Software Development Intern (SDE)</option>
                       <option value="Full-Stack Developer Intern">Full-Stack Developer Intern</option>
@@ -323,7 +323,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell me a bit about your team, tech stack, or the opportunity..."
-                      className={`w-full px-4 py-3.5 rounded-2xl bg-slate-900 border text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-red-500/30 focus:border-red-400 transition-all resize-none ${
+                      className={`w-full px-4 py-3.5 rounded-2xl bg-black/60 backdrop-blur-xl border text-sm sm:text-base text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-red-500/30 focus:border-red-400 transition-all resize-none ${
                         formErrors.message ? 'border-red-500' : 'border-white/15'
                       }`}
                     />

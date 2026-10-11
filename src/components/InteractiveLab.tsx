@@ -139,7 +139,7 @@ export const InteractiveLab: React.FC = () => {
           </div>
 
           {/* Mode Switcher Tabs (Enlarged) */}
-          <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-slate-900/90 border border-white/15 text-sm font-mono self-start md:self-auto shadow-xl shadow-black/40">
+          <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-black/70 backdrop-blur-xl border border-white/15 text-sm font-mono self-start md:self-auto shadow-xl shadow-black/40">
             <button
               onClick={() => setActiveTab('ml')}
               className={`px-4 py-2.5 rounded-xl transition-all flex items-center gap-2 font-bold cursor-pointer ${

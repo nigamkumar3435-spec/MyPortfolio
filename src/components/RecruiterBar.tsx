@@ -50,7 +50,7 @@ export const RecruiterBar: React.FC<RecruiterBarProps> = ({ onOpenResume }) => {
 
   return (
     <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 -mt-6 mb-20">
-      <div className="glass-panel rounded-3xl p-5 sm:p-7 border border-white/15 shadow-2xl bg-slate-900/80">
+      <div className="glass-panel rounded-3xl p-5 sm:p-7 border border-amber-500/25 shadow-2xl bg-black/60 backdrop-blur-xl">
         
         {/* Top Fast-Track Notice */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 mb-5 border-b border-white/10 gap-4">

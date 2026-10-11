@@ -50,7 +50,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
           </div>
 
           {/* Category Filter Tabs */}
-          <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-slate-900/90 border border-white/10 text-sm font-semibold self-start md:self-auto shadow-lg shadow-black/40">
+          <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-black/70 backdrop-blur-xl border border-white/15 text-sm font-semibold self-start md:self-auto shadow-xl shadow-black/40">
             <button
               onClick={() => setActiveFilter('all')}
               className={`px-3.5 py-1.5 rounded-xl transition-all cursor-pointer ${
@@ -204,7 +204,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                     {allStackTags.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 rounded-xl bg-slate-900/90 text-slate-100 text-xs font-mono font-medium border border-white/15 hover:border-amber-400 hover:text-amber-300 hover:scale-105 transition-all shadow-sm"
+                        className="px-3 py-1 rounded-xl bg-black/60 backdrop-blur-md text-slate-100 text-xs font-mono font-medium border border-white/15 hover:border-amber-400 hover:text-amber-300 hover:scale-105 transition-all shadow-sm"
                       >
                         {tech}
                       </span>
@@ -228,7 +228,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-white/15 hover:border-amber-400 text-slate-200 hover:text-amber-300 transition-all shadow-lg hover:scale-110"
+                      className="p-2.5 rounded-xl bg-black/70 hover:bg-black/90 border border-white/15 hover:border-amber-400 text-slate-200 hover:text-amber-300 transition-all shadow-lg hover:scale-110"
                       title="View GitHub Repository"
                       aria-label={`${project.title} GitHub repository`}
                     >

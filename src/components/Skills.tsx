@@ -58,7 +58,7 @@ export const Skills: React.FC = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Filter skills (e.g., SQL, Java, React)..."
-              className="w-full pl-12 pr-4 py-3 rounded-2xl bg-slate-900 border border-white/15 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-red-500/30 focus:border-red-400 transition-all shadow-lg shadow-black/40"
+              className="w-full pl-12 pr-4 py-3 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/15 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-amber-500/30 focus:border-amber-400 transition-all shadow-lg shadow-black/40"
             />
             {searchQuery && (
               <button
@@ -125,7 +125,7 @@ export const Skills: React.FC = () => {
                   return (
                     <div
                       key={sIdx}
-                      className="p-5 rounded-2xl bg-black/60 border border-white/15 hover:border-amber-400/70 hover:bg-slate-900/90 transition-all flex flex-col justify-between space-y-3.5 group shadow-lg hover:scale-[1.02]"
+                      className="p-5 rounded-2xl bg-black/60 border border-white/15 hover:border-amber-400/70 hover:bg-black/80 transition-all flex flex-col justify-between space-y-3.5 group shadow-lg hover:scale-[1.02]"
                     >
                       <div className="flex items-start justify-between gap-2.5">
                         <span className="text-lg sm:text-xl font-black text-slate-100 group-hover:text-amber-300 transition-colors">

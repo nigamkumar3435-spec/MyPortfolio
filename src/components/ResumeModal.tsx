@@ -176,7 +176,7 @@ CERTIFICATIONS
         </div>
 
         {/* ATS Resume Sheet Layout */}
-        <div className="p-6 sm:p-10 rounded-xl bg-slate-950/80 border border-white/10 font-sans text-slate-200 space-y-6 shadow-inner print:p-0 print:border-none">
+        <div className="p-6 sm:p-10 rounded-xl bg-[#0c0709]/95 border border-amber-500/20 font-sans text-slate-200 space-y-6 shadow-inner print:p-0 print:border-none">
           
           {/* Header */}
           <div className="text-center space-y-1.5 pb-4 border-b border-slate-700">

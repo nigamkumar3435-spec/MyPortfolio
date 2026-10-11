@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { CosmicBackground } from './components/CosmicBackground'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { RecruiterBar } from './components/RecruiterBar'
@@ -19,7 +20,10 @@ export function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-[#0a0708] text-slate-100 flex flex-col selection:bg-red-500/30 selection:text-yellow-200">
+    <div className="min-h-screen text-slate-100 flex flex-col selection:bg-red-500/30 selection:text-yellow-200 relative">
+      {/* Immersive Blended Red & Solar Yellow Background */}
+      <CosmicBackground />
+
       {/* Fixed Header */}
       <Navbar onOpenResume={() => setIsResumeOpen(true)} />
 
