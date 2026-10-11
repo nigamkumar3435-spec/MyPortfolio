@@ -29,7 +29,7 @@ export const EngineeringMindset: React.FC = () => {
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
             Engineering Mindset &amp;{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-violet-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-sky-300">
               Principles
             </span>
           </h2>
@@ -51,18 +51,18 @@ export const EngineeringMindset: React.FC = () => {
                 glow: 'shadow-cyan-950/40'
               },
               {
-                text: 'text-rose-400',
-                border: 'border-rose-500/40 hover:border-rose-400/80',
-                bg: 'bg-rose-500/15 border-rose-500/30 text-rose-300',
-                glare: 'rgba(244, 63, 94, 0.25)',
-                glow: 'shadow-rose-950/40'
+                text: 'text-blue-400',
+                border: 'border-blue-500/40 hover:border-blue-400/80',
+                bg: 'bg-blue-500/15 border-blue-500/30 text-blue-300',
+                glare: 'rgba(59, 130, 246, 0.25)',
+                glow: 'shadow-blue-950/40'
               },
               {
-                text: 'text-violet-400',
-                border: 'border-violet-500/40 hover:border-violet-400/80',
-                bg: 'bg-violet-500/15 border-violet-500/30 text-violet-300',
-                glare: 'rgba(168, 85, 247, 0.25)',
-                glow: 'shadow-violet-950/40'
+                text: 'text-teal-400',
+                border: 'border-teal-500/40 hover:border-teal-400/80',
+                bg: 'bg-teal-500/15 border-teal-500/30 text-teal-300',
+                glare: 'rgba(20, 184, 166, 0.25)',
+                glow: 'shadow-teal-950/40'
               },
               {
                 text: 'text-emerald-400',

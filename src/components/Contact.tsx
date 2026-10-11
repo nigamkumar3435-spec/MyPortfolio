@@ -73,7 +73,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
         particleCount: 80,
         spread: 70,
         origin: { y: 0.75 },
-        colors: ['#38bdf8', '#818cf8', '#34d399', '#f472b6']
+        colors: ['#38bdf8', '#2563eb', '#34d399', '#f59e0b']
       })
 
       setSubmitSuccess(true)
@@ -100,7 +100,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
   return (
     <section id="contact" className="py-24 relative bg-slate-950/70">
       {/* Background Chromatic Accent */}
-      <div className="absolute bottom-10 left-1/3 w-[600px] h-[350px] bg-gradient-to-tr from-cyan-500/10 via-violet-600/10 to-fuchsia-600/10 blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 left-1/3 w-[600px] h-[350px] bg-gradient-to-tr from-cyan-500/10 via-blue-600/10 to-sky-600/10 blur-[150px] pointer-events-none -z-10" />
 
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
@@ -112,7 +112,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
             Let's Discuss{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-violet-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-sky-300">
               Opportunities
             </span>
           </h2>
@@ -184,13 +184,13 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
                   href={personal.githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-violet-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md group"
+                  className="w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-white/10 hover:border-sky-400/50 text-sm font-semibold text-slate-100 transition-all shadow-md group"
                 >
                   <span className="flex items-center gap-3">
-                    <GithubIcon className="w-5 h-5 text-violet-400" />
+                    <GithubIcon className="w-5 h-5 text-sky-400" />
                     <span>GitHub Profile (27 Repos)</span>
                   </span>
-                  <span className="text-violet-400 font-mono text-sm group-hover:translate-x-1 transition-transform">&gt;</span>
+                  <span className="text-sky-400 font-mono text-sm group-hover:translate-x-1 transition-transform">&gt;</span>
                 </a>
 
                 <button

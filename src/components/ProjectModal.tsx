@@ -58,7 +58,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                     ? 'bg-emerald-950/40 text-emerald-300 border-emerald-800/40'
                     : project.status === 'Completed'
                     ? 'bg-blue-950/40 text-blue-300 border-blue-800/40'
-                    : 'bg-violet-950/40 text-violet-300 border-violet-800/40'
+                    : 'bg-slate-900/80 text-sky-300 border-sky-800/40'
                 }`}
               >
                 ● {project.status}
@@ -195,7 +195,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             )}
             {project.techStack.ml && (
               <div className="p-3 rounded-lg bg-black/30 border border-white/5 space-y-1.5">
-                <span className="text-[10px] font-mono text-violet-400 uppercase">ML &amp; Analysis</span>
+                <span className="text-[10px] font-mono text-sky-400 uppercase">ML &amp; Analysis</span>
                 <div className="flex flex-wrap gap-1">
                   {project.techStack.ml.map((t, idx) => (
                     <span key={idx} className="px-1.5 py-0.5 rounded bg-white/5 text-slate-300 text-[11px]">

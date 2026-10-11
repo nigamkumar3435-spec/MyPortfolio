@@ -27,7 +27,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
   return (
     <section id="projects" className="py-24 relative">
       {/* Background Chromatic Accent */}
-      <div className="absolute top-1/2 right-1/4 w-[600px] h-[350px] bg-gradient-to-l from-violet-600/10 via-cyan-500/10 to-transparent blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[350px] bg-gradient-to-l from-blue-600/10 via-cyan-500/10 to-transparent blur-[140px] pointer-events-none -z-10" />
 
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
@@ -40,7 +40,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
               Featured Software &amp;{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-violet-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-sky-300">
                 ML Systems
               </span>
             </h2>
@@ -112,17 +112,17 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
             let buttonColorClass = 'text-emerald-300 hover:text-emerald-200'
 
             if (project.id === 'blood-bank') {
-              cardThemeClass = 'card-theme-rose'
-              glareColor = 'rgba(244, 63, 94, 0.3)'
-              titleHoverClass = 'group-hover:text-rose-300'
-              accentBorderClass = 'border-rose-500/40'
-              buttonColorClass = 'text-rose-300 hover:text-rose-200'
+              cardThemeClass = 'card-theme-cyan'
+              glareColor = 'rgba(6, 182, 212, 0.3)'
+              titleHoverClass = 'group-hover:text-cyan-300'
+              accentBorderClass = 'border-cyan-500/40'
+              buttonColorClass = 'text-cyan-300 hover:text-cyan-200'
             } else if (project.id === 'disease-risk') {
-              cardThemeClass = 'card-theme-violet'
-              glareColor = 'rgba(168, 85, 247, 0.3)'
-              titleHoverClass = 'group-hover:text-purple-300'
-              accentBorderClass = 'border-purple-500/40'
-              buttonColorClass = 'text-purple-300 hover:text-purple-200'
+              cardThemeClass = 'card-theme-blue'
+              glareColor = 'rgba(37, 99, 235, 0.3)'
+              titleHoverClass = 'group-hover:text-sky-300'
+              accentBorderClass = 'border-blue-500/40'
+              buttonColorClass = 'text-sky-300 hover:text-sky-200'
             } else if (project.id === 'foodwise-ai') {
               cardThemeClass = 'card-theme-amber'
               glareColor = 'rgba(245, 158, 11, 0.3)'
@@ -136,7 +136,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                 ? 'bg-emerald-950/80 text-emerald-300 border-emerald-400/60 shadow-md shadow-emerald-500/25'
                 : project.status === 'Completed'
                 ? 'bg-cyan-950/80 text-cyan-300 border-cyan-400/60 shadow-md shadow-cyan-500/25'
-                : 'bg-violet-950/80 text-violet-300 border-violet-400/60 shadow-md shadow-violet-500/25'
+                : 'bg-blue-950/80 text-blue-300 border-blue-400/60 shadow-md shadow-blue-500/25'
 
             return (
               <TiltCard
@@ -193,8 +193,8 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                   )}
 
                   {project.id === 'foodwise-ai' && (
-                    <div className="flex items-center gap-2 text-xs font-mono text-violet-300 bg-violet-950/50 px-3.5 py-1.5 rounded-xl border border-violet-500/50">
-                      <Sparkles className="w-4 h-4 text-violet-400 shrink-0" />
+                    <div className="flex items-center gap-2 text-xs font-mono text-sky-300 bg-sky-950/50 px-3.5 py-1.5 rounded-xl border border-sky-500/50">
+                      <Sparkles className="w-4 h-4 text-sky-400 shrink-0" />
                       <span>Prototyping &amp; exploration lab: Multi-step ReAct agent simulation.</span>
                     </div>
                   )}

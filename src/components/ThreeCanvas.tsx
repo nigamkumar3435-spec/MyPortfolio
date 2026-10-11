@@ -45,13 +45,13 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
     cyanPointLight.position.set(5, 5, 5)
     scene.add(cyanPointLight)
 
-    const violetPointLight = new THREE.PointLight(0xa855f7, 4, 50)
-    violetPointLight.position.set(-5, -5, 4)
-    scene.add(violetPointLight)
+    const bluePointLight = new THREE.PointLight(0x2563eb, 3.5, 50)
+    bluePointLight.position.set(-5, -5, 4)
+    scene.add(bluePointLight)
 
-    const pinkPointLight = new THREE.PointLight(0xec4899, 3, 40)
-    pinkPointLight.position.set(0, 4, -3)
-    scene.add(pinkPointLight)
+    const skyPointLight = new THREE.PointLight(0x38bdf8, 2.5, 40)
+    skyPointLight.position.set(0, 4, -3)
+    scene.add(skyPointLight)
 
     // Group to hold model-specific objects
     const modelGroup = new THREE.Group()
@@ -77,12 +77,12 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
       // Inner Glowing Core
       const coreGeo = new THREE.SphereGeometry(1.2, 28, 28)
       const coreMat = new THREE.MeshStandardMaterial({
-        color: 0x9333ea,
+        color: 0x1d4ed8,
         roughness: 0.1,
         metalness: 0.6,
         transparent: true,
         opacity: 0.7,
-        emissive: 0x7c3aed,
+        emissive: 0x2563eb,
         emissiveIntensity: 0.8
       })
       const coreMesh = new THREE.Mesh(coreGeo, coreMat)
@@ -101,7 +101,7 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
       modelGroup.add(ring1)
 
       const ringMat2 = new THREE.MeshBasicMaterial({
-        color: 0xec4899,
+        color: 0x10b981,
         transparent: true,
         opacity: 0.6
       })
@@ -115,11 +115,11 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
     if (model === 'torus') {
       const knotGeo = new THREE.TorusKnotGeometry(1.5, 0.42, 128, 32, 2, 3)
       const knotMat = new THREE.MeshStandardMaterial({
-        color: 0xa855f7,
+        color: 0x2563eb,
         roughness: 0.2,
         metalness: 0.8,
         wireframe: true,
-        emissive: 0x4f46e5,
+        emissive: 0x1d4ed8,
         emissiveIntensity: 0.4
       })
       const knotMesh = new THREE.Mesh(knotGeo, knotMat)
@@ -201,11 +201,11 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
         galaxyPositions[i3 + 1] = randomY
         galaxyPositions[i3 + 2] = Math.sin(branchAngle + spinAngle) * radius + randomZ
 
-        // Neon Cyan to Purple to Rose gradient colors
+        // Technical Blueprint Sky to Deep Cobalt gradient colors
         const mixRatio = radius / 3.0
-        galaxyColors[i3] = 0.2 + 0.8 * mixRatio // R
-        galaxyColors[i3 + 1] = 0.7 - 0.4 * mixRatio // G
-        galaxyColors[i3 + 2] = 0.9 // B
+        galaxyColors[i3] = 0.05 + 0.15 * mixRatio // R (low red for clean cool tone)
+        galaxyColors[i3 + 1] = 0.65 + 0.25 * (1 - mixRatio) // G (teal/cyan touch)
+        galaxyColors[i3 + 2] = 0.95 // B (electric blue)
       }
 
       galaxyGeo.setAttribute('position', new THREE.BufferAttribute(galaxyPositions, 3))

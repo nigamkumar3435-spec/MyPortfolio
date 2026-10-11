@@ -36,7 +36,7 @@ export const About: React.FC = () => {
       description:
         'Focus on verified data preprocessing, preventing train/test data leakage, tuning decision thresholds, and prioritizing Recall over uncalibrated accuracy scores.',
       tag: 'Scikit-Learn & EDA',
-      color: 'border-violet-400/50 text-violet-300 bg-violet-950/40 shadow-violet-500/10'
+      color: 'border-amber-400/50 text-amber-300 bg-amber-950/40 shadow-amber-500/10'
     },
     {
       icon: BrainCircuit,
@@ -60,7 +60,7 @@ export const About: React.FC = () => {
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
             About Me &amp;{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-violet-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-sky-300">
               Engineering Focus
             </span>
           </h2>
@@ -132,10 +132,10 @@ export const About: React.FC = () => {
               </TiltCard>
 
               <TiltCard
-                glareColor="rgba(168, 85, 247, 0.25)"
-                className="p-5 rounded-2xl bg-slate-900/90 border border-violet-500/40 text-center shadow-xl shadow-violet-950/40 tilt-pop"
+                glareColor="rgba(16, 185, 129, 0.25)"
+                className="p-5 rounded-2xl bg-slate-900/90 border border-emerald-500/40 text-center shadow-xl shadow-emerald-950/40 tilt-pop"
               >
-                <div className="text-3xl sm:text-4xl font-black font-mono text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400">
+                <div className="text-3xl sm:text-4xl font-black font-mono text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
                   5
                 </div>
                 <div className="text-xs sm:text-sm text-slate-200 font-mono font-semibold mt-1">

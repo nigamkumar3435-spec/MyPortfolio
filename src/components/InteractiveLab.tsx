@@ -116,7 +116,7 @@ export const InteractiveLab: React.FC = () => {
   return (
     <section id="interactive-lab" className="py-24 relative bg-black/60">
       {/* Dynamic Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-r from-violet-600/10 via-cyan-500/10 to-blue-600/10 blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-r from-blue-600/10 via-cyan-500/10 to-sky-600/10 blur-[150px] pointer-events-none -z-10" />
 
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
@@ -129,7 +129,7 @@ export const InteractiveLab: React.FC = () => {
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
               Interactive Technical{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-violet-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-sky-300">
                 Sandbox
               </span>
             </h2>
@@ -168,7 +168,7 @@ export const InteractiveLab: React.FC = () => {
               onClick={() => setActiveTab('agent')}
               className={`px-4 py-2.5 rounded-xl transition-all flex items-center gap-2 font-bold cursor-pointer ${
                 activeTab === 'agent'
-                  ? 'bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white shadow-md shadow-violet-500/30'
+                  ? 'bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-md shadow-blue-500/30'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -429,7 +429,7 @@ export const InteractiveLab: React.FC = () => {
           <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/15 space-y-7 shadow-2xl">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-white/10 gap-4">
               <div>
-                <span className="text-base font-mono font-bold text-violet-300 uppercase">
+                <span className="text-base font-mono font-bold text-sky-300 uppercase">
                   FoodWise-AI Autonomous Agent Workflow (Prototype)
                 </span>
                 <p className="text-sm text-slate-300 mt-1">
@@ -441,7 +441,7 @@ export const InteractiveLab: React.FC = () => {
                 <button
                   onClick={runAgentSimulation}
                   disabled={agentRunning}
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-violet-400 via-purple-300 to-cyan-400 hover:from-violet-300 hover:to-cyan-300 disabled:opacity-50 transition-all shadow-lg shadow-violet-500/20 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-sky-400 via-blue-500 to-cyan-400 hover:from-sky-300 hover:to-cyan-300 disabled:opacity-50 transition-all shadow-lg shadow-sky-500/20 cursor-pointer"
                 >
                   <Play className="w-4 h-4" />
                   <span>{agentRunning ? 'Agent Running...' : 'Run Surplus Agent'}</span>
@@ -462,12 +462,12 @@ export const InteractiveLab: React.FC = () => {
               <div
                 className={`p-5 rounded-2xl border transition-all ${
                   agentStep >= 1
-                    ? 'bg-slate-900/80 border-violet-500/50 text-slate-200'
+                    ? 'bg-slate-900/80 border-sky-500/50 text-slate-200'
                     : 'bg-black/30 border-white/5 text-slate-500 opacity-60'
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <div className="font-mono text-sm font-bold text-violet-300">
+                  <div className="font-mono text-sm font-bold text-sky-300">
                     STEP 01: SENSOR &amp; INVENTORY TELEMETRY
                   </div>
                   {agentStep >= 1 && <span className="text-emerald-400 text-xs font-bold font-mono">✓ Completed</span>}
@@ -519,7 +519,7 @@ export const InteractiveLab: React.FC = () => {
               <div
                 className={`p-5 rounded-2xl border transition-all ${
                   agentStep >= 4
-                    ? 'bg-violet-950/40 border-violet-400 text-slate-200 shadow-xl shadow-violet-500/10'
+                    ? 'bg-blue-950/40 border-blue-400 text-slate-200 shadow-xl shadow-blue-500/10'
                     : 'bg-black/30 border-white/5 text-slate-500 opacity-60'
                 }`}
               >

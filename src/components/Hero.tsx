@@ -57,18 +57,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
   return (
     <section id="hero" className="relative pt-32 pb-24 lg:pt-40 lg:pb-36 overflow-hidden">
-      {/* Dynamic 3D Chromatic Ambient Glows */}
-      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-gradient-to-tr from-cyan-500/25 via-violet-600/25 to-fuchsia-600/25 blur-[160px] pointer-events-none -z-10 rounded-full animate-pulse-halo" />
-      <div className="absolute top-20 right-10 w-[700px] h-[500px] bg-gradient-to-bl from-blue-600/20 via-purple-600/20 to-pink-500/20 blur-[150px] pointer-events-none -z-10" />
+      {/* Dynamic Ambient Engineering Glows */}
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] bg-gradient-to-tr from-sky-500/10 via-blue-600/10 to-indigo-950/20 blur-[160px] pointer-events-none -z-10 rounded-full animate-pulse-halo" />
+      <div className="absolute top-20 right-10 w-[650px] h-[450px] bg-gradient-to-bl from-blue-600/10 via-cyan-600/10 to-slate-900/20 blur-[150px] pointer-events-none -z-10" />
 
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           
-          {/* Left Column: Personal Brand & Hero Copy (Enlarged Fonts & Vibrant Neon Accents) */}
+          {/* Left Column: Personal Brand & Hero Copy */}
           <div className="lg:col-span-7 space-y-8">
             
             {/* Factual Availability Pill */}
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-slate-900/95 border border-emerald-400/50 text-emerald-300 text-sm sm:text-base font-mono shadow-xl shadow-emerald-950/50 backdrop-blur-md">
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-slate-900/95 border border-emerald-500/40 text-emerald-300 text-sm sm:text-base font-mono shadow-xl shadow-emerald-950/30 backdrop-blur-md">
               <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-80"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400"></span>
@@ -76,11 +76,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               <span className="font-bold tracking-wide">{personal.availability}</span>
             </div>
 
-            {/* Name & Headline (Balanced Sleek Typography) */}
+            {/* Name & Headline (Clean Executive Typography) */}
             <div className="space-y-3.5">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
                 Hi, I'm{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 via-violet-400 to-fuchsia-400 drop-shadow-[0_0_30px_rgba(56,189,248,0.35)]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-sky-300 drop-shadow-[0_0_25px_rgba(56,189,248,0.2)]">
                   {personal.name}
                 </span>
               </h1>
@@ -91,13 +91,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
             </div>
 
             {/* Compelling Hero Pitch */}
-            <div className="space-y-2.5 border-l-3 border-cyan-400 pl-5 py-1 text-slate-200 text-base sm:text-lg leading-relaxed">
+            <div className="space-y-2.5 border-l-3 border-sky-400 pl-5 py-1 text-slate-200 text-base sm:text-lg leading-relaxed">
               <p className="font-bold text-white text-base sm:text-lg tracking-tight">
                 Building useful software. Exploring intelligent systems.
               </p>
               <p className="text-slate-300 font-normal leading-relaxed text-sm sm:text-base">
                 I'm a Computer Science Engineering student at{' '}
-                <span className="text-cyan-300 font-semibold underline decoration-cyan-400/50 underline-offset-4">
+                <span className="text-sky-300 font-semibold underline decoration-sky-400/50 underline-offset-4">
                   IIST Indore
                 </span>{' '}
                 (Graduating 2027) who enjoys turning ideas into working products—from full-stack applications with clean database architectures to empirical machine learning pipelines and intelligent automation.
@@ -108,13 +108,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
             <div className="flex flex-wrap items-center gap-2 pt-1">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mr-1">Core Tech:</span>
               {[
-                { name: 'Java', color: 'border-orange-500/40 text-orange-300 bg-orange-950/30' },
-                { name: 'Python', color: 'border-amber-500/40 text-amber-300 bg-amber-950/30' },
-                { name: 'React.js', color: 'border-cyan-500/40 text-cyan-300 bg-cyan-950/30' },
-                { name: 'TypeScript', color: 'border-blue-500/40 text-blue-300 bg-blue-950/30' },
-                { name: 'MySQL', color: 'border-sky-500/40 text-sky-300 bg-sky-950/30' },
-                { name: 'Scikit-learn', color: 'border-purple-500/40 text-purple-300 bg-purple-950/30' },
-                { name: 'Tailwind CSS', color: 'border-teal-500/40 text-teal-300 bg-teal-950/30' },
+                { name: 'Java', color: 'border-orange-500/40 text-orange-300 bg-orange-950/20' },
+                { name: 'Python', color: 'border-amber-500/40 text-amber-300 bg-amber-950/20' },
+                { name: 'React.js', color: 'border-sky-500/40 text-sky-300 bg-sky-950/20' },
+                { name: 'TypeScript', color: 'border-blue-500/40 text-blue-300 bg-blue-950/20' },
+                { name: 'MySQL', color: 'border-cyan-500/40 text-cyan-300 bg-cyan-950/20' },
+                { name: 'Scikit-learn', color: 'border-indigo-500/40 text-indigo-300 bg-indigo-950/20' },
+                { name: 'Tailwind CSS', color: 'border-teal-500/40 text-teal-300 bg-teal-950/20' },
               ].map((tech) => (
                 <span
                   key={tech.name}
@@ -125,11 +125,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               ))}
             </div>
 
-            {/* Primary & Secondary CTAs (Refined Buttons) */}
+            {/* Primary & Secondary CTAs (Refined Tech Blue Buttons) */}
             <div className="pt-2 flex flex-wrap items-center gap-3.5">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-bold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 hover:from-cyan-300 hover:to-blue-400 transition-all shadow-xl shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-bold text-white bg-gradient-to-r from-sky-500 via-blue-600 to-blue-700 hover:from-sky-400 hover:to-blue-600 transition-all shadow-xl shadow-blue-600/30 hover:shadow-blue-600/50 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-sky-400/40"
               >
                 <span>Explore My Projects</span>
                 <ArrowRight className="w-4 h-4" />
@@ -137,9 +137,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
               <button
                 onClick={onOpenResume}
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-semibold text-slate-100 bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-cyan-400/50 transition-all shadow-lg shadow-black/40 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-cyan-500/30"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-semibold text-slate-100 bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-sky-400/50 transition-all shadow-lg shadow-black/40 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-sky-500/30"
               >
-                <FileText className="w-4 h-4 text-cyan-400" />
+                <FileText className="w-4 h-4 text-sky-400" />
                 <span>Download Resume</span>
               </button>
 
@@ -157,10 +157,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 href={personal.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 hover:border-cyan-400/70 hover:text-cyan-300 hover:shadow-lg hover:shadow-cyan-500/25 transition-all"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 hover:border-sky-400/70 hover:text-sky-300 hover:shadow-lg hover:shadow-sky-500/20 transition-all"
                 aria-label="GitHub Profile"
               >
-                <GithubIcon className="w-4 h-4 text-cyan-400" />
+                <GithubIcon className="w-4 h-4 text-sky-400" />
                 <span>github/{personal.githubUsername}</span>
               </a>
 
@@ -168,7 +168,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 href={personal.linkedinUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 hover:border-blue-400/70 hover:text-blue-300 hover:shadow-lg hover:shadow-blue-500/25 transition-all"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 hover:border-blue-400/70 hover:text-blue-300 hover:shadow-lg hover:shadow-blue-500/20 transition-all"
                 aria-label="LinkedIn Profile"
               >
                 <LinkedinIcon className="w-4 h-4 text-blue-400" />
@@ -177,7 +177,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
               <button
                 onClick={handleCopyEmail}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 hover:border-violet-400/70 hover:text-violet-300 hover:shadow-lg hover:shadow-violet-500/25 transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/15 hover:border-sky-400/70 hover:text-sky-300 hover:shadow-lg hover:shadow-sky-500/20 transition-all cursor-pointer"
                 title="Click to copy email address"
               >
                 {copiedEmail ? (
@@ -187,7 +187,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   </>
                 ) : (
                   <>
-                    <Mail className="w-4 h-4 text-violet-400" />
+                    <Mail className="w-4 h-4 text-sky-400" />
                     <span>{personal.email}</span>
                     <Copy className="w-3.5 h-3.5 text-slate-500" />
                   </>
@@ -306,7 +306,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                     <div className="absolute bottom-3 left-3 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-cyan-500/30 text-xs font-mono text-cyan-300 tilt-pop shadow-md">
                       ⚡ Move mouse to tilt in 3D
                     </div>
-                    <div className="absolute top-3 right-3 bg-violet-950/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-violet-500/40 text-xs font-mono text-violet-300 tilt-pop shadow-md">
+                    <div className="absolute top-3 right-3 bg-blue-950/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-blue-500/40 text-xs font-mono text-blue-300 tilt-pop shadow-md">
                       {threeModel === 'neural' && 'Dual Core • Polyhedron Wireframe'}
                       {threeModel === 'torus' && 'Quantum Knot • Specular Light'}
                       {threeModel === 'cube' && 'Nested 3-Axis • Cyber Matrix'}
@@ -387,12 +387,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                       onClick={() => setActiveNode('ml')}
                       className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer ${
                         activeNode === 'ml'
-                          ? 'bg-violet-950/50 border-violet-400 shadow-md shadow-violet-500/20'
+                          ? 'bg-emerald-950/50 border-emerald-400 shadow-md shadow-emerald-500/20'
                           : 'bg-slate-900/60 border-white/10 hover:border-white/20'
                       }`}
                     >
-                      <div className="flex items-center gap-2 text-sm font-bold text-violet-300">
-                        <Sparkles className="w-4 h-4 text-violet-400" />
+                      <div className="flex items-center gap-2 text-sm font-bold text-emerald-300">
+                        <Sparkles className="w-4 h-4 text-emerald-400" />
                         <span>ML / Inference</span>
                       </div>
                       <p className="text-xs text-slate-400 mt-1 font-mono">
@@ -422,7 +422,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                       </p>
                     )}
                     {activeNode === 'ml' && (
-                      <p className="text-violet-200">
+                      <p className="text-emerald-200">
                         &gt; Supervised pipelines, leak-free feature scaling, cost-sensitive recall metrics over accuracy.
                       </p>
                     )}

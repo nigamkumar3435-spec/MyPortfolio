@@ -41,7 +41,7 @@ export const Skills: React.FC = () => {
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
               Verified Technical{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-violet-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-sky-300">
                 Skills
               </span>
             </h2>
@@ -86,7 +86,7 @@ export const Skills: React.FC = () => {
             <span className="font-medium">Working Knowledge (Practical Hands-On Usage)</span>
           </div>
           <div className="flex items-center gap-2.5">
-            <span className="w-3 h-3 rounded-full bg-violet-400 shadow-sm shadow-violet-400"></span>
+            <span className="w-3 h-3 rounded-full bg-amber-400 shadow-sm shadow-amber-400"></span>
             <span className="font-medium">Active Exploration (Foundations &amp; Prototyping)</span>
           </div>
         </div>
@@ -120,7 +120,7 @@ export const Skills: React.FC = () => {
                       ? 'bg-cyan-950/80 text-cyan-300 border-cyan-400/60 shadow-sm shadow-cyan-500/30'
                       : skill.proficiency === 'Working Knowledge'
                       ? 'bg-emerald-950/80 text-emerald-300 border-emerald-400/60 shadow-sm shadow-emerald-500/30'
-                      : 'bg-violet-950/80 text-violet-300 border-violet-400/60 shadow-sm shadow-violet-500/30'
+                      : 'bg-amber-950/80 text-amber-300 border-amber-400/60 shadow-sm shadow-amber-500/30'
 
                   return (
                     <div

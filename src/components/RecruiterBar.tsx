@@ -44,7 +44,7 @@ export const RecruiterBar: React.FC<RecruiterBarProps> = ({ onOpenResume }) => {
       label: 'Location & Work',
       value: 'Indore, MP, India',
       subtext: 'Open to Remote / Relocation',
-      color: 'text-violet-400 bg-violet-950/50 border-violet-500/30'
+      color: 'text-sky-400 bg-sky-950/50 border-sky-500/30'
     }
   ]
 
@@ -92,7 +92,7 @@ export const RecruiterBar: React.FC<RecruiterBarProps> = ({ onOpenResume }) => {
               'border-cyan-500/40 bg-gradient-to-br from-cyan-950/30 to-black/60',
               'border-amber-500/40 bg-gradient-to-br from-amber-950/30 to-black/60',
               'border-emerald-500/40 bg-gradient-to-br from-emerald-950/30 to-black/60',
-              'border-violet-500/40 bg-gradient-to-br from-violet-950/30 to-black/60'
+              'border-sky-500/40 bg-gradient-to-br from-sky-950/30 to-black/60'
             ]
 
             return (
