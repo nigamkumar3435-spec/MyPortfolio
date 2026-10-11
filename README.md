@@ -63,7 +63,7 @@ All personal details, CGPA, links, projects, and credentials are intentionally c
 
 1. **Update CGPA / Semester Progress**:
    ```typescript
-   cgpa: '8.2', // Update whenever latest semester results arrive
+   cgpa: '7.48', // Update whenever latest semester results arrive
    cgpaScale: '10.0',
    ```
 
