@@ -116,7 +116,7 @@ export const InteractiveLab: React.FC = () => {
 
   return (
     <section id="interactive-lab" className="py-20 relative bg-black/40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">

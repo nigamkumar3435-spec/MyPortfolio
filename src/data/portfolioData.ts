@@ -14,7 +14,7 @@ export const portfolioData: PortfolioData = {
     degree: 'B.Tech in Computer Science Engineering',
     institution: 'Indore Institute of Science and Technology (IIST), Indore',
     graduationYear: 2027,
-    cgpa: '8.2', // Editable: Update with your latest verified semester CGPA
+    cgpa: '7.48', // Editable: Update with your latest verified semester CGPA
     cgpaScale: '10.0',
     location: 'Indore, Madhya Pradesh, India',
     availability: 'Actively seeking 2025/2026 SDE & AI/ML Internships',

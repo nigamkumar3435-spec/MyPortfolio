@@ -99,10 +99,10 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
 
   return (
     <section id="contact" className="py-20 relative bg-slate-950/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
         {/* Section Heading */}
-        <div className="space-y-2 mb-12 text-center max-w-2xl mx-auto">
+        <div className="space-y-2 mb-12 text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-800/40 text-cyan-300 text-xs font-mono">
             <Mail className="w-3.5 h-3.5" />
             <span>07 // GET IN TOUCH</span>

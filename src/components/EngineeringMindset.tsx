@@ -18,7 +18,7 @@ export const EngineeringMindset: React.FC = () => {
 
   return (
     <section id="engineering-mindset" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
         {/* Section Heading */}
         <div className="space-y-2 mb-12">

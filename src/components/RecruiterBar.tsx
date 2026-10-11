@@ -48,7 +48,7 @@ export const RecruiterBar: React.FC<RecruiterBarProps> = ({ onOpenResume }) => {
   ]
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 mb-16">
+    <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 -mt-4 mb-16">
       <div className="glass-panel rounded-2xl p-4 sm:p-5 border border-white/10 shadow-xl bg-slate-900/70">
         
         {/* Top Fast-Track Notice */}

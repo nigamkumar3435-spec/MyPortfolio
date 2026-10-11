@@ -57,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-cyan-500/10 via-blue-600/10 to-violet-600/10 blur-[130px] pointer-events-none -z-10 rounded-full" />
       <div className="absolute top-20 right-10 w-72 h-72 bg-cyan-500/5 blur-[100px] pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Personal Brand & Hero Copy */}
