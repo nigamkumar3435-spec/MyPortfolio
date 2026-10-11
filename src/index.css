@@ -90,18 +90,12 @@
   box-shadow: 0 16px 36px -10px rgba(239, 68, 68, 0.22), 0 0 1px 1px rgba(245, 158, 11, 0.3);
 }
 
-/* 3D Transform Utilities for TiltCard Child Layering */
-.preserve-3d {
-  transform-style: preserve-3d;
-}
-
+/* Smooth Card Transition Utilities */
 .tilt-pop {
-  transform: translateZ(20px);
   transition: transform 0.25s ease-out;
 }
 
 .tilt-pop-lg {
-  transform: translateZ(32px);
   transition: transform 0.25s ease-out;
 }
 

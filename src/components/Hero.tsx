@@ -7,15 +7,13 @@ import {
   Check,
   Terminal,
   Activity,
-  Sparkles,
   Database,
   Cpu,
   Code2,
-  Box
+  Sparkles
 } from 'lucide-react'
 import { portfolioData } from '../data/portfolioData'
 import { GithubIcon, LinkedinIcon } from './Icons'
-import { ThreeCanvas, type ThreeModelType } from './ThreeCanvas'
 import { TiltCard } from './TiltCard'
 
 interface HeroProps {
@@ -25,8 +23,7 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
   const { personal } = portfolioData
   const [copiedEmail, setCopiedEmail] = useState(false)
-  const [activeConsoleTab, setActiveConsoleTab] = useState<'3d' | 'topology' | 'cli' | 'code'>('3d')
-  const [threeModel, setThreeModel] = useState<ThreeModelType>('neural')
+  const [activeConsoleTab, setActiveConsoleTab] = useState<'topology' | 'cli' | 'code'>('topology')
   const [cliOutput, setCliOutput] = useState<string>('System initialized. Ready for recruiter query.')
   const [activeNode, setActiveNode] = useState<string>('api')
 
@@ -219,19 +216,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 {/* Console Mode Switcher */}
                 <div className="flex items-center gap-1 bg-black/60 p-1 rounded-xl border border-white/10 text-xs font-mono">
                   <button
-                    onClick={() => setActiveConsoleTab('3d')}
-                    className={`px-2.5 py-1 rounded-lg transition-all flex items-center gap-1 font-bold ${
-                      activeConsoleTab === '3d'
-                        ? 'bg-gradient-to-r from-red-500/30 to-amber-500/30 text-yellow-300 border border-amber-400/60 shadow-sm'
-                        : 'text-slate-400 hover:text-white'
-                    }`}
-                  >
-                    <Box className="w-3.5 h-3.5" />
-                    <span>3D Orbit</span>
-                  </button>
-                  <button
                     onClick={() => setActiveConsoleTab('topology')}
-                    className={`px-2.5 py-1 rounded-lg transition-all font-bold ${
+                    className={`px-3 py-1.5 rounded-lg transition-all font-bold cursor-pointer ${
                       activeConsoleTab === 'topology'
                         ? 'bg-gradient-to-r from-red-500/30 to-amber-500/30 text-yellow-300 border border-amber-400/60 shadow-sm'
                         : 'text-slate-400 hover:text-white'
@@ -241,7 +227,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   </button>
                   <button
                     onClick={() => setActiveConsoleTab('cli')}
-                    className={`px-2.5 py-1 rounded-lg transition-all font-bold ${
+                    className={`px-3 py-1.5 rounded-lg transition-all font-bold cursor-pointer ${
                       activeConsoleTab === 'cli'
                         ? 'bg-gradient-to-r from-red-500/30 to-amber-500/30 text-yellow-300 border border-amber-400/60 shadow-sm'
                         : 'text-slate-400 hover:text-white'
@@ -251,7 +237,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   </button>
                   <button
                     onClick={() => setActiveConsoleTab('code')}
-                    className={`px-2.5 py-1 rounded-lg transition-all font-bold ${
+                    className={`px-3 py-1.5 rounded-lg transition-all font-bold cursor-pointer ${
                       activeConsoleTab === 'code'
                         ? 'bg-gradient-to-r from-red-500/30 to-amber-500/30 text-yellow-300 border border-amber-400/60 shadow-sm'
                         : 'text-slate-400 hover:text-white'
@@ -261,64 +247,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   </button>
                 </div>
               </div>
-
-              {/* Console Body Tab 0: Interactive 3D WebGL Orbit Canvas */}
-              {activeConsoleTab === '3d' && (
-                <div className="pt-4 space-y-3.5">
-                  <div className="flex items-center justify-between text-xs font-mono text-slate-300">
-                    <span className="flex items-center gap-1.5 text-yellow-300 font-bold">
-                      <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-spin" />
-                      INTERACTIVE 3D WEBGL RENDER
-                    </span>
-                    <span className="text-emerald-400 flex items-center gap-1 font-bold">
-                      <Activity className="w-3.5 h-3.5 animate-pulse" /> Three.js GPU
-                    </span>
-                  </div>
-
-                  {/* 3D Geometry Selector Pills */}
-                  <div className="flex items-center gap-1.5 bg-black/40 p-1 rounded-xl border border-white/10 text-xs font-mono">
-                    <span className="text-[11px] text-slate-400 px-2 uppercase font-bold">Geometry:</span>
-                    {[
-                      { id: 'neural' as const, label: '🧠 Neural Core' },
-                      { id: 'torus' as const, label: '🌀 Torus Knot' },
-                      { id: 'cube' as const, label: '🧊 Hypercube' },
-                      { id: 'galaxy' as const, label: '✨ Galaxy' },
-                    ].map((item) => (
-                      <button
-                        key={item.id}
-                        onClick={() => setThreeModel(item.id)}
-                        className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-                          threeModel === item.id
-                            ? 'bg-amber-500/30 text-yellow-300 border border-amber-400/60 shadow-sm shadow-amber-500/20'
-                            : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
-                        }`}
-                      >
-                        {item.label}
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* 3D Canvas Container */}
-                  <div className="relative h-64 sm:h-72 w-full rounded-2xl bg-black/70 border border-white/15 overflow-hidden shadow-inner flex items-center justify-center">
-                    <ThreeCanvas model={threeModel} className="w-full h-full" />
-                    
-                    {/* 3D Canvas Overlay Badges */}
-                    <div className="absolute bottom-3 left-3 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-amber-500/30 text-xs font-mono text-yellow-300 tilt-pop shadow-md">
-                      ⚡ Move mouse to tilt in 3D
-                    </div>
-                    <div className="absolute top-3 right-3 bg-red-950/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-red-500/40 text-xs font-mono text-red-300 tilt-pop shadow-md">
-                      {threeModel === 'neural' && 'Dual Core • Polyhedron Wireframe'}
-                      {threeModel === 'torus' && 'Quantum Knot • Specular Light'}
-                      {threeModel === 'cube' && 'Nested 3-Axis • Cyber Matrix'}
-                      {threeModel === 'galaxy' && '750 Swirling Particle Vortex'}
-                    </div>
-                  </div>
-
-                  <p className="text-xs sm:text-sm font-mono text-slate-300">
-                    Interactive WebGL render representing connected full-stack services, database integrity, and autonomous ML intelligence.
-                  </p>
-                </div>
-              )}
 
               {/* Console Body Tab 1: System Architecture Topology */}
               {activeConsoleTab === 'topology' && (
