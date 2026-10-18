@@ -5,6 +5,7 @@ import {
   Sparkles
 } from 'lucide-react'
 import { portfolioData } from '../data/portfolioData'
+import { TiltCard } from './TiltCard'
 
 export const Skills: React.FC = () => {
   const { skillCategories } = portfolioData
@@ -123,24 +124,29 @@ export const Skills: React.FC = () => {
                       : 'bg-red-950/80 text-red-300 border-red-400/60 shadow-sm shadow-red-500/30'
 
                   return (
-                    <div
+                    <TiltCard
                       key={sIdx}
-                      className="p-5 rounded-2xl bg-black/60 border border-white/15 hover:border-amber-400/70 hover:bg-black/80 transition-all flex flex-col justify-between space-y-3.5 group shadow-lg hover:scale-[1.02]"
+                      maxTilt={8}
+                      scale={1.03}
+                      glareColor="rgba(245, 158, 11, 0.2)"
+                      className="rounded-2xl h-full"
                     >
-                      <div className="flex items-start justify-between gap-2.5">
-                        <span className="text-lg sm:text-xl font-black text-slate-100 group-hover:text-amber-300 transition-colors">
-                          {skill.name}
-                        </span>
-                        <span
-                          className={`text-xs font-mono font-bold px-2.5 py-1 rounded-full border ${badgeColor} shrink-0`}
-                        >
-                          {skill.proficiency}
-                        </span>
+                      <div className="p-5 rounded-2xl bg-black/60 border border-white/15 hover:border-amber-400/70 hover:bg-black/80 transition-all flex flex-col justify-between space-y-3.5 group shadow-lg h-full">
+                        <div className="flex items-start justify-between gap-2.5 tilt-pop">
+                          <span className="text-lg sm:text-xl font-black text-slate-100 group-hover:text-amber-300 transition-colors">
+                            {skill.name}
+                          </span>
+                          <span
+                            className={`text-xs font-mono font-bold px-2.5 py-1 rounded-full border ${badgeColor} shrink-0`}
+                          >
+                            {skill.proficiency}
+                          </span>
+                        </div>
+                        <p className="text-sm text-slate-200 leading-relaxed font-mono tilt-pop">
+                          {skill.context}
+                        </p>
                       </div>
-                      <p className="text-sm text-slate-200 leading-relaxed font-mono">
-                        {skill.context}
-                      </p>
-                    </div>
+                    </TiltCard>
                   )
                 })}
               </div>

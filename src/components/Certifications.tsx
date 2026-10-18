@@ -8,6 +8,7 @@ import {
   FileCheck2
 } from 'lucide-react'
 import { portfolioData } from '../data/portfolioData'
+import { TiltCard } from './TiltCard'
 
 export const Certifications: React.FC = () => {
   const { certifications, personal } = portfolioData
@@ -37,7 +38,13 @@ export const Certifications: React.FC = () => {
           
           {/* Left Column: Formal Education Card */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-6 sm:p-7 rounded-2xl glass-card border border-white/10 space-y-5 shadow-xl">
+            <TiltCard
+              maxTilt={7}
+              scale={1.02}
+              glareColor="rgba(239, 68, 68, 0.25)"
+              className="rounded-2xl"
+            >
+              <div className="p-6 sm:p-7 rounded-2xl glass-card border border-white/10 space-y-5 shadow-xl">
               <div className="flex items-center gap-3 pb-4 border-b border-white/10">
                 <div className="p-2.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400">
                   <GraduationCap className="w-6 h-6" />
@@ -114,7 +121,8 @@ export const Certifications: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </TiltCard>
+        </div>
 
           {/* Right Column: Verified Industry Certifications Grid */}
           <div className="lg:col-span-7 space-y-4">
@@ -125,53 +133,60 @@ export const Certifications: React.FC = () => {
 
             <div className="space-y-3.5">
               {certifications.map((cert) => (
-                <div
+                <TiltCard
                   key={cert.id}
-                  className="p-5 rounded-2xl glass-card border border-white/10 hover:border-amber-500/40 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-lg hover:bg-slate-900/60"
+                  maxTilt={6}
+                  scale={1.02}
+                  glareColor="rgba(245, 158, 11, 0.2)"
+                  className="rounded-2xl"
                 >
-                  <div className="space-y-1.5 min-w-0">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-amber-950/60 text-amber-300 border border-amber-800/60">
-                        {cert.badgeText}
-                      </span>
-                      <span className="text-[10px] font-mono text-slate-400 flex items-center gap-1">
-                        <Calendar className="w-3 h-3" /> {cert.year}
-                      </span>
-                    </div>
-
-                    <h3 className="text-sm sm:text-base font-bold text-white">
-                      {cert.title}
-                    </h3>
-
-                    <p className="text-xs text-slate-300">
-                      Issued by <span className="text-amber-300 font-semibold">{cert.issuer}</span>
-                    </p>
-
-                    <div className="flex flex-wrap gap-1.5 pt-1">
-                      {cert.skillsCovered.map((skill, sIdx) => (
-                        <span
-                          key={sIdx}
-                          className="text-[10px] font-mono text-slate-300 bg-black/60 px-2 py-0.5 rounded-md border border-white/5"
-                        >
-                          {skill}
+                  <div
+                    className="p-5 rounded-2xl glass-card border border-white/10 hover:border-amber-500/40 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-lg hover:bg-slate-900/60"
+                  >
+                    <div className="space-y-1.5 min-w-0 tilt-pop">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-amber-950/60 text-amber-300 border border-amber-800/60">
+                          {cert.badgeText}
                         </span>
-                      ))}
-                    </div>
-                  </div>
+                        <span className="text-[10px] font-mono text-slate-400 flex items-center gap-1">
+                          <Calendar className="w-3 h-3" /> {cert.year}
+                        </span>
+                      </div>
 
-                  {cert.verificationUrl && (
-                    <a
-                      href={cert.verificationUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-slate-200 hover:text-white bg-slate-900 hover:bg-slate-800 border border-white/15 hover:border-amber-400 transition-all self-start sm:self-center shrink-0 shadow-md"
-                    >
-                      <FileCheck2 className="w-3.5 h-3.5 text-amber-400" />
-                      <span>Verify</span>
-                      <ExternalLink className="w-3 h-3 text-slate-400" />
-                    </a>
-                  )}
-                </div>
+                      <h3 className="text-sm sm:text-base font-bold text-white">
+                        {cert.title}
+                      </h3>
+
+                      <p className="text-xs text-slate-300">
+                        Issued by <span className="text-amber-300 font-semibold">{cert.issuer}</span>
+                      </p>
+
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {cert.skillsCovered.map((skill, sIdx) => (
+                          <span
+                            key={sIdx}
+                            className="text-[10px] font-mono text-slate-300 bg-black/60 px-2 py-0.5 rounded-md border border-white/5"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {cert.verificationUrl && (
+                      <a
+                        href={cert.verificationUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-slate-200 hover:text-white bg-slate-900 hover:bg-slate-800 border border-white/15 hover:border-amber-400 transition-all self-start sm:self-center shrink-0 shadow-md tilt-pop"
+                      >
+                        <FileCheck2 className="w-3.5 h-3.5 text-amber-400" />
+                        <span>Verify</span>
+                        <ExternalLink className="w-3 h-3 text-slate-400" />
+                      </a>
+                    )}
+                  </div>
+                </TiltCard>
               ))}
             </div>
 

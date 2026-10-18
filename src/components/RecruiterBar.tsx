@@ -9,6 +9,7 @@ import {
   Zap
 } from 'lucide-react'
 import { portfolioData } from '../data/portfolioData'
+import { TiltCard } from './TiltCard'
 
 interface RecruiterBarProps {
   onOpenResume: () => void
@@ -96,25 +97,32 @@ export const RecruiterBar: React.FC<RecruiterBarProps> = ({ onOpenResume }) => {
             ]
 
             return (
-              <div
+              <TiltCard
                 key={index}
-                className={`p-4 sm:p-4.5 rounded-2xl border ${cardBgColors[index]} flex items-start gap-3.5 transition-all shadow-xl hover:scale-[1.02]`}
+                maxTilt={9}
+                scale={1.03}
+                glareColor="rgba(245, 158, 11, 0.3)"
+                className="rounded-2xl"
               >
-                <div className={`p-3 rounded-xl border ${item.color} shrink-0 shadow-md`}>
-                  <Icon className="w-5 h-5" />
+                <div
+                  className={`p-4 sm:p-4.5 rounded-2xl border ${cardBgColors[index]} flex items-start gap-3.5 transition-all shadow-xl h-full`}
+                >
+                  <div className={`p-3 rounded-xl border ${item.color} shrink-0 shadow-md tilt-pop`}>
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <div className="min-w-0 tilt-pop">
+                    <div className="text-xs font-mono text-slate-300 uppercase tracking-wider font-bold">
+                      {item.label}
+                    </div>
+                    <div className="text-base sm:text-lg font-bold text-white truncate mt-0.5">
+                      {item.value}
+                    </div>
+                    <div className="text-xs text-slate-300 truncate mt-0.5 font-medium">
+                      {item.subtext}
+                    </div>
+                  </div>
                 </div>
-                <div className="min-w-0">
-                  <div className="text-xs font-mono text-slate-300 uppercase tracking-wider font-bold">
-                    {item.label}
-                  </div>
-                  <div className="text-base sm:text-lg font-bold text-white truncate mt-0.5">
-                    {item.value}
-                  </div>
-                  <div className="text-xs text-slate-300 truncate mt-0.5 font-medium">
-                    {item.subtext}
-                  </div>
-                </div>
-              </div>
+              </TiltCard>
             )
           })}
         </div>

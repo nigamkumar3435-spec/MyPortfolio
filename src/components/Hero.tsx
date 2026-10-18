@@ -15,6 +15,8 @@ import {
 import { portfolioData } from '../data/portfolioData'
 import { GithubIcon, LinkedinIcon } from './Icons'
 import { TiltCard } from './TiltCard'
+import { ThreeCanvas } from './ThreeCanvas'
+import { Box } from 'lucide-react'
 
 interface HeroProps {
   onOpenResume: () => void
@@ -23,7 +25,7 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
   const { personal } = portfolioData
   const [copiedEmail, setCopiedEmail] = useState(false)
-  const [activeConsoleTab, setActiveConsoleTab] = useState<'topology' | 'cli' | 'code'>('topology')
+  const [activeConsoleTab, setActiveConsoleTab] = useState<'3d' | 'topology' | 'cli' | 'code'>('3d')
   const [cliOutput, setCliOutput] = useState<string>('System initialized. Ready for recruiter query.')
   const [activeNode, setActiveNode] = useState<string>('api')
 
@@ -216,6 +218,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 {/* Console Mode Switcher */}
                 <div className="flex items-center gap-1 bg-black/60 p-1 rounded-xl border border-white/10 text-xs font-mono">
                   <button
+                    onClick={() => setActiveConsoleTab('3d')}
+                    className={`px-3 py-1.5 rounded-lg transition-all font-bold cursor-pointer flex items-center gap-1 ${
+                      activeConsoleTab === '3d'
+                        ? 'bg-gradient-to-r from-red-500/30 to-amber-500/30 text-yellow-300 border border-amber-400/60 shadow-sm'
+                        : 'text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    <Box className="w-3.5 h-3.5 text-yellow-400" />
+                    <span>3D Core</span>
+                  </button>
+                  <button
                     onClick={() => setActiveConsoleTab('topology')}
                     className={`px-3 py-1.5 rounded-lg transition-all font-bold cursor-pointer ${
                       activeConsoleTab === 'topology'
@@ -247,6 +260,35 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   </button>
                 </div>
               </div>
+
+              {/* Console Body Tab 0: Interactive 3D WebGL Engine */}
+              {activeConsoleTab === '3d' && (
+                <div className="pt-3.5 space-y-3 tilt-pop">
+                  <div className="flex items-center justify-between text-xs font-mono text-slate-300">
+                    <span className="font-bold flex items-center gap-1.5 text-amber-300">
+                      <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
+                      INTERACTIVE 3D WEBGL CORE
+                    </span>
+                    <span className="text-emerald-400 flex items-center gap-1 font-bold">
+                      <Activity className="w-3 h-3 animate-pulse" /> 60 FPS Orbit
+                    </span>
+                  </div>
+
+                  {/* 3D WebGL Viewport */}
+                  <div className="relative w-full h-[320px] rounded-2xl bg-black/85 border border-white/15 overflow-hidden shadow-inner flex flex-col">
+                    <ThreeCanvas
+                      className="w-full h-full"
+                      interactive={true}
+                      showControls={true}
+                    />
+                  </div>
+
+                  <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 pt-0.5 px-1">
+                    <span>Click &amp; drag to rotate • Dynamic specular lights</span>
+                    <span className="text-amber-400 font-bold">WebGL 2.0</span>
+                  </div>
+                </div>
+              )}
 
               {/* Console Body Tab 1: System Architecture Topology */}
               {activeConsoleTab === 'topology' && (

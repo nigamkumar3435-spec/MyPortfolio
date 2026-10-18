@@ -9,6 +9,9 @@
     "lint": "oxlint",
     "preview": "vite preview"
   },
+  "overrides": {
+    "rollup": "npm:@rollup/wasm-node"
+  },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "@types/canvas-confetti": "^1.9.0",
@@ -28,6 +31,7 @@
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^4.7.0",
     "oxlint": "^1.81.0",
+    "rollup": "npm:@rollup/wasm-node@^4.64.10",
     "typescript": "~6.0.2",
     "vite": "^6.4.4"
   }

@@ -90,14 +90,27 @@
   box-shadow: 0 16px 36px -10px rgba(239, 68, 68, 0.22), 0 0 1px 1px rgba(245, 158, 11, 0.3);
 }
 
-/* Smooth Card Transition Utilities */
+/* Smooth 3D Card Depth & Transition Utilities */
 .tilt-pop {
-  transition: transform 0.25s ease-out;
+  transform: translateZ(24px);
+  transform-style: preserve-3d;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tilt-pop-lg {
-  transition: transform 0.25s ease-out;
+  transform: translateZ(48px);
+  transform-style: preserve-3d;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
 
 /* Red & Yellow Themed Cards */
 .card-theme-red {

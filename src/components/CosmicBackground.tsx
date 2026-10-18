@@ -1,7 +1,19 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 export const CosmicBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
+  const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const nx = Number(((e.clientX / window.innerWidth - 0.5) * 2).toFixed(3))
+      const ny = Number(((e.clientY / window.innerHeight - 0.5) * 2).toFixed(3))
+      setMouseOffset({ x: nx, y: ny })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -119,27 +131,66 @@ export const CosmicBackground: React.FC = () => {
       {/* 1. Deep Obsidian & Molten Wine Base Gradient */}
       <div className="absolute inset-0 bg-[#070405] bg-[radial-gradient(ellipse_120%_90%_at_50%_-15%,#1c080d_0%,#0e0508_40%,#060304_100%)]" />
 
-      {/* 2. Fluid Blended Ambient Aura Mesh (Animated Drift) */}
+      {/* 2. Fluid Blended Ambient Aura Mesh (With 3D Mouse Parallax Drift) */}
       
       {/* Top Center Hero Halo: Fusion of Crimson and Solar Yellow */}
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[550px] rounded-full bg-[radial-gradient(circle_at_center,rgba(239,68,68,0.22)_0%,rgba(245,158,11,0.15)_38%,rgba(250,204,21,0.08)_60%,transparent_75%)] blur-[130px] animate-pulse-halo" />
+      <div
+        className="absolute -top-32 left-1/2 w-[900px] h-[550px] rounded-full bg-[radial-gradient(circle_at_center,rgba(239,68,68,0.22)_0%,rgba(245,158,11,0.15)_38%,rgba(250,204,21,0.08)_60%,transparent_75%)] blur-[130px] animate-pulse-halo"
+        style={{
+          transform: `translate3d(calc(-50% + ${mouseOffset.x * 28}px), ${mouseOffset.y * 28}px, 0)`,
+          transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+        }}
+      />
 
       {/* Top Left Radiant Solar Gold Aura */}
-      <div className="absolute top-[18%] -left-36 w-[650px] h-[650px] rounded-full bg-[radial-gradient(circle_at_center,rgba(250,204,21,0.15)_0%,rgba(245,158,11,0.10)_45%,transparent_70%)] blur-[140px] animate-float-slow" />
+      <div
+        className="absolute top-[18%] -left-36 w-[650px] h-[650px] rounded-full bg-[radial-gradient(circle_at_center,rgba(250,204,21,0.15)_0%,rgba(245,158,11,0.10)_45%,transparent_70%)] blur-[140px] animate-float-slow"
+        style={{
+          transform: `translate3d(${mouseOffset.x * -24}px, ${mouseOffset.y * -24}px, 0)`,
+          transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+        }}
+      />
 
       {/* Top Right Fiery Crimson Blaze */}
-      <div className="absolute top-[28%] -right-36 w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.18)_0%,rgba(245,158,11,0.08)_50%,transparent_72%)] blur-[140px] animate-float-slow" style={{ animationDelay: '-4s' }} />
+      <div
+        className="absolute top-[28%] -right-36 w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.18)_0%,rgba(245,158,11,0.08)_50%,transparent_72%)] blur-[140px] animate-float-slow"
+        style={{
+          animationDelay: '-4s',
+          transform: `translate3d(${mouseOffset.x * 24}px, ${mouseOffset.y * 24}px, 0)`,
+          transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+        }}
+      />
 
       {/* Mid Left Molten Amber Vortex */}
-      <div className="absolute top-[55%] -left-48 w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.16)_0%,rgba(239,68,68,0.12)_42%,transparent_70%)] blur-[150px] animate-pulse-halo" style={{ animationDelay: '-2s' }} />
+      <div
+        className="absolute top-[55%] -left-48 w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.16)_0%,rgba(239,68,68,0.12)_42%,transparent_70%)] blur-[150px] animate-pulse-halo"
+        style={{
+          animationDelay: '-2s',
+          transform: `translate3d(${mouseOffset.x * -20}px, ${mouseOffset.y * -20}px, 0)`,
+          transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+        }}
+      />
 
       {/* Mid Right Solar Yellow Fusion */}
-      <div className="absolute top-[68%] -right-40 w-[750px] h-[750px] rounded-full bg-[radial-gradient(circle_at_center,rgba(250,204,21,0.15)_0%,rgba(225,29,72,0.12)_48%,transparent_72%)] blur-[145px] animate-float-slow" style={{ animationDelay: '-7s' }} />
+      <div
+        className="absolute top-[68%] -right-40 w-[750px] h-[750px] rounded-full bg-[radial-gradient(circle_at_center,rgba(250,204,21,0.15)_0%,rgba(225,29,72,0.12)_48%,transparent_72%)] blur-[145px] animate-float-slow"
+        style={{
+          animationDelay: '-7s',
+          transform: `translate3d(${mouseOffset.x * 20}px, ${mouseOffset.y * 20}px, 0)`,
+          transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+        }}
+      />
 
       {/* Bottom Center Horizon Glow: Warm Golden Hearth */}
-      <div className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.18)_0%,rgba(239,68,68,0.15)_45%,transparent_75%)] blur-[160px] animate-pulse-halo" />
+      <div
+        className="absolute -bottom-40 left-1/2 w-[1000px] h-[600px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.18)_0%,rgba(239,68,68,0.15)_45%,transparent_75%)] blur-[160px] animate-pulse-halo"
+        style={{
+          transform: `translate3d(calc(-50% + ${mouseOffset.x * 16}px), ${mouseOffset.y * 16}px, 0)`,
+          transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+        }}
+      />
 
-      {/* 3. High-Tech Cybernetic Dual-Tone Grid Matrix */}
+      {/* 3. High-Tech Cybernetic Dual-Tone Grid Matrix (Parallax Layer) */}
       <div
         className="absolute inset-0 opacity-[0.45] mix-blend-screen"
         style={{
@@ -149,7 +200,9 @@ export const CosmicBackground: React.FC = () => {
           `,
           backgroundSize: '56px 56px',
           maskImage: 'radial-gradient(ellipse 95% 85% at 50% 50%, #000 30%, transparent 95%)',
-          WebkitMaskImage: 'radial-gradient(ellipse 95% 85% at 50% 50%, #000 30%, transparent 95%)'
+          WebkitMaskImage: 'radial-gradient(ellipse 95% 85% at 50% 50%, #000 30%, transparent 95%)',
+          transform: `translate3d(${mouseOffset.x * 12}px, ${mouseOffset.y * 12}px, 0)`,
+          transition: 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       />
 
