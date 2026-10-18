@@ -37,8 +37,8 @@ export const CosmicBackground: React.FC = () => {
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-    // Particle definition: Molten embers blending crimson, amber & gold
-    interface Ember {
+    // Gentle ambient dust motes (plausible, soft contrast, not flashy)
+    interface Mote {
       x: number
       y: number
       size: number
@@ -47,67 +47,58 @@ export const CosmicBackground: React.FC = () => {
       alpha: number
       alphaSpeed: number
       color: string
-      glowColor: string
     }
 
     const colors = [
-      { fill: 'rgba(239, 68, 68, ', glow: 'rgba(239, 68, 68, 0.6)' },    // Crimson Red
-      { fill: 'rgba(245, 158, 11, ', glow: 'rgba(245, 158, 11, 0.6)' },  // Solar Amber
-      { fill: 'rgba(250, 204, 21, ', glow: 'rgba(250, 204, 21, 0.7)' },  // Radiant Gold
-      { fill: 'rgba(251, 113, 133, ', glow: 'rgba(251, 113, 133, 0.5)' }  // Rose Flame
+      'rgba(100, 116, 139, ', // Slate 500
+      'rgba(148, 163, 184, ', // Slate 400
+      'rgba(71, 85, 105, '    // Slate 600
     ]
 
-    const emberCount = Math.min(Math.floor(window.innerWidth / 35), 45)
-    const embers: Ember[] = []
+    const moteCount = Math.min(Math.floor(window.innerWidth / 45), 32)
+    const motes: Mote[] = []
 
-    for (let i = 0; i < emberCount; i++) {
-      const palette = colors[Math.floor(Math.random() * colors.length)]
-      embers.push({
+    for (let i = 0; i < moteCount; i++) {
+      const color = colors[Math.floor(Math.random() * colors.length)]
+      motes.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        size: Math.random() * 2.2 + 0.8,
-        speedY: Math.random() * 0.45 + 0.15,
-        speedX: (Math.random() - 0.5) * 0.3,
-        alpha: Math.random() * 0.6 + 0.2,
-        alphaSpeed: (Math.random() * 0.01 + 0.005) * (Math.random() > 0.5 ? 1 : -1),
-        color: palette.fill,
-        glowColor: palette.glow
+        size: Math.random() * 1.5 + 0.6,
+        speedY: Math.random() * 0.25 + 0.08,
+        speedX: (Math.random() - 0.5) * 0.15,
+        alpha: Math.random() * 0.25 + 0.08,
+        alphaSpeed: (Math.random() * 0.005 + 0.002) * (Math.random() > 0.5 ? 1 : -1),
+        color
       })
     }
 
     const render = () => {
       ctx.clearRect(0, 0, width, height)
 
-      for (let i = 0; i < embers.length; i++) {
-        const ember = embers[i]
+      for (let i = 0; i < motes.length; i++) {
+        const mote = motes[i]
 
-        // Update position (rising gently)
         if (!prefersReducedMotion) {
-          ember.y -= ember.speedY
-          ember.x += ember.speedX + Math.sin(ember.y * 0.01) * 0.15
+          mote.y -= mote.speedY
+          mote.x += mote.speedX + Math.sin(mote.y * 0.01) * 0.08
 
-          // Pulse opacity
-          ember.alpha += ember.alphaSpeed
-          if (ember.alpha > 0.85 || ember.alpha < 0.15) {
-            ember.alphaSpeed = -ember.alphaSpeed
+          mote.alpha += mote.alphaSpeed
+          if (mote.alpha > 0.35 || mote.alpha < 0.08) {
+            mote.alphaSpeed = -mote.alphaSpeed
           }
 
-          // Respawn at bottom if floated past top
-          if (ember.y < -10) {
-            ember.y = height + 10
-            ember.x = Math.random() * width
+          if (mote.y < -10) {
+            mote.y = height + 10
+            mote.x = Math.random() * width
           }
-          if (ember.x < -10) ember.x = width + 10
-          if (ember.x > width + 10) ember.x = -10
+          if (mote.x < -10) mote.x = width + 10
+          if (mote.x > width + 10) mote.x = -10
         }
 
-        // Draw glowing ember
         ctx.save()
         ctx.beginPath()
-        ctx.arc(ember.x, ember.y, ember.size, 0, Math.PI * 2)
-        ctx.fillStyle = `${ember.color}${ember.alpha})`
-        ctx.shadowBlur = ember.size * 5
-        ctx.shadowColor = ember.glowColor
+        ctx.arc(mote.x, mote.y, mote.size, 0, Math.PI * 2)
+        ctx.fillStyle = `${mote.color}${mote.alpha})`
         ctx.fill()
         ctx.restore()
       }
@@ -128,101 +119,68 @@ export const CosmicBackground: React.FC = () => {
       className="fixed inset-0 pointer-events-none -z-20 overflow-hidden"
       aria-hidden="true"
     >
-      {/* 1. Deep Obsidian & Molten Wine Base Gradient */}
-      <div className="absolute inset-0 bg-[#070405] bg-[radial-gradient(ellipse_120%_90%_at_50%_-15%,#1c080d_0%,#0e0508_40%,#060304_100%)]" />
+      {/* 1. Base Calming Porcelain/Slate Canvas */}
+      <div className="absolute inset-0 bg-[#f8fafc]" />
 
-      {/* 2. Fluid Blended Ambient Aura Mesh (With 3D Mouse Parallax Drift) */}
+      {/* 2. Soft, Eye-Friendly Ambient Light Diffusions (3D Parallax Drift) */}
       
-      {/* Top Center Hero Halo: Fusion of Crimson and Solar Yellow */}
+      {/* Top Center Subtle Horizon Diffusion */}
       <div
-        className="absolute -top-32 left-1/2 w-[900px] h-[550px] rounded-full bg-[radial-gradient(circle_at_center,rgba(239,68,68,0.22)_0%,rgba(245,158,11,0.15)_38%,rgba(250,204,21,0.08)_60%,transparent_75%)] blur-[130px] animate-pulse-halo"
+        className="absolute -top-32 left-1/2 w-[900px] h-[550px] rounded-full bg-[radial-gradient(circle_at_center,rgba(241,245,249,0.9)_0%,rgba(226,232,240,0.5)_40%,transparent_70%)] blur-[90px]"
         style={{
-          transform: `translate3d(calc(-50% + ${mouseOffset.x * 28}px), ${mouseOffset.y * 28}px, 0)`,
+          transform: `translate3d(calc(-50% + ${mouseOffset.x * 20}px), ${mouseOffset.y * 20}px, 0)`,
           transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       />
 
-      {/* Top Left Radiant Solar Gold Aura */}
+      {/* Top Left Soft Tint */}
       <div
-        className="absolute top-[18%] -left-36 w-[650px] h-[650px] rounded-full bg-[radial-gradient(circle_at_center,rgba(250,204,21,0.15)_0%,rgba(245,158,11,0.10)_45%,transparent_70%)] blur-[140px] animate-float-slow"
+        className="absolute top-[15%] -left-32 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(226,232,240,0.45)_0%,transparent_65%)] blur-[100px]"
         style={{
-          transform: `translate3d(${mouseOffset.x * -24}px, ${mouseOffset.y * -24}px, 0)`,
+          transform: `translate3d(${mouseOffset.x * -16}px, ${mouseOffset.y * -16}px, 0)`,
           transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       />
 
-      {/* Top Right Fiery Crimson Blaze */}
+      {/* Mid Right Soft Tint */}
       <div
-        className="absolute top-[28%] -right-36 w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.18)_0%,rgba(245,158,11,0.08)_50%,transparent_72%)] blur-[140px] animate-float-slow"
+        className="absolute top-[45%] -right-32 w-[650px] h-[650px] rounded-full bg-[radial-gradient(circle_at_center,rgba(241,245,249,0.8)_0%,rgba(226,232,240,0.35)_45%,transparent_65%)] blur-[100px]"
         style={{
-          animationDelay: '-4s',
-          transform: `translate3d(${mouseOffset.x * 24}px, ${mouseOffset.y * 24}px, 0)`,
+          transform: `translate3d(${mouseOffset.x * 16}px, ${mouseOffset.y * 16}px, 0)`,
           transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       />
 
-      {/* Mid Left Molten Amber Vortex */}
+      {/* 3. Subtle Architectural Engineering Grid Matrix */}
       <div
-        className="absolute top-[55%] -left-48 w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.16)_0%,rgba(239,68,68,0.12)_42%,transparent_70%)] blur-[150px] animate-pulse-halo"
-        style={{
-          animationDelay: '-2s',
-          transform: `translate3d(${mouseOffset.x * -20}px, ${mouseOffset.y * -20}px, 0)`,
-          transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
-        }}
-      />
-
-      {/* Mid Right Solar Yellow Fusion */}
-      <div
-        className="absolute top-[68%] -right-40 w-[750px] h-[750px] rounded-full bg-[radial-gradient(circle_at_center,rgba(250,204,21,0.15)_0%,rgba(225,29,72,0.12)_48%,transparent_72%)] blur-[145px] animate-float-slow"
-        style={{
-          animationDelay: '-7s',
-          transform: `translate3d(${mouseOffset.x * 20}px, ${mouseOffset.y * 20}px, 0)`,
-          transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
-        }}
-      />
-
-      {/* Bottom Center Horizon Glow: Warm Golden Hearth */}
-      <div
-        className="absolute -bottom-40 left-1/2 w-[1000px] h-[600px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.18)_0%,rgba(239,68,68,0.15)_45%,transparent_75%)] blur-[160px] animate-pulse-halo"
-        style={{
-          transform: `translate3d(calc(-50% + ${mouseOffset.x * 16}px), ${mouseOffset.y * 16}px, 0)`,
-          transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
-        }}
-      />
-
-      {/* 3. High-Tech Cybernetic Dual-Tone Grid Matrix (Parallax Layer) */}
-      <div
-        className="absolute inset-0 opacity-[0.45] mix-blend-screen"
+        className="absolute inset-0 opacity-[0.55]"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(239, 68, 68, 0.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(250, 204, 21, 0.04) 1px, transparent 1px)
+            linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px)
           `,
-          backgroundSize: '56px 56px',
-          maskImage: 'radial-gradient(ellipse 95% 85% at 50% 50%, #000 30%, transparent 95%)',
-          WebkitMaskImage: 'radial-gradient(ellipse 95% 85% at 50% 50%, #000 30%, transparent 95%)',
-          transform: `translate3d(${mouseOffset.x * 12}px, ${mouseOffset.y * 12}px, 0)`,
+          backgroundSize: '48px 48px',
+          maskImage: 'radial-gradient(ellipse 95% 85% at 50% 50%, #000 35%, transparent 95%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 95% 85% at 50% 50%, #000 35%, transparent 95%)',
+          transform: `translate3d(${mouseOffset.x * 8}px, ${mouseOffset.y * 8}px, 0)`,
           transition: 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       />
 
-      {/* 4. Fine Hexagonal Tech Accents Overlay */}
+      {/* 4. Fine Subtle Dot Accents */}
       <div
         className="absolute inset-0 opacity-[0.25]"
         style={{
-          backgroundImage: `radial-gradient(rgba(245, 158, 11, 0.12) 1.2px, transparent 1.2px)`,
-          backgroundSize: '32px 32px'
+          backgroundImage: `radial-gradient(rgba(100, 116, 139, 0.14) 1px, transparent 1px)`,
+          backgroundSize: '24px 24px'
         }}
       />
 
-      {/* 5. Subtle Canvas for Rising Red & Golden Ember Particles */}
+      {/* 5. Minimalist Canvas for Calm Floating Dust Motes */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full pointer-events-none opacity-85"
+        className="absolute inset-0 w-full h-full pointer-events-none opacity-75"
       />
-
-      {/* 6. Soft Cinematic Vignette to keep text focused & edges rich */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(5,2,3,0.55)_100%)]" />
     </div>
   )
 }

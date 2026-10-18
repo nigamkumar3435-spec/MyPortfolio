@@ -24,45 +24,45 @@ export const RecruiterBar: React.FC<RecruiterBarProps> = ({ onOpenResume }) => {
       label: 'Degree & Track',
       value: `${personal.degree}`,
       subtext: `${personal.institution} ('27)`,
-      color: 'text-red-400 bg-red-950/50 border-red-500/30'
+      color: 'text-indigo-600 bg-indigo-50 border-indigo-200'
     },
     {
       icon: Award,
       label: 'Verified CGPA',
       value: `${personal.cgpa} / ${personal.cgpaScale}`,
       subtext: 'B.Tech CSE Track',
-      color: 'text-yellow-400 bg-yellow-950/50 border-yellow-500/30'
+      color: 'text-emerald-700 bg-emerald-50 border-emerald-200'
     },
     {
       icon: Briefcase,
       label: 'Target Roles',
       value: 'SDE & Full-Stack Intern',
       subtext: 'AI/ML & Automation',
-      color: 'text-amber-400 bg-amber-950/50 border-amber-500/30'
+      color: 'text-sky-700 bg-sky-50 border-sky-200'
     },
     {
       icon: MapPin,
       label: 'Location & Work',
       value: 'Indore, MP, India',
       subtext: 'Open to Remote / Relocation',
-      color: 'text-rose-400 bg-rose-950/50 border-rose-500/30'
+      color: 'text-amber-700 bg-amber-50 border-amber-200'
     }
   ]
 
   return (
     <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 -mt-6 mb-20">
-      <div className="glass-panel rounded-3xl p-5 sm:p-7 border border-amber-500/25 shadow-2xl bg-black/60 backdrop-blur-xl">
+      <div className="rounded-3xl p-5 sm:p-7 border border-slate-200 bg-white/95 shadow-sm backdrop-blur-md">
         
         {/* Top Fast-Track Notice */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 mb-5 border-b border-white/10 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 mb-5 border-b border-slate-200 gap-4">
           <div className="flex items-center gap-3">
-            <span className="flex h-3 w-3 rounded-full bg-amber-400 shadow-sm shadow-amber-400/80 animate-pulse"></span>
-            <span className="text-sm font-mono font-bold uppercase tracking-wider text-yellow-300 flex items-center gap-1.5">
-              <Zap className="w-4 h-4 text-amber-400" />
+            <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span className="text-sm font-mono font-bold uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
+              <Zap className="w-4 h-4 text-amber-500" />
               30-Second Recruiter Fast-Track
             </span>
-            <span className="text-slate-500 text-sm hidden sm:inline">•</span>
-            <span className="text-sm text-slate-300 hidden sm:inline font-medium">
+            <span className="text-slate-300 text-sm hidden sm:inline">•</span>
+            <span className="text-sm text-slate-600 hidden sm:inline font-medium">
               Core credentials, verified CGPA, and availability at a glance
             </span>
           </div>
@@ -70,54 +70,48 @@ export const RecruiterBar: React.FC<RecruiterBarProps> = ({ onOpenResume }) => {
           <div className="flex items-center gap-3 self-start sm:self-auto">
             <button
               onClick={onOpenResume}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-slate-200 bg-white/10 hover:bg-white/15 border border-white/15 hover:border-amber-500/40 transition-all shadow-sm cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-all shadow-xs cursor-pointer"
             >
-              <FileText className="w-4 h-4 text-yellow-400" />
+              <FileText className="w-4 h-4 text-indigo-600" />
               <span>Full ATS Resume</span>
             </button>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-red-500 via-amber-500 to-yellow-400 hover:from-red-400 hover:to-yellow-300 transition-all shadow-sm shadow-red-500/25"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 transition-all shadow-xs"
             >
-              <Mail className="w-4 h-4 text-slate-950" />
+              <Mail className="w-4 h-4 text-white" />
               <span>Contact Directly</span>
             </a>
           </div>
         </div>
 
-        {/* 4 Key Metric Cards (Enlarged with 3D Tilt & Vibrant Red/Yellow Border Accents) */}
+        {/* 4 Key Metric Cards (Clean 3D Tilt Cards) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {recruiterHighlights.map((item, index) => {
             const Icon = item.icon
-            const cardBgColors = [
-              'border-red-500/40 bg-gradient-to-br from-red-950/30 to-black/60',
-              'border-yellow-500/40 bg-gradient-to-br from-yellow-950/30 to-black/60',
-              'border-amber-500/40 bg-gradient-to-br from-amber-950/30 to-black/60',
-              'border-rose-500/40 bg-gradient-to-br from-rose-950/30 to-black/60'
-            ]
 
             return (
               <TiltCard
                 key={index}
-                maxTilt={9}
-                scale={1.03}
-                glareColor="rgba(245, 158, 11, 0.3)"
+                maxTilt={8}
+                scale={1.02}
+                glareColor="rgba(255, 255, 255, 0.7)"
                 className="rounded-2xl"
               >
                 <div
-                  className={`p-4 sm:p-4.5 rounded-2xl border ${cardBgColors[index]} flex items-start gap-3.5 transition-all shadow-xl h-full`}
+                  className="p-4 sm:p-4.5 rounded-2xl border border-slate-200/90 bg-slate-50/70 hover:bg-white hover:border-slate-300 flex items-start gap-3.5 transition-all shadow-xs h-full"
                 >
-                  <div className={`p-3 rounded-xl border ${item.color} shrink-0 shadow-md tilt-pop`}>
+                  <div className={`p-3 rounded-xl border ${item.color} shrink-0 shadow-xs tilt-pop`}>
                     <Icon className="w-5 h-5" />
                   </div>
                   <div className="min-w-0 tilt-pop">
-                    <div className="text-xs font-mono text-slate-300 uppercase tracking-wider font-bold">
+                    <div className="text-xs font-mono text-slate-500 uppercase tracking-wider font-semibold">
                       {item.label}
                     </div>
-                    <div className="text-base sm:text-lg font-bold text-white truncate mt-0.5">
+                    <div className="text-base sm:text-lg font-bold text-slate-900 truncate mt-0.5">
                       {item.value}
                     </div>
-                    <div className="text-xs text-slate-300 truncate mt-0.5 font-medium">
+                    <div className="text-xs text-slate-600 truncate mt-0.5 font-medium">
                       {item.subtext}
                     </div>
                   </div>

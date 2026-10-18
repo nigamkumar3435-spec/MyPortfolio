@@ -12,9 +12,9 @@ interface TiltCardProps {
 export const TiltCard: React.FC<TiltCardProps> = ({
   children,
   className = '',
-  glareColor = 'rgba(245, 158, 11, 0.25)',
-  maxTilt = 10,
-  scale = 1.02,
+  glareColor = 'rgba(255, 255, 255, 0.75)',
+  maxTilt = 8,
+  scale = 1.015,
   perspective = 1100
 }) => {
   const cardRef = useRef<HTMLDivElement>(null)
@@ -76,13 +76,13 @@ export const TiltCard: React.FC<TiltCardProps> = ({
       >
         {children}
 
-        {/* Dynamic 3D Glare Sheen */}
+        {/* Dynamic 3D Glare Sheen (Soft Natural Daylight Reflection) */}
         <div
           className="absolute inset-0 rounded-[inherit] pointer-events-none transition-opacity duration-300"
           style={{
-            opacity: glare.opacity * 0.85,
+            opacity: glare.opacity * 0.65,
             background: `radial-gradient(circle 380px at ${glare.x}% ${glare.y}%, ${glareColor}, transparent 75%)`,
-            mixBlendMode: 'screen'
+            mixBlendMode: 'soft-light'
           }}
           aria-hidden="true"
         />
