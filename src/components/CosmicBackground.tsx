@@ -37,7 +37,7 @@ export const CosmicBackground: React.FC = () => {
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-    // Gentle ambient dust motes (plausible, soft contrast, not flashy)
+    // Gentle ambient dust motes (warm amber, peach, stone)
     interface Mote {
       x: number
       y: number
@@ -50,12 +50,13 @@ export const CosmicBackground: React.FC = () => {
     }
 
     const colors = [
-      'rgba(100, 116, 139, ', // Slate 500
-      'rgba(148, 163, 184, ', // Slate 400
-      'rgba(71, 85, 105, '    // Slate 600
+      'rgba(245, 158, 11, ', // Amber 500
+      'rgba(234, 88, 12, ',  // Orange 600
+      'rgba(217, 119, 6, ',  // Amber 600
+      'rgba(168, 162, 158, ' // Stone 400
     ]
 
-    const moteCount = Math.min(Math.floor(window.innerWidth / 45), 32)
+    const moteCount = Math.min(Math.floor(window.innerWidth / 45), 28)
     const motes: Mote[] = []
 
     for (let i = 0; i < moteCount; i++) {
@@ -66,7 +67,7 @@ export const CosmicBackground: React.FC = () => {
         size: Math.random() * 1.5 + 0.6,
         speedY: Math.random() * 0.25 + 0.08,
         speedX: (Math.random() - 0.5) * 0.15,
-        alpha: Math.random() * 0.25 + 0.08,
+        alpha: Math.random() * 0.22 + 0.08,
         alphaSpeed: (Math.random() * 0.005 + 0.002) * (Math.random() > 0.5 ? 1 : -1),
         color
       })
@@ -83,7 +84,7 @@ export const CosmicBackground: React.FC = () => {
           mote.x += mote.speedX + Math.sin(mote.y * 0.01) * 0.08
 
           mote.alpha += mote.alphaSpeed
-          if (mote.alpha > 0.35 || mote.alpha < 0.08) {
+          if (mote.alpha > 0.32 || mote.alpha < 0.07) {
             mote.alphaSpeed = -mote.alphaSpeed
           }
 
@@ -119,45 +120,45 @@ export const CosmicBackground: React.FC = () => {
       className="fixed inset-0 pointer-events-none -z-20 overflow-hidden"
       aria-hidden="true"
     >
-      {/* 1. Base Calming Porcelain/Slate Canvas */}
-      <div className="absolute inset-0 bg-[#f8fafc]" />
+      {/* 1. Base Calming Warm Porcelain/Alabaster Canvas */}
+      <div className="absolute inset-0 bg-[#faf8f5]" />
 
-      {/* 2. Soft, Eye-Friendly Ambient Light Diffusions (3D Parallax Drift) */}
+      {/* 2. Soft, Eye-Friendly Warm Ambient Light Diffusions */}
       
-      {/* Top Center Subtle Horizon Diffusion */}
+      {/* Top Center Warm Sunrise Horizon Diffusion */}
       <div
-        className="absolute -top-32 left-1/2 w-[900px] h-[550px] rounded-full bg-[radial-gradient(circle_at_center,rgba(241,245,249,0.9)_0%,rgba(226,232,240,0.5)_40%,transparent_70%)] blur-[90px]"
+        className="absolute -top-32 left-1/2 w-[900px] h-[550px] rounded-full bg-[radial-gradient(circle_at_center,rgba(254,243,199,0.45)_0%,rgba(254,215,170,0.25)_35%,transparent_70%)] blur-[90px]"
         style={{
           transform: `translate3d(calc(-50% + ${mouseOffset.x * 20}px), ${mouseOffset.y * 20}px, 0)`,
           transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       />
 
-      {/* Top Left Soft Tint */}
+      {/* Top Left Warm Peach / Terracotta Tint */}
       <div
-        className="absolute top-[15%] -left-32 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(226,232,240,0.45)_0%,transparent_65%)] blur-[100px]"
+        className="absolute top-[15%] -left-32 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(255,237,213,0.35)_0%,transparent_65%)] blur-[100px]"
         style={{
           transform: `translate3d(${mouseOffset.x * -16}px, ${mouseOffset.y * -16}px, 0)`,
           transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       />
 
-      {/* Mid Right Soft Tint */}
+      {/* Mid Right Warm Golden Amber Tint */}
       <div
-        className="absolute top-[45%] -right-32 w-[650px] h-[650px] rounded-full bg-[radial-gradient(circle_at_center,rgba(241,245,249,0.8)_0%,rgba(226,232,240,0.35)_45%,transparent_65%)] blur-[100px]"
+        className="absolute top-[45%] -right-32 w-[650px] h-[650px] rounded-full bg-[radial-gradient(circle_at_center,rgba(254,243,199,0.4)_0%,rgba(253,230,138,0.2)_45%,transparent_65%)] blur-[100px]"
         style={{
           transform: `translate3d(${mouseOffset.x * 16}px, ${mouseOffset.y * 16}px, 0)`,
           transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       />
 
-      {/* 3. Subtle Architectural Engineering Grid Matrix */}
+      {/* 3. Subtle Warm Architectural Engineering Grid Matrix */}
       <div
-        className="absolute inset-0 opacity-[0.55]"
+        className="absolute inset-0 opacity-[0.45]"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px)
+            linear-gradient(to right, rgba(214, 211, 209, 0.25) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(214, 211, 209, 0.25) 1px, transparent 1px)
           `,
           backgroundSize: '48px 48px',
           maskImage: 'radial-gradient(ellipse 95% 85% at 50% 50%, #000 35%, transparent 95%)',
@@ -167,11 +168,11 @@ export const CosmicBackground: React.FC = () => {
         }}
       />
 
-      {/* 4. Fine Subtle Dot Accents */}
+      {/* 4. Fine Subtle Warm Dot Accents */}
       <div
         className="absolute inset-0 opacity-[0.25]"
         style={{
-          backgroundImage: `radial-gradient(rgba(100, 116, 139, 0.14) 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(rgba(217, 119, 6, 0.15) 1px, transparent 1px)`,
           backgroundSize: '24px 24px'
         }}
       />
@@ -179,7 +180,7 @@ export const CosmicBackground: React.FC = () => {
       {/* 5. Minimalist Canvas for Calm Floating Dust Motes */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full pointer-events-none opacity-75"
+        className="absolute inset-0 w-full h-full pointer-events-none opacity-80"
       />
     </div>
   )

@@ -31,26 +31,29 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs font-mono font-semibold">
-              <FolderGit2 className="w-4 h-4 text-indigo-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-mono font-semibold">
+              <FolderGit2 className="w-4 h-4 text-orange-600" />
               <span>02 // FEATURED ENGINEERING WORK</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-              Featured Software &amp; ML Systems
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-tight">
+              Featured Software &amp;{' '}
+              <span className="text-orange-600">
+                ML Systems
+              </span>
             </h2>
-            <p className="text-slate-600 text-base max-w-3xl leading-relaxed">
+            <p className="text-stone-600 text-base max-w-3xl leading-relaxed">
               Concrete implementations built with real database schemas, typed architectures, and reproducible evaluation pipelines.
             </p>
           </div>
 
           {/* Category Filter Tabs */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl bg-slate-100 border border-slate-200 text-sm font-semibold self-start md:self-auto shadow-xs">
+          <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl bg-stone-100 border border-stone-200 text-sm font-semibold self-start md:self-auto shadow-xs">
             <button
               onClick={() => setActiveFilter('all')}
               className={`px-3.5 py-1.5 rounded-xl transition-all cursor-pointer ${
                 activeFilter === 'all'
-                  ? 'bg-white text-slate-900 font-bold shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
+                  ? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white font-bold shadow-xs'
+                  : 'text-stone-600 hover:text-stone-900 hover:bg-white/60'
               }`}
             >
               All Projects ({projects.length})
@@ -59,8 +62,8 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
               onClick={() => setActiveFilter('fullstack')}
               className={`px-3.5 py-1.5 rounded-xl transition-all cursor-pointer ${
                 activeFilter === 'fullstack'
-                  ? 'bg-white text-slate-900 font-bold shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
+                  ? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white font-bold shadow-xs'
+                  : 'text-stone-600 hover:text-stone-900 hover:bg-white/60'
               }`}
             >
               Full-Stack &amp; DB (2)
@@ -69,8 +72,8 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
               onClick={() => setActiveFilter('ml')}
               className={`px-3.5 py-1.5 rounded-xl transition-all cursor-pointer ${
                 activeFilter === 'ml'
-                  ? 'bg-white text-slate-900 font-bold shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
+                  ? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white font-bold shadow-xs'
+                  : 'text-stone-600 hover:text-stone-900 hover:bg-white/60'
               }`}
             >
               Machine Learning (1)
@@ -79,8 +82,8 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
               onClick={() => setActiveFilter('agent')}
               className={`px-3.5 py-1.5 rounded-xl transition-all cursor-pointer ${
                 activeFilter === 'agent'
-                  ? 'bg-white text-slate-900 font-bold shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
+                  ? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white font-bold shadow-xs'
+                  : 'text-stone-600 hover:text-stone-900 hover:bg-white/60'
               }`}
             >
               AI Agents Lab (1)
@@ -102,20 +105,20 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
               project.status === 'Verified'
                 ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
                 : project.status === 'Completed'
-                ? 'bg-sky-50 text-sky-800 border-sky-200'
-                : 'bg-amber-50 text-amber-800 border-amber-200'
+                ? 'bg-amber-50 text-amber-800 border-amber-200'
+                : 'bg-orange-50 text-orange-800 border-orange-200'
 
             return (
               <TiltCard
                 key={project.id}
-                glareColor="rgba(255, 255, 255, 0.7)"
-                className="group rounded-3xl p-7 sm:p-8 flex flex-col justify-between border border-slate-200/90 bg-white hover:border-slate-300 transition-all duration-300 shadow-xs hover:shadow-md"
+                glareColor="rgba(254, 243, 199, 0.75)"
+                className="group rounded-3xl p-7 sm:p-8 flex flex-col justify-between border border-stone-200/90 bg-white hover:border-amber-300 transition-all duration-300 shadow-xs hover:shadow-md"
               >
                 <div className="space-y-5">
                   
                   {/* Card Top Pill Bar */}
                   <div className="flex items-center justify-between tilt-pop">
-                    <span className="text-xs font-mono font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+                    <span className="text-xs font-mono font-semibold px-3 py-1 rounded-full bg-stone-100 text-stone-700 border border-stone-200">
                       {project.badge}
                     </span>
                     <span
@@ -127,26 +130,26 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
 
                   {/* Title & Tagline */}
                   <div className="space-y-1.5 tilt-pop">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 group-hover:text-indigo-600 transition-colors tracking-tight leading-snug">
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-stone-900 group-hover:text-orange-600 transition-colors tracking-tight leading-snug">
                       {project.title}
                     </h3>
-                    <p className="text-sm sm:text-base font-semibold text-slate-600 leading-snug">
+                    <p className="text-sm sm:text-base font-semibold text-stone-600 leading-snug">
                       {project.tagline}
                     </p>
                   </div>
 
                   {/* Description */}
-                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                  <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
                     {project.description}
                   </p>
 
                   {/* Key Highlights */}
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 text-sm text-slate-700 tilt-pop">
-                    <div className="text-xs font-mono uppercase tracking-wider font-bold flex items-center gap-2 text-indigo-900">
+                  <div className="p-4 rounded-2xl bg-amber-50/40 border border-amber-200/70 space-y-2 text-sm text-stone-700 tilt-pop">
+                    <div className="text-xs font-mono uppercase tracking-wider font-bold flex items-center gap-2 text-amber-900">
                       <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                       Key Core Capability:
                     </div>
-                    <p className="text-slate-700 font-medium leading-relaxed text-xs sm:text-sm">
+                    <p className="text-stone-700 font-medium leading-relaxed text-xs sm:text-sm">
                       {project.keyFeatures[0]}
                     </p>
                   </div>
@@ -171,7 +174,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                     {allStackTags.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 rounded-xl bg-slate-100 text-slate-700 text-xs font-mono font-medium border border-slate-200 hover:border-slate-300 hover:text-slate-900 transition-all"
+                        className="px-3 py-1 rounded-xl bg-stone-100 text-stone-700 text-xs font-mono font-medium border border-stone-200 hover:border-amber-300 hover:text-stone-900 transition-all"
                       >
                         {tech}
                       </span>
@@ -181,10 +184,10 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                 </div>
 
                 {/* Card Actions Footer */}
-                <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between gap-4 tilt-pop">
+                <div className="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between gap-4 tilt-pop">
                   <button
                     onClick={() => onSelectProject(project)}
-                    className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-indigo-600 hover:text-indigo-800 transition-all group-hover:translate-x-1 cursor-pointer"
+                    className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-orange-600 hover:text-orange-800 transition-all group-hover:translate-x-1 cursor-pointer"
                   >
                     <span>Inspect Technical Deep-Dive</span>
                     <ArrowRight className="w-4 h-4" />
@@ -195,7 +198,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 hover:text-slate-900 transition-all shadow-xs"
+                      className="p-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-200 text-stone-700 hover:text-stone-900 transition-all shadow-xs"
                       title="View GitHub Repository"
                       aria-label={`${project.title} GitHub repository`}
                     >
@@ -203,7 +206,6 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                     </a>
                   </div>
                 </div>
-
               </TiltCard>
             )
           })}

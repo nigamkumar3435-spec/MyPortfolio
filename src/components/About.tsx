@@ -20,7 +20,7 @@ export const About: React.FC = () => {
       description:
         'I prioritize core data structures, algorithms, and modular design patterns over surface-level frameworks. Clean abstractions make scaling intuitive.',
       tag: 'DSA & Systems',
-      color: 'border-indigo-200 text-indigo-600 bg-indigo-50'
+      color: 'border-orange-200 text-orange-600 bg-orange-50'
     },
     {
       icon: Database,
@@ -28,7 +28,7 @@ export const About: React.FC = () => {
       description:
         'Experienced in designing normalized (3NF) MySQL schemas, enforcing ACID transactions, row-level locks, and utilizing prepared statements against SQL injection.',
       tag: 'MySQL & JDBC',
-      color: 'border-emerald-200 text-emerald-700 bg-emerald-50'
+      color: 'border-amber-200 text-amber-700 bg-amber-50'
     },
     {
       icon: Cpu,
@@ -36,7 +36,7 @@ export const About: React.FC = () => {
       description:
         'Focus on verified data preprocessing, preventing train/test data leakage, tuning decision thresholds, and prioritizing Recall over uncalibrated accuracy scores.',
       tag: 'Scikit-Learn & EDA',
-      color: 'border-sky-200 text-sky-700 bg-sky-50'
+      color: 'border-rose-200 text-rose-700 bg-rose-50'
     },
     {
       icon: BrainCircuit,
@@ -54,14 +54,17 @@ export const About: React.FC = () => {
         
         {/* Section Heading */}
         <div className="space-y-3 mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs font-mono font-semibold">
-            <Compass className="w-4 h-4 text-indigo-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-mono font-semibold">
+            <Compass className="w-4 h-4 text-orange-600" />
             <span>01 // PROFESSIONAL BACKGROUND</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            About Me &amp; Engineering Focus
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-tight">
+            About Me &amp;{' '}
+            <span className="text-orange-600">
+              Engineering Focus
+            </span>
           </h2>
-          <p className="text-slate-600 text-base max-w-3xl leading-relaxed">
+          <p className="text-stone-600 text-base max-w-3xl leading-relaxed">
             A transparent look into my academic foundation, problem-solving mindset, and software craftsmanship.
           </p>
         </div>
@@ -70,29 +73,29 @@ export const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* Left Column: Authentic Personal Narrative */}
-          <div className="lg:col-span-6 space-y-5 text-slate-700 text-base sm:text-lg leading-relaxed">
+          <div className="lg:col-span-6 space-y-5 text-stone-700 text-base sm:text-lg leading-relaxed">
             {personal.bioParagraphs.map((paragraph, index) => (
-              <p key={index} className="text-slate-700 font-normal">
+              <p key={index} className="text-stone-700 font-normal">
                 {paragraph}
               </p>
             ))}
 
-            <div className="p-5 rounded-2xl bg-white border border-slate-200 space-y-3 font-mono text-sm shadow-xs">
-              <div className="text-slate-900 uppercase tracking-wider font-bold flex items-center gap-2 text-xs">
+            <div className="p-5 rounded-2xl bg-white border border-amber-200/80 space-y-3 font-mono text-sm shadow-xs">
+              <div className="text-stone-900 uppercase tracking-wider font-bold flex items-center gap-2 text-xs">
                 <CheckCircle className="w-4 h-4 text-emerald-600" />
                 <span>What Recruiters Can Expect From Me</span>
               </div>
-              <ul className="space-y-2 text-slate-600 text-sm font-sans">
+              <ul className="space-y-2 text-stone-600 text-sm font-sans">
                 <li className="flex items-start gap-2.5">
-                  <span className="text-indigo-600 font-bold font-mono">&gt;</span>
+                  <span className="text-orange-600 font-bold font-mono">&gt;</span>
                   <span>Honest communication with zero exaggerations about skill levels or experience.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-indigo-600 font-bold font-mono">&gt;</span>
+                  <span className="text-orange-600 font-bold font-mono">&gt;</span>
                   <span>Curiosity paired with disciplined debugging and thorough documentation.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="text-indigo-600 font-bold font-mono">&gt;</span>
+                  <span className="text-orange-600 font-bold font-mono">&gt;</span>
                   <span>Readiness to write clean code, accept critical PR code reviews, and ship features rapidly.</span>
                 </li>
               </ul>
@@ -105,37 +108,37 @@ export const About: React.FC = () => {
             {/* Quick Stat Bar */}
             <div className="grid grid-cols-3 gap-3.5 sm:gap-4">
               <TiltCard
-                glareColor="rgba(255, 255, 255, 0.7)"
-                className="p-5 rounded-2xl bg-white border border-slate-200 text-center shadow-xs tilt-pop"
+                glareColor="rgba(254, 243, 199, 0.75)"
+                className="p-5 rounded-2xl bg-white border border-stone-200/90 text-center shadow-xs tilt-pop hover:border-amber-300"
               >
-                <div className="text-3xl sm:text-4xl font-extrabold font-mono text-slate-900">
+                <div className="text-3xl sm:text-4xl font-extrabold font-mono text-stone-900">
                   27
                 </div>
-                <div className="text-xs sm:text-sm text-slate-500 font-mono font-medium mt-1">
+                <div className="text-xs sm:text-sm text-stone-500 font-mono font-medium mt-1">
                   Public Repos
                 </div>
               </TiltCard>
 
               <TiltCard
-                glareColor="rgba(255, 255, 255, 0.7)"
-                className="p-5 rounded-2xl bg-white border border-slate-200 text-center shadow-xs tilt-pop"
+                glareColor="rgba(254, 243, 199, 0.75)"
+                className="p-5 rounded-2xl bg-white border border-stone-200/90 text-center shadow-xs tilt-pop hover:border-amber-300"
               >
-                <div className="text-3xl sm:text-4xl font-extrabold font-mono text-slate-900">
+                <div className="text-3xl sm:text-4xl font-extrabold font-mono text-orange-600">
                   {personal.cgpa}
                 </div>
-                <div className="text-xs sm:text-sm text-slate-500 font-mono font-medium mt-1">
+                <div className="text-xs sm:text-sm text-stone-500 font-mono font-medium mt-1">
                   Verified CGPA
                 </div>
               </TiltCard>
 
               <TiltCard
-                glareColor="rgba(255, 255, 255, 0.7)"
-                className="p-5 rounded-2xl bg-white border border-slate-200 text-center shadow-xs tilt-pop"
+                glareColor="rgba(254, 243, 199, 0.75)"
+                className="p-5 rounded-2xl bg-white border border-stone-200/90 text-center shadow-xs tilt-pop hover:border-amber-300"
               >
-                <div className="text-3xl sm:text-4xl font-extrabold font-mono text-slate-900">
+                <div className="text-3xl sm:text-4xl font-extrabold font-mono text-stone-900">
                   5
                 </div>
-                <div className="text-xs sm:text-sm text-slate-500 font-mono font-medium mt-1">
+                <div className="text-xs sm:text-sm text-stone-500 font-mono font-medium mt-1">
                   Certifications
                 </div>
               </TiltCard>
@@ -148,22 +151,22 @@ export const About: React.FC = () => {
                 return (
                   <TiltCard
                     key={i}
-                    glareColor="rgba(255, 255, 255, 0.7)"
-                    className="p-6 sm:p-7 rounded-2xl bg-white space-y-3.5 flex flex-col justify-between border border-slate-200 hover:border-slate-300 shadow-xs hover:shadow-md transition-all"
+                    glareColor="rgba(254, 243, 199, 0.75)"
+                    className="p-6 sm:p-7 rounded-2xl bg-white space-y-3.5 flex flex-col justify-between border border-stone-200 hover:border-amber-300 shadow-xs hover:shadow-md transition-all"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-3 tilt-pop">
                         <div className={`p-3 rounded-xl border ${pillar.color} shadow-xs`}>
                           <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                         </div>
-                        <span className="text-xs sm:text-sm font-mono font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+                        <span className="text-xs sm:text-sm font-mono font-semibold px-3 py-1 rounded-full bg-stone-50 text-stone-700 border border-stone-200">
                           {pillar.tag}
                         </span>
                       </div>
-                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 tilt-pop leading-snug">
+                      <h3 className="text-lg sm:text-xl font-bold text-stone-900 tilt-pop leading-snug">
                         {pillar.title}
                       </h3>
-                      <p className="text-sm sm:text-base text-slate-600 leading-relaxed mt-2.5">
+                      <p className="text-sm sm:text-base text-stone-600 leading-relaxed mt-2.5">
                         {pillar.description}
                       </p>
                     </div>

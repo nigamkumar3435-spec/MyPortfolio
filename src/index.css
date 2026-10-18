@@ -2,10 +2,10 @@
 
 @layer base {
   :root {
-    --bg-primary: #f8fafc;
+    --bg-primary: #faf8f5;
     --bg-card: #ffffff;
-    --border-subtle: rgba(226, 232, 240, 0.85);
-    --border-glow: rgba(148, 163, 184, 0.3);
+    --border-subtle: rgba(231, 229, 228, 0.9);
+    --border-glow: rgba(245, 158, 11, 0.25);
     font-size: 15.5px;
   }
 
@@ -39,12 +39,12 @@
 
   body {
     background-color: var(--bg-primary);
-    color: #1e293b;
+    color: #1c1917;
     min-height: 100vh;
     overflow-x: hidden;
     background-image: 
-      radial-gradient(ellipse 70% 40% at 50% -5%, rgba(241, 245, 249, 0.9), transparent),
-      radial-gradient(ellipse 50% 30% at 90% 70%, rgba(241, 245, 249, 0.6), transparent);
+      radial-gradient(ellipse 70% 40% at 50% -5%, rgba(254, 243, 199, 0.35), transparent),
+      radial-gradient(ellipse 50% 30% at 90% 70%, rgba(254, 215, 170, 0.25), transparent);
   }
 }
 
@@ -55,39 +55,39 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: #faf8f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #d6d3d1;
   border-radius: 9999px;
-  border: 2px solid #f8fafc;
+  border: 2px solid #faf8f5;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #f59e0b;
 }
 
-/* Clean, Non-Flashy Light Glass & Panel Utilities */
+/* Clean, Non-Flashy Warm Light Glass & Panel Utilities */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(231, 229, 228, 0.9);
+  box-shadow: 0 4px 20px -2px rgba(180, 83, 9, 0.04);
 }
 
 .glass-card {
   background: #ffffff;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(231, 229, 228, 0.9);
+  box-shadow: 0 1px 3px 0 rgba(28, 25, 23, 0.04), 0 1px 2px -1px rgba(28, 25, 23, 0.04);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card:hover {
   background: #ffffff;
-  border-color: rgba(148, 163, 184, 0.6);
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.03);
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 10px 25px -5px rgba(217, 119, 6, 0.08), 0 8px 10px -6px rgba(217, 119, 6, 0.04);
 }
 
 /* Smooth 3D Card Depth & Transition Utilities */
@@ -111,41 +111,41 @@
   perspective: 1000px;
 }
 
-/* Subtly Accented Cards (Clean & Eye-Friendly) */
+/* Warm Accented Cards (Orange, Yellow, Red) */
 .card-theme-red {
-  border-color: #f1f5f9;
+  border-color: #fee2e2;
   background: #ffffff;
 }
 .card-theme-red:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.07);
+  border-color: #f87171;
+  box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.09);
 }
 
 .card-theme-yellow {
-  border-color: #f1f5f9;
+  border-color: #fef9c3;
   background: #ffffff;
 }
 .card-theme-yellow:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.07);
+  border-color: #facc15;
+  box-shadow: 0 10px 25px -5px rgba(234, 179, 8, 0.09);
 }
 
 .card-theme-amber {
-  border-color: #f1f5f9;
+  border-color: #fef3c7;
   background: #ffffff;
 }
 .card-theme-amber:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.07);
+  border-color: #f59e0b;
+  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.09);
 }
 
 .card-theme-flame {
-  border-color: #f1f5f9;
+  border-color: #ffedd5;
   background: #ffffff;
 }
 .card-theme-flame:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.07);
+  border-color: #fb923c;
+  box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.09);
 }
 
 /* Floating 3D Keyframe Animations */

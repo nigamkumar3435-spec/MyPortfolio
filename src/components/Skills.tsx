@@ -27,38 +27,38 @@ export const Skills: React.FC = () => {
     .filter((category) => category.skills.length > 0)
 
   return (
-    <section id="skills" className="py-24 relative bg-slate-100/50">
+    <section id="skills" className="py-24 relative bg-stone-100/40">
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 text-xs font-mono font-semibold shadow-xs">
-              <Cpu className="w-4 h-4 text-indigo-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50/90 border border-amber-200/80 text-amber-900 text-xs font-mono font-semibold shadow-xs">
+              <Cpu className="w-4 h-4 text-orange-600" />
               <span>03 // TECHNICAL ARSENAL</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-              Verified Technical Skills
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-tight">
+              Verified <span className="text-orange-600">Technical Skills</span>
             </h2>
-            <p className="text-slate-600 text-base max-w-3xl leading-relaxed">
+            <p className="text-stone-600 text-base max-w-3xl leading-relaxed">
               Honest representation of technologies I can explain in depth during a technical interview. No arbitrary percentage bars.
             </p>
           </div>
 
           {/* Real-time Search Box */}
           <div className="relative w-full md:w-80">
-            <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
+            <Search className="w-5 h-5 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Filter skills (e.g., SQL, Java, React)..."
-              className="w-full pl-12 pr-4 py-3 rounded-2xl bg-white border border-slate-300 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-indigo-500/15 focus:border-indigo-500 transition-all shadow-xs"
+              className="w-full pl-12 pr-4 py-3 rounded-2xl bg-white border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-4 focus:ring-orange-500/15 focus:border-orange-500 transition-all shadow-xs"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-slate-700 font-mono cursor-pointer"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-stone-400 hover:text-stone-700 font-mono cursor-pointer"
               >
                 Clear
               </button>
@@ -66,23 +66,23 @@ export const Skills: React.FC = () => {
           </div>
         </div>
 
-        {/* Legend for Honest Proficiency */}
-        <div className="mb-10 p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 flex flex-wrap items-center gap-6 text-sm text-slate-700 font-mono shadow-xs">
-          <span className="text-slate-900 font-bold flex items-center gap-1.5">
-            <Sparkles className="w-4 h-4 text-indigo-600" />
+        {/* Legend for Honest Proficiency - Warm Accents */}
+        <div className="mb-10 p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 flex flex-wrap items-center gap-6 text-sm text-stone-700 font-mono shadow-xs">
+          <span className="text-stone-900 font-bold flex items-center gap-1.5">
+            <Sparkles className="w-4 h-4 text-orange-600" />
             Proficiency Standard:
           </span>
           <div className="flex items-center gap-2.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-            <span className="font-medium text-xs sm:text-sm">Core Competency (Interview-Ready, Tested in Code)</span>
+            <span className="w-2.5 h-2.5 rounded-full bg-orange-500 shadow-xs"></span>
+            <span className="font-medium text-xs sm:text-sm text-stone-800">Core Competency (Interview-Ready, Tested in Code)</span>
           </div>
           <div className="flex items-center gap-2.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-sky-500"></span>
-            <span className="font-medium text-xs sm:text-sm">Working Knowledge (Practical Hands-On Usage)</span>
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-500 shadow-xs"></span>
+            <span className="font-medium text-xs sm:text-sm text-stone-800">Working Knowledge (Practical Hands-On Usage)</span>
           </div>
           <div className="flex items-center gap-2.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
-            <span className="font-medium text-xs sm:text-sm">Active Exploration (Foundations &amp; Prototyping)</span>
+            <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shadow-xs"></span>
+            <span className="font-medium text-xs sm:text-sm text-stone-800">Active Exploration (Foundations &amp; Prototyping)</span>
           </div>
         </div>
 
@@ -91,18 +91,18 @@ export const Skills: React.FC = () => {
           {filteredCategories.map((category, catIdx) => (
             <div
               key={catIdx}
-              className="p-7 sm:p-9 rounded-3xl bg-white border border-slate-200/90 space-y-6 shadow-xs"
+              className="p-7 sm:p-9 rounded-3xl bg-white border border-stone-200/90 space-y-6 shadow-xs"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-100 gap-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-stone-100 gap-3">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight">
                     {category.title}
                   </h3>
-                  <p className="text-sm text-slate-600 mt-1">
+                  <p className="text-sm text-stone-600 mt-1">
                     {category.description}
                   </p>
                 </div>
-                <span className="text-xs font-mono font-semibold text-slate-700 self-start sm:self-auto bg-slate-100 px-3.5 py-1 rounded-full border border-slate-200">
+                <span className="text-xs font-mono font-semibold text-stone-700 self-start sm:self-auto bg-stone-100 px-3.5 py-1 rounded-full border border-stone-200">
                   {category.skills.length} skills listed
                 </span>
               </div>
@@ -112,22 +112,22 @@ export const Skills: React.FC = () => {
                 {category.skills.map((skill, sIdx) => {
                   const badgeColor =
                     skill.proficiency === 'Core Competency'
-                      ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                      ? 'bg-orange-50 text-orange-800 border-orange-200'
                       : skill.proficiency === 'Working Knowledge'
-                      ? 'bg-sky-50 text-sky-800 border-sky-200'
-                      : 'bg-amber-50 text-amber-800 border-amber-200'
+                      ? 'bg-amber-50 text-amber-800 border-amber-200'
+                      : 'bg-rose-50 text-rose-800 border-rose-200'
 
                   return (
                     <TiltCard
                       key={sIdx}
                       maxTilt={8}
                       scale={1.02}
-                      glareColor="rgba(255, 255, 255, 0.7)"
+                      glareColor="rgba(254, 243, 199, 0.7)"
                       className="rounded-2xl h-full"
                     >
-                      <div className="p-5 rounded-2xl bg-slate-50/70 border border-slate-200 hover:border-slate-300 hover:bg-white transition-all flex flex-col justify-between space-y-3.5 group shadow-xs h-full">
+                      <div className="p-5 rounded-2xl bg-stone-50/70 border border-stone-200 hover:border-amber-300 hover:bg-white transition-all flex flex-col justify-between space-y-3.5 group shadow-xs h-full">
                         <div className="flex items-start justify-between gap-2.5 tilt-pop">
-                          <span className="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                          <span className="text-lg font-bold text-stone-900 group-hover:text-orange-600 transition-colors">
                             {skill.name}
                           </span>
                           <span
@@ -136,7 +136,7 @@ export const Skills: React.FC = () => {
                             {skill.proficiency}
                           </span>
                         </div>
-                        <p className="text-sm text-slate-600 leading-relaxed font-sans tilt-pop">
+                        <p className="text-sm text-stone-600 leading-relaxed font-sans tilt-pop">
                           {skill.context}
                         </p>
                       </div>

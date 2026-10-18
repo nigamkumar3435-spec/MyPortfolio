@@ -20,8 +20,8 @@ export function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 flex flex-col selection:bg-slate-200 selection:text-slate-900 relative">
-      {/* Serene, Non-Flashy Architectural Light Background */}
+    <div className="min-h-screen bg-[#faf8f5] text-stone-800 flex flex-col selection:bg-amber-200/80 selection:text-amber-950 relative">
+      {/* Warm Ambient Architectural Light Background */}
       <CosmicBackground />
 
       {/* Fixed Header */}

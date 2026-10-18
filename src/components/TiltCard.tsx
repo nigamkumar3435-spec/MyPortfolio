@@ -12,7 +12,7 @@ interface TiltCardProps {
 export const TiltCard: React.FC<TiltCardProps> = ({
   children,
   className = '',
-  glareColor = 'rgba(255, 255, 255, 0.75)',
+  glareColor = 'rgba(254, 243, 199, 0.75)',
   maxTilt = 8,
   scale = 1.015,
   perspective = 1100

@@ -114,32 +114,32 @@ export const InteractiveLab: React.FC = () => {
   }
 
   return (
-    <section id="interactive-lab" className="py-24 relative bg-slate-100/40">
+    <section id="interactive-lab" className="py-24 relative bg-stone-100/40">
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 text-xs font-mono font-semibold shadow-xs">
-              <Sparkles className="w-4 h-4 text-indigo-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50/90 border border-amber-200/80 text-amber-900 text-xs font-mono font-semibold shadow-xs">
+              <Sparkles className="w-4 h-4 text-orange-600" />
               <span>05 // LIVE RECRUITER LAB</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-              Interactive Technical Sandbox
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-tight">
+              Interactive <span className="text-orange-600">Technical Sandbox</span>
             </h2>
-            <p className="text-slate-600 text-base max-w-3xl leading-relaxed">
+            <p className="text-stone-600 text-base max-w-3xl leading-relaxed">
               Inspect working logic in real-time: test ML decision inference, execute SQL schema queries, or run an autonomous multi-step agent workflow.
             </p>
           </div>
 
           {/* Mode Switcher Tabs */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl bg-white border border-slate-200 text-sm font-mono self-start md:self-auto shadow-xs">
+          <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl bg-white border border-stone-200 text-sm font-mono self-start md:self-auto shadow-xs">
             <button
               onClick={() => setActiveTab('ml')}
               className={`px-4 py-2 rounded-xl transition-all flex items-center gap-2 font-semibold cursor-pointer ${
                 activeTab === 'ml'
-                  ? 'bg-slate-900 text-white shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  ? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-xs'
+                  : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
               }`}
             >
               <Cpu className="w-4 h-4" />
@@ -150,8 +150,8 @@ export const InteractiveLab: React.FC = () => {
               onClick={() => setActiveTab('sql')}
               className={`px-4 py-2 rounded-xl transition-all flex items-center gap-2 font-semibold cursor-pointer ${
                 activeTab === 'sql'
-                  ? 'bg-slate-900 text-white shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  ? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-xs'
+                  : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
               }`}
             >
               <Database className="w-4 h-4" />
@@ -162,8 +162,8 @@ export const InteractiveLab: React.FC = () => {
               onClick={() => setActiveTab('agent')}
               className={`px-4 py-2 rounded-xl transition-all flex items-center gap-2 font-semibold cursor-pointer ${
                 activeTab === 'agent'
-                  ? 'bg-slate-900 text-white shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  ? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-xs'
+                  : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
               }`}
             >
               <Activity className="w-4 h-4" />
@@ -174,14 +174,14 @@ export const InteractiveLab: React.FC = () => {
 
         {/* Tab 1: ML Risk Predictor Sandbox */}
         {activeTab === 'ml' && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/90 shadow-xs">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 bg-white p-8 sm:p-10 rounded-3xl border border-stone-200/90 shadow-xs">
             {/* Left Column: Clinical Parameters */}
             <div className="lg:col-span-7 space-y-7">
-              <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                <span className="text-sm font-mono font-bold uppercase text-slate-800 tracking-wider">
+              <div className="flex items-center justify-between pb-4 border-b border-stone-100">
+                <span className="text-sm font-mono font-bold uppercase text-stone-800 tracking-wider">
                   Clinical Input Parameters
                 </span>
-                <span className="text-xs text-slate-500 font-mono">
+                <span className="text-xs text-stone-500 font-mono">
                   Standardized Scaler Applied
                 </span>
               </div>
@@ -189,8 +189,8 @@ export const InteractiveLab: React.FC = () => {
               {/* Slider 1: Age */}
               <div className="space-y-2.5">
                 <div className="flex justify-between text-sm font-semibold">
-                  <span className="text-slate-700">Patient Age (Years)</span>
-                  <span className="font-mono text-slate-900 text-base font-bold">{age} years</span>
+                  <span className="text-stone-700">Patient Age (Years)</span>
+                  <span className="font-mono text-stone-900 text-base font-bold">{age} years</span>
                 </div>
                 <input
                   type="range"
@@ -198,15 +198,15 @@ export const InteractiveLab: React.FC = () => {
                   max="80"
                   value={age}
                   onChange={(e) => setAge(Number(e.target.value))}
-                  className="w-full accent-indigo-600 bg-slate-200 h-2.5 rounded-lg cursor-pointer"
+                  className="w-full accent-orange-500 bg-stone-200 h-2.5 rounded-lg cursor-pointer"
                 />
               </div>
 
               {/* Slider 2: Resting Blood Pressure */}
               <div className="space-y-2.5">
                 <div className="flex justify-between text-sm font-semibold">
-                  <span className="text-slate-700">Resting Blood Pressure (mm Hg)</span>
-                  <span className="font-mono text-slate-900 text-base font-bold">{restingBp} mm Hg</span>
+                  <span className="text-stone-700">Resting Blood Pressure (mm Hg)</span>
+                  <span className="font-mono text-stone-900 text-base font-bold">{restingBp} mm Hg</span>
                 </div>
                 <input
                   type="range"
@@ -214,15 +214,15 @@ export const InteractiveLab: React.FC = () => {
                   max="200"
                   value={restingBp}
                   onChange={(e) => setRestingBp(Number(e.target.value))}
-                  className="w-full accent-indigo-600 bg-slate-200 h-2.5 rounded-lg cursor-pointer"
+                  className="w-full accent-orange-500 bg-stone-200 h-2.5 rounded-lg cursor-pointer"
                 />
               </div>
 
               {/* Slider 3: Serum Cholesterol */}
               <div className="space-y-2.5">
                 <div className="flex justify-between text-sm font-semibold">
-                  <span className="text-slate-700">Serum Cholesterol (mg/dl)</span>
-                  <span className="font-mono text-slate-900 text-base font-bold">{cholesterol} mg/dl</span>
+                  <span className="text-stone-700">Serum Cholesterol (mg/dl)</span>
+                  <span className="font-mono text-stone-900 text-base font-bold">{cholesterol} mg/dl</span>
                 </div>
                 <input
                   type="range"
@@ -230,15 +230,15 @@ export const InteractiveLab: React.FC = () => {
                   max="380"
                   value={cholesterol}
                   onChange={(e) => setCholesterol(Number(e.target.value))}
-                  className="w-full accent-indigo-600 bg-slate-200 h-2.5 rounded-lg cursor-pointer"
+                  className="w-full accent-orange-500 bg-stone-200 h-2.5 rounded-lg cursor-pointer"
                 />
               </div>
 
               {/* Slider 4: Max Heart Rate */}
               <div className="space-y-2.5">
                 <div className="flex justify-between text-sm font-semibold">
-                  <span className="text-slate-700">Maximum Heart Rate Achieved (bpm)</span>
-                  <span className="font-mono text-slate-900 text-base font-bold">{maxHeartRate} bpm</span>
+                  <span className="text-stone-700">Maximum Heart Rate Achieved (bpm)</span>
+                  <span className="font-mono text-stone-900 text-base font-bold">{maxHeartRate} bpm</span>
                 </div>
                 <input
                   type="range"
@@ -246,13 +246,13 @@ export const InteractiveLab: React.FC = () => {
                   max="210"
                   value={maxHeartRate}
                   onChange={(e) => setMaxHeartRate(Number(e.target.value))}
-                  className="w-full accent-indigo-600 bg-slate-200 h-2.5 rounded-lg cursor-pointer"
+                  className="w-full accent-orange-500 bg-stone-200 h-2.5 rounded-lg cursor-pointer"
                 />
               </div>
 
               {/* Chest Pain Selector */}
               <div className="space-y-3">
-                <div className="text-sm text-slate-700 font-semibold">Chest Pain Classification</div>
+                <div className="text-sm text-stone-700 font-semibold">Chest Pain Classification</div>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
                   {[
                     { id: 0, label: 'Typical Angina' },
@@ -265,8 +265,8 @@ export const InteractiveLab: React.FC = () => {
                       onClick={() => setChestPain(item.id)}
                       className={`p-3 rounded-xl border transition-all text-center cursor-pointer font-bold ${
                         chestPain === item.id
-                          ? 'bg-indigo-50 border-indigo-300 text-indigo-900 shadow-xs'
-                          : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                          ? 'bg-orange-50 border-orange-300 text-orange-950 shadow-xs'
+                          : 'bg-stone-50 border-stone-200 text-stone-600 hover:text-stone-900 hover:bg-stone-100'
                       }`}
                     >
                       {item.label}
@@ -277,20 +277,20 @@ export const InteractiveLab: React.FC = () => {
             </div>
 
             {/* Right Column: Model Output & Responsible Disclaimer */}
-            <div className="lg:col-span-5 flex flex-col justify-between space-y-7 bg-slate-50 p-7 sm:p-8 rounded-3xl border border-slate-200">
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-7 bg-stone-50 p-7 sm:p-8 rounded-3xl border border-stone-200">
               <div className="space-y-5">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono text-slate-500 uppercase font-bold">
+                  <span className="text-xs font-mono text-stone-500 uppercase font-bold">
                     Model Inference Output
                   </span>
-                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200 font-semibold">
+                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-orange-50 text-orange-800 border border-orange-200 font-semibold">
                     Live Logistic Pipeline
                   </span>
                 </div>
 
                 {/* Score Dial */}
                 <div className="text-center py-6 space-y-3">
-                  <div className="text-6xl sm:text-7xl lg:text-8xl font-black font-mono tracking-tight text-slate-900">
+                  <div className="text-6xl sm:text-7xl lg:text-8xl font-black font-mono tracking-tight text-stone-900">
                     {riskScore}%
                   </div>
                   <div
@@ -304,27 +304,27 @@ export const InteractiveLab: React.FC = () => {
                   >
                     <span>{riskCategory}</span>
                   </div>
-                  <p className="text-sm text-slate-600 pt-1 font-medium">
+                  <p className="text-sm text-stone-600 pt-1 font-medium">
                     Calibrated likelihood score across standard clinical validation sets.
                   </p>
                 </div>
 
                 {/* Contributing Weights Breakdown */}
-                <div className="space-y-2.5 text-xs font-mono bg-white p-4 rounded-2xl border border-slate-200">
-                  <div className="text-xs text-slate-800 font-bold">
+                <div className="space-y-2.5 text-xs font-mono bg-white p-4 rounded-2xl border border-stone-200">
+                  <div className="text-xs text-stone-800 font-bold">
                     Decision Boundary Feature Weights:
                   </div>
-                  <div className="flex justify-between text-slate-600">
+                  <div className="flex justify-between text-stone-600">
                     <span>Heart Rate Deficit:</span>
-                    <span className="text-slate-900 font-bold">Weight: +0.65</span>
+                    <span className="text-orange-700 font-bold">Weight: +0.65</span>
                   </div>
-                  <div className="flex justify-between text-slate-600">
+                  <div className="flex justify-between text-stone-600">
                     <span>Age Factor (Scaled):</span>
-                    <span className="text-slate-900 font-bold">Weight: +0.55</span>
+                    <span className="text-orange-700 font-bold">Weight: +0.55</span>
                   </div>
-                  <div className="flex justify-between text-slate-600">
+                  <div className="flex justify-between text-stone-600">
                     <span>Resting BP Factor:</span>
-                    <span className="text-slate-900 font-bold">Weight: +0.42</span>
+                    <span className="text-orange-700 font-bold">Weight: +0.42</span>
                   </div>
                 </div>
               </div>
@@ -345,11 +345,11 @@ export const InteractiveLab: React.FC = () => {
 
         {/* Tab 2: SQL Schema Explorer */}
         {activeTab === 'sql' && (
-          <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/90 space-y-7 shadow-xs">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-slate-100 gap-3">
+          <div className="bg-white p-8 sm:p-10 rounded-3xl border border-stone-200/90 space-y-7 shadow-xs">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-stone-100 gap-3">
               <div className="flex items-center gap-2.5">
-                <Database className="w-5 h-5 text-indigo-600" />
-                <span className="text-base font-mono font-bold text-slate-900">
+                <Database className="w-5 h-5 text-orange-600" />
+                <span className="text-base font-mono font-bold text-stone-900">
                   Blood Bank MySQL 8.0 Schema Query Runner
                 </span>
               </div>
@@ -366,8 +366,8 @@ export const InteractiveLab: React.FC = () => {
                   onClick={() => setSelectedSqlIndex(idx)}
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-mono font-semibold transition-all border cursor-pointer ${
                     selectedSqlIndex === idx
-                      ? 'bg-indigo-50 border-indigo-300 text-indigo-900 shadow-xs'
-                      : 'bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                      ? 'bg-orange-50 border-orange-300 text-orange-950 shadow-xs'
+                      : 'bg-stone-50 border-stone-200 text-stone-600 hover:text-stone-900 hover:bg-stone-100'
                   }`}
                 >
                   {item.name}
@@ -376,20 +376,20 @@ export const InteractiveLab: React.FC = () => {
             </div>
 
             {/* Query Preview Terminal */}
-            <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800 font-mono text-sm space-y-2.5 shadow-xs">
-              <div className="flex items-center justify-between text-slate-400 text-xs font-bold">
+            <div className="p-5 rounded-2xl bg-stone-900 border border-stone-800 font-mono text-sm space-y-2.5 shadow-xs">
+              <div className="flex items-center justify-between text-stone-400 text-xs font-bold">
                 <span>SQL QUERY (PREPARED STATEMENT COMPATIBLE)</span>
-                <span className="text-emerald-400">Execution time: ~8ms</span>
+                <span className="text-amber-400">Execution time: ~8ms</span>
               </div>
-              <pre className="text-emerald-400 whitespace-pre-wrap leading-relaxed text-xs sm:text-sm">
+              <pre className="text-amber-300/90 whitespace-pre-wrap leading-relaxed text-xs sm:text-sm">
                 {sqlQueries[selectedSqlIndex].query}
               </pre>
             </div>
 
             {/* Results Table */}
-            <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-xs">
+            <div className="overflow-x-auto rounded-2xl border border-stone-200 bg-white shadow-xs">
               <table className="w-full text-left font-mono text-xs sm:text-sm">
-                <thead className="bg-slate-50 text-slate-700 uppercase text-xs border-b border-slate-200 font-bold">
+                <thead className="bg-stone-50 text-stone-700 uppercase text-xs border-b border-stone-200 font-bold">
                   <tr>
                     {sqlQueries[selectedSqlIndex].headers.map((h, i) => (
                       <th key={i} className="px-5 py-3.5">
@@ -398,11 +398,11 @@ export const InteractiveLab: React.FC = () => {
                     ))}
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 text-slate-800">
+                <tbody className="divide-y divide-stone-100 text-stone-800">
                   {sqlQueries[selectedSqlIndex].rows.map((row, rIdx) => (
-                    <tr key={rIdx} className="hover:bg-slate-50/80 transition-colors">
+                    <tr key={rIdx} className="hover:bg-stone-50/80 transition-colors">
                       {row.map((cell, cIdx) => (
-                        <td key={cIdx} className="px-5 py-3 text-slate-700 font-medium">
+                        <td key={cIdx} className="px-5 py-3 text-stone-700 font-medium">
                           {cell}
                         </td>
                       ))}
@@ -412,7 +412,7 @@ export const InteractiveLab: React.FC = () => {
               </table>
             </div>
 
-            <div className="text-xs sm:text-sm text-slate-500 font-mono">
+            <div className="text-xs sm:text-sm text-stone-500 font-mono">
               Schema enforces 3NF normalization, foreign key constraints (CASCADE / RESTRICT), and prepared parameter binding.
             </div>
           </div>
@@ -420,13 +420,13 @@ export const InteractiveLab: React.FC = () => {
 
         {/* Tab 3: Agentic Dispatch Runner (FoodWise-AI) */}
         {activeTab === 'agent' && (
-          <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/90 space-y-7 shadow-xs">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-slate-100 gap-4">
+          <div className="bg-white p-8 sm:p-10 rounded-3xl border border-stone-200/90 space-y-7 shadow-xs">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-stone-100 gap-4">
               <div>
-                <span className="text-base font-mono font-bold text-slate-900 uppercase">
+                <span className="text-base font-mono font-bold text-stone-900 uppercase">
                   FoodWise-AI Autonomous Agent Workflow (Prototype)
                 </span>
-                <p className="text-sm text-slate-600 mt-1">
+                <p className="text-sm text-stone-600 mt-1">
                   Simulating multi-step ReAct pattern: Kitchen sensor -&gt; Surplus detection -&gt; Radius match -&gt; Human confirmation.
                 </p>
               </div>
@@ -435,14 +435,14 @@ export const InteractiveLab: React.FC = () => {
                 <button
                   onClick={runAgentSimulation}
                   disabled={agentRunning}
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 disabled:opacity-50 transition-all shadow-xs cursor-pointer"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 disabled:opacity-50 transition-all shadow-xs cursor-pointer"
                 >
                   <Play className="w-4 h-4" />
                   <span>{agentRunning ? 'Agent Running...' : 'Run Surplus Agent'}</span>
                 </button>
                 <button
                   onClick={resetAgent}
-                  className="p-3 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 cursor-pointer"
+                  className="p-3 rounded-xl bg-stone-100 text-stone-700 hover:bg-stone-200 border border-stone-200 cursor-pointer"
                   title="Reset simulation"
                 >
                   <RotateCcw className="w-4 h-4" />
@@ -456,17 +456,17 @@ export const InteractiveLab: React.FC = () => {
               <div
                 className={`p-5 rounded-2xl border transition-all ${
                   agentStep >= 1
-                    ? 'bg-slate-50 border-slate-200 text-slate-800'
-                    : 'bg-slate-50/50 border-slate-200 text-slate-400 opacity-60'
+                    ? 'bg-stone-50 border-stone-200 text-stone-800'
+                    : 'bg-stone-50/50 border-stone-200 text-stone-400 opacity-60'
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <div className="font-mono text-sm font-bold text-slate-900">
+                  <div className="font-mono text-sm font-bold text-stone-900">
                     STEP 01: SENSOR &amp; INVENTORY TELEMETRY
                   </div>
                   {agentStep >= 1 && <span className="text-emerald-700 text-xs font-bold font-mono">✓ Completed</span>}
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 mt-1.5 font-mono">
+                <p className="text-xs sm:text-sm text-stone-600 mt-1.5 font-mono">
                   &gt; Ingesting institutional dining hall logs: 42.5 kg perishable prepared meals remaining at 20:30 hrs.
                 </p>
               </div>
@@ -475,17 +475,17 @@ export const InteractiveLab: React.FC = () => {
               <div
                 className={`p-5 rounded-2xl border transition-all ${
                   agentStep >= 2
-                    ? 'bg-slate-50 border-slate-200 text-slate-800'
-                    : 'bg-slate-50/50 border-slate-200 text-slate-400 opacity-60'
+                    ? 'bg-stone-50 border-stone-200 text-stone-800'
+                    : 'bg-stone-50/50 border-stone-200 text-stone-400 opacity-60'
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <div className="font-mono text-sm font-bold text-slate-900">
+                  <div className="font-mono text-sm font-bold text-stone-900">
                     STEP 02: DEMAND PREDICTION VS SURPLUS THRESHOLD
                   </div>
                   {agentStep >= 2 && <span className="text-emerald-700 text-xs font-bold font-mono">✓ Completed</span>}
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 mt-1.5 font-mono">
+                <p className="text-xs sm:text-sm text-stone-600 mt-1.5 font-mono">
                   &gt; Projected consumption: 12.0 kg. Net surplus: 30.5 kg (&gt;15% trigger condition met). Autonomous dispatch protocol engaged.
                 </p>
               </div>
@@ -494,17 +494,17 @@ export const InteractiveLab: React.FC = () => {
               <div
                 className={`p-5 rounded-2xl border transition-all ${
                   agentStep >= 3
-                    ? 'bg-slate-50 border-slate-200 text-slate-800'
-                    : 'bg-slate-50/50 border-slate-200 text-slate-400 opacity-60'
+                    ? 'bg-stone-50 border-stone-200 text-stone-800'
+                    : 'bg-stone-50/50 border-stone-200 text-stone-400 opacity-60'
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <div className="font-mono text-sm font-bold text-slate-900">
+                  <div className="font-mono text-sm font-bold text-stone-900">
                     STEP 03: GEOLOCATION TOOL QUERY &amp; NGO MATCH
                   </div>
                   {agentStep >= 3 && <span className="text-emerald-700 text-xs font-bold font-mono">✓ Completed</span>}
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 mt-1.5 font-mono">
+                <p className="text-xs sm:text-sm text-stone-600 mt-1.5 font-mono">
                   &gt; Querying Haversine geo-index within 5.0 km radius. Matched Partner: "Annapurna Food Bank" (3.2 km away, capacity: 50 kg).
                 </p>
               </div>
@@ -513,16 +513,16 @@ export const InteractiveLab: React.FC = () => {
               <div
                 className={`p-5 rounded-2xl border transition-all ${
                   agentStep >= 4
-                    ? 'bg-indigo-50/60 border-indigo-200 text-slate-800 shadow-xs'
-                    : 'bg-slate-50/50 border-slate-200 text-slate-400 opacity-60'
+                    ? 'bg-amber-50/70 border-amber-200 text-stone-800 shadow-xs'
+                    : 'bg-stone-50/50 border-stone-200 text-stone-400 opacity-60'
                 }`}
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
-                    <div className="font-mono text-sm font-bold text-indigo-950">
+                    <div className="font-mono text-sm font-bold text-amber-950">
                       STEP 04: HUMAN-IN-THE-LOOP APPROVAL CHECKPOINT
                     </div>
-                    <p className="text-sm text-slate-700 mt-1 font-medium">
+                    <p className="text-sm text-stone-700 mt-1 font-medium">
                       Action proposed: Dispatch driver notification for 30.5 kg to Annapurna Food Bank.
                     </p>
                   </div>
@@ -530,7 +530,7 @@ export const InteractiveLab: React.FC = () => {
                   {agentStep === 4 && !managerApproved && (
                     <button
                       onClick={approveDispatch}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 transition-colors shadow-xs cursor-pointer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 transition-colors shadow-xs cursor-pointer"
                     >
                       <Check className="w-5 h-5" />
                       <span>Authorize Dispatch</span>
@@ -547,19 +547,19 @@ export const InteractiveLab: React.FC = () => {
 
               {/* Step 5 */}
               {agentStep >= 5 && (
-                <div className="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-950 font-mono text-sm space-y-1.5 animate-in fade-in duration-300 shadow-xs">
-                  <div className="font-bold flex items-center gap-2 text-emerald-800 text-base">
-                    <CheckCircle2 className="w-5 h-5" />
+                <div className="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-950 font-mono text-sm space-y-1.5 animate-in fade-in duration-300 shadow-xs">
+                  <div className="font-bold flex items-center gap-2 text-amber-900 text-base">
+                    <CheckCircle2 className="w-5 h-5 text-orange-600" />
                     <span>DISPATCH SUCCESSFUL (DISPATCH TOKEN #FW-9921)</span>
                   </div>
-                  <p className="text-slate-700 font-sans">
+                  <p className="text-stone-700 font-sans">
                     Volunteer team notified via automated webhook. Transit ETA: 18 mins. Food waste diverted: 30.5 kg.
                   </p>
                 </div>
               )}
             </div>
 
-            <div className="text-xs sm:text-sm text-slate-500 font-mono">
+            <div className="text-xs sm:text-sm text-stone-500 font-mono">
               Demonstrates why autonomous agents in physical domains require explicit human-in-the-loop checkpoints and defensive fallback policies.
             </div>
           </div>

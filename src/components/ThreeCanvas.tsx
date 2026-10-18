@@ -55,23 +55,23 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     mount.appendChild(renderer.domElement)
 
-    // Dynamic 3D Lights - Studio Daylight, Soft Indigo & Warm Amber Accents
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.4)
+    // Dynamic 3D Lights - Studio Warm Daylight, Amber & Terracotta Accents
+    const ambientLight = new THREE.AmbientLight(0xfffbf0, 1.4)
     scene.add(ambientLight)
 
-    const keyLight = new THREE.DirectionalLight(0xffffff, 0.9)
+    const keyLight = new THREE.DirectionalLight(0xfff7ed, 1.0)
     keyLight.position.set(5, 8, 5)
     scene.add(keyLight)
 
-    const indigoLight = new THREE.PointLight(0x4f46e5, 3.0, 50)
-    indigoLight.position.set(4, 4, 4)
-    scene.add(indigoLight)
+    const amberLight = new THREE.PointLight(0xf59e0b, 3.2, 50)
+    amberLight.position.set(4, 4, 4)
+    scene.add(amberLight)
 
-    const slateLight = new THREE.PointLight(0x0284c7, 2.0, 50)
-    slateLight.position.set(-4, -4, 3)
-    scene.add(slateLight)
+    const orangeLight = new THREE.PointLight(0xea580c, 2.4, 50)
+    orangeLight.position.set(-4, -4, 3)
+    scene.add(orangeLight)
 
-    const warmLight = new THREE.PointLight(0xd97706, 1.8, 40)
+    const warmLight = new THREE.PointLight(0xfbbf24, 2.0, 40)
     warmLight.position.set(0, 3, -3)
     scene.add(warmLight)
 
@@ -81,51 +81,51 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
 
     const disposables: Array<{ dispose: () => void }> = []
 
-    // 1. NEURAL CORE (Refined Slate Lattice + Indigo Core + Orbiting Rings)
+    // 1. NEURAL CORE (Refined Warm Stone Lattice + Amber/Orange Core + Orbiting Rings)
     if (currentModel === 'neural') {
       const geo = new THREE.IcosahedronGeometry(1.85, 1)
       const mat = new THREE.MeshStandardMaterial({
-        color: 0x1e293b,
+        color: 0x292524,
         wireframe: isWireframe,
         roughness: 0.25,
-        metalness: 0.6,
-        emissive: 0x0f172a,
+        metalness: 0.65,
+        emissive: 0x44403c,
         emissiveIntensity: 0.2
       })
       const mesh = new THREE.Mesh(geo, mat)
       modelGroup.add(mesh)
       disposables.push(geo, mat)
 
-      // Inner Core (Soft Indigo / Pearl)
+      // Inner Core (Glowing Sunset Orange / Amber)
       const coreGeo = new THREE.SphereGeometry(1.05, 32, 32)
       const coreMat = new THREE.MeshStandardMaterial({
-        color: 0x4f46e5,
+        color: 0xea580c,
         roughness: 0.2,
-        metalness: 0.5,
+        metalness: 0.4,
         transparent: true,
-        opacity: 0.85,
-        emissive: 0x3730a3,
-        emissiveIntensity: 0.4
+        opacity: 0.88,
+        emissive: 0xc2410c,
+        emissiveIntensity: 0.5
       })
       const coreMesh = new THREE.Mesh(coreGeo, coreMat)
       modelGroup.add(coreMesh)
       disposables.push(coreGeo, coreMat)
 
-      // Dual Orbiting Rings (Subtle Slate & Indigo)
-      const ringGeo = new THREE.TorusGeometry(2.45, 0.03, 16, 120)
+      // Dual Orbiting Rings (Warm Amber & Coral Red)
+      const ringGeo = new THREE.TorusGeometry(2.45, 0.032, 16, 120)
       const ringMat1 = new THREE.MeshBasicMaterial({
-        color: 0x4f46e5,
+        color: 0xf59e0b,
         transparent: true,
-        opacity: 0.75
+        opacity: 0.85
       })
       const ring1 = new THREE.Mesh(ringGeo, ringMat1)
       ring1.rotation.x = Math.PI / 3
       modelGroup.add(ring1)
 
       const ringMat2 = new THREE.MeshBasicMaterial({
-        color: 0x64748b,
+        color: 0xef4444,
         transparent: true,
-        opacity: 0.65
+        opacity: 0.75
       })
       const ring2 = new THREE.Mesh(ringGeo, ringMat2)
       ring2.rotation.y = Math.PI / 3.5
@@ -134,7 +134,7 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
 
       // Vertex Node Spheres
       const nodeGeo = new THREE.SphereGeometry(0.065, 8, 8)
-      const nodeMat = new THREE.MeshBasicMaterial({ color: 0x4f46e5 })
+      const nodeMat = new THREE.MeshBasicMaterial({ color: 0xf59e0b })
       const posAttr = geo.getAttribute('position')
       for (let i = 0; i < posAttr.count; i += 3) {
         const node = new THREE.Mesh(nodeGeo, nodeMat)
@@ -148,25 +148,25 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
     if (currentModel === 'torus') {
       const knotGeo = new THREE.TorusKnotGeometry(1.4, 0.38, 140, 32, 2, 3)
       const knotMat = new THREE.MeshStandardMaterial({
-        color: 0x1e293b,
+        color: 0x292524,
         roughness: 0.3,
         metalness: 0.7,
         wireframe: isWireframe,
-        emissive: 0x334155,
-        emissiveIntensity: 0.3
+        emissive: 0x44403c,
+        emissiveIntensity: 0.25
       })
       const knotMesh = new THREE.Mesh(knotGeo, knotMat)
       modelGroup.add(knotMesh)
 
       const solidGeo = new THREE.TorusKnotGeometry(1.36, 0.32, 100, 24, 2, 3)
       const solidMat = new THREE.MeshStandardMaterial({
-        color: 0x4f46e5,
-        roughness: 0.3,
-        metalness: 0.6,
+        color: 0xf97316,
+        roughness: 0.25,
+        metalness: 0.5,
         transparent: true,
-        opacity: 0.75,
-        emissive: 0x3730a3,
-        emissiveIntensity: 0.3
+        opacity: 0.8,
+        emissive: 0xc2410c,
+        emissiveIntensity: 0.4
       })
       const solidMesh = new THREE.Mesh(solidGeo, solidMat)
       modelGroup.add(solidMesh)
@@ -177,11 +177,11 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
     if (currentModel === 'cube') {
       const outerBoxGeo = new THREE.BoxGeometry(2.1, 2.1, 2.1)
       const outerBoxMat = new THREE.MeshStandardMaterial({
-        color: 0x1e293b,
+        color: 0x292524,
         wireframe: isWireframe,
         roughness: 0.25,
         metalness: 0.7,
-        emissive: 0x0f172a,
+        emissive: 0x44403c,
         emissiveIntensity: 0.2
       })
       const outerBox = new THREE.Mesh(outerBoxGeo, outerBoxMat)
@@ -189,22 +189,22 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
 
       const innerBoxGeo = new THREE.BoxGeometry(1.25, 1.25, 1.25)
       const innerBoxMat = new THREE.MeshStandardMaterial({
-        color: 0x4f46e5,
+        color: 0xf59e0b,
         wireframe: isWireframe,
         roughness: 0.2,
         metalness: 0.6,
-        emissive: 0x3730a3,
-        emissiveIntensity: 0.3
+        emissive: 0xd97706,
+        emissiveIntensity: 0.4
       })
       const innerBox = new THREE.Mesh(innerBoxGeo, innerBoxMat)
       modelGroup.add(innerBox)
 
       const coreOctGeo = new THREE.OctahedronGeometry(0.68, 0)
       const coreOctMat = new THREE.MeshStandardMaterial({
-        color: 0xd97706,
-        emissive: 0xb45309,
-        emissiveIntensity: 0.4,
-        metalness: 0.6,
+        color: 0xef4444,
+        emissive: 0xb91c1c,
+        emissiveIntensity: 0.5,
+        metalness: 0.5,
         roughness: 0.2
       })
       const coreOct = new THREE.Mesh(coreOctGeo, coreOctMat)
@@ -234,28 +234,28 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
         galaxyPositions[i3 + 1] = randomY
         galaxyPositions[i3 + 2] = Math.sin(branchAngle + spinAngle) * radius + randomZ
 
-        // Calming Slate-to-Indigo Gradient
+        // Warm Golden-to-Amber-to-Red Palette
         const mixRatio = radius / 3.0
-        galaxyColors[i3] = 0.2 + 0.1 * mixRatio
-        galaxyColors[i3 + 1] = 0.3 + 0.2 * mixRatio
-        galaxyColors[i3 + 2] = 0.65 + 0.25 * mixRatio
+        galaxyColors[i3] = 0.95 - 0.1 * mixRatio      // R: High red/orange
+        galaxyColors[i3 + 1] = 0.65 - 0.35 * mixRatio // G: Golden to terracotta
+        galaxyColors[i3 + 2] = 0.15 + 0.1 * mixRatio  // B: Low blue
       }
 
       galaxyGeo.setAttribute('position', new THREE.BufferAttribute(galaxyPositions, 3))
       galaxyGeo.setAttribute('color', new THREE.BufferAttribute(galaxyColors, 3))
 
       const galaxyMat = new THREE.PointsMaterial({
-        size: 0.065,
+        size: 0.07,
         vertexColors: true,
         transparent: true,
-        opacity: 0.85
+        opacity: 0.9
       })
       const galaxyPoints = new THREE.Points(galaxyGeo, galaxyMat)
       modelGroup.add(galaxyPoints)
       disposables.push(galaxyGeo, galaxyMat)
     }
 
-    // Ambient 3D Star Dust Particles Field
+    // Ambient 3D Warm Dust Particles Field
     const particlesCount = 200
     const particlesGeometry = new THREE.BufferGeometry()
     const posArray = new Float32Array(particlesCount * 3)
@@ -268,10 +268,10 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
 
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3))
     const particlesMaterial = new THREE.PointsMaterial({
-      size: 0.04,
-      color: 0x94a3b8,
+      size: 0.045,
+      color: 0xf59e0b,
       transparent: true,
-      opacity: 0.65
+      opacity: 0.7
     })
     const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial)
     scene.add(particlesMesh)
@@ -299,10 +299,10 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
       const ny = -(((e.clientY - rect.top) / rect.height - 0.5) * 2)
 
       // Move point lights in 3D world coordinates with the cursor
-      indigoLight.position.x = nx * 5
-      indigoLight.position.y = ny * 5
-      slateLight.position.x = -nx * 4
-      slateLight.position.y = -ny * 4
+      amberLight.position.x = nx * 5
+      amberLight.position.y = ny * 5
+      orangeLight.position.x = -nx * 4
+      orangeLight.position.y = -ny * 4
 
       targetTiltX = nx * 0.45
       targetTiltY = ny * 0.45
@@ -421,7 +421,7 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
 
       {/* Floating Interactive 3D Controls Bar */}
       {showControls && (
-        <div className="absolute bottom-3 inset-x-3 flex flex-wrap items-center justify-between gap-2 p-2 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200 text-xs font-mono shadow-md z-10 pointer-events-auto">
+        <div className="absolute bottom-3 inset-x-3 flex flex-wrap items-center justify-between gap-2 p-2 rounded-2xl bg-white/95 backdrop-blur-md border border-amber-200/60 text-xs font-mono shadow-md z-10 pointer-events-auto">
           {/* Model Switcher Chips */}
           <div className="flex items-center gap-1">
             {[
@@ -435,8 +435,8 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
                 onClick={() => handleSelectModel(m.id as ThreeModelType)}
                 className={`px-2.5 py-1 rounded-xl transition-all font-semibold cursor-pointer text-[11px] ${
                   currentModel === m.id
-                    ? 'bg-slate-900 text-white shadow-xs'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                    ? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-xs'
+                    : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
                 }`}
               >
                 {m.label}
@@ -450,17 +450,17 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({
               onClick={() => setIsWireframe((prev) => !prev)}
               className={`px-2.5 py-1 rounded-xl border transition-all flex items-center gap-1.5 cursor-pointer text-[11px] font-semibold ${
                 isWireframe
-                  ? 'bg-slate-100 border-slate-300 text-slate-800 shadow-xs'
-                  : 'bg-white border-slate-200 text-slate-500 hover:text-slate-900'
+                  ? 'bg-amber-50 border-amber-300 text-amber-900 shadow-xs'
+                  : 'bg-white border-stone-200 text-stone-600 hover:text-stone-900'
               }`}
               title="Toggle Wireframe Shader"
             >
-              <Eye className="w-3 h-3" />
+              <Eye className="w-3 h-3 text-orange-500" />
               <span>{isWireframe ? 'Wireframe' : 'Solid'}</span>
             </button>
 
-            <span className="text-[10px] text-slate-500 hidden sm:flex items-center gap-1 font-medium">
-              <Orbit className="w-3 h-3 text-indigo-500 animate-spin" />
+            <span className="text-[10px] text-stone-500 hidden sm:flex items-center gap-1 font-medium">
+              <Orbit className="w-3 h-3 text-orange-500 animate-spin" />
               <span>Drag to Orbit</span>
             </span>
           </div>

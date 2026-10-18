@@ -56,9 +56,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
   return (
     <section id="hero" className="relative pt-32 pb-24 lg:pt-40 lg:pb-36 overflow-hidden">
-      {/* Soft Daylight Ambient Whisper */}
-      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-slate-200/50 blur-[140px] pointer-events-none -z-10 rounded-full" />
-      <div className="absolute top-20 right-10 w-[550px] h-[350px] bg-indigo-100/40 blur-[130px] pointer-events-none -z-10" />
+      {/* Soft Warm Ambient Diffusions */}
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-amber-100/35 blur-[140px] pointer-events-none -z-10 rounded-full" />
+      <div className="absolute top-20 right-10 w-[550px] h-[350px] bg-orange-100/30 blur-[130px] pointer-events-none -z-10" />
 
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
@@ -67,36 +67,36 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
           <div className="lg:col-span-7 space-y-8">
             
             {/* Factual Availability Pill */}
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-emerald-50/90 border border-emerald-200/80 text-emerald-800 text-sm font-mono shadow-xs backdrop-blur-sm">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-amber-50/90 border border-amber-200/80 text-amber-900 text-sm font-mono shadow-xs backdrop-blur-sm">
               <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-600"></span>
               </span>
               <span className="font-semibold tracking-wide">{personal.availability}</span>
             </div>
 
             {/* Name & Headline */}
             <div className="space-y-3.5">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-stone-900 leading-[1.1]">
                 Hi, I'm{' '}
-                <span className="text-slate-900 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-800 bg-clip-text text-transparent">
+                <span className="text-stone-900">
                   {personal.name}
                 </span>
               </h1>
               
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-slate-700 tracking-tight leading-snug">
-                {personal.headline}
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-stone-700 tracking-tight leading-snug">
+                <span className="text-orange-600 font-bold">Computer Science Engineer</span> <span className="text-stone-300 font-light">|</span> <span className="text-stone-800">Full-Stack Developer</span> <span className="text-stone-300 font-light">|</span> <span className="text-amber-600 font-bold">Exploring AI Engineering</span>
               </p>
             </div>
 
             {/* Compelling Hero Pitch */}
-            <div className="space-y-2.5 border-l-2 border-indigo-500/80 pl-5 py-1 text-slate-600 text-base sm:text-lg leading-relaxed">
-              <p className="font-semibold text-slate-900 text-base sm:text-lg tracking-tight">
+            <div className="space-y-2.5 border-l-2 border-orange-500 pl-5 py-1 text-stone-600 text-base sm:text-lg leading-relaxed">
+              <p className="font-semibold text-stone-900 text-base sm:text-lg tracking-tight">
                 Building useful software. Exploring intelligent systems.
               </p>
-              <p className="text-slate-600 font-normal leading-relaxed text-sm sm:text-base">
+              <p className="text-stone-600 font-normal leading-relaxed text-sm sm:text-base">
                 I'm a Computer Science Engineering student at{' '}
-                <span className="text-slate-900 font-semibold underline decoration-indigo-300 underline-offset-4">
+                <span className="text-stone-900 font-semibold underline decoration-orange-400 underline-offset-4">
                   IIST Indore
                 </span>{' '}
                 (Graduating 2027) who enjoys turning ideas into working products—from full-stack applications with clean database architectures to empirical machine learning pipelines and intelligent automation.
@@ -105,7 +105,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
             {/* Clean Tech Stack Bar */}
             <div className="flex flex-wrap items-center gap-2 pt-1">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 mr-1">Core Tech:</span>
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-stone-500 mr-1">Core Tech:</span>
               {[
                 'Java',
                 'Python',
@@ -117,7 +117,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               ].map((techName) => (
                 <span
                   key={techName}
-                  className="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-white border border-slate-200 text-slate-700 shadow-xs transition-all hover:border-slate-300 hover:text-slate-900 cursor-default"
+                  className="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-white border border-stone-200 text-stone-700 shadow-xs transition-all hover:border-amber-300 hover:text-stone-900 cursor-default"
                 >
                   {techName}
                 </span>
@@ -128,7 +128,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
             <div className="pt-2 flex flex-wrap items-center gap-3.5">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 transition-all shadow-sm hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-slate-300"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all shadow-sm shadow-orange-500/20 hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-orange-300"
               >
                 <span>Explore My Projects</span>
                 <ArrowRight className="w-4 h-4" />
@@ -136,15 +136,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
               <button
                 onClick={onOpenResume}
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-semibold text-slate-700 bg-white hover:bg-slate-50 hover:text-slate-900 border border-slate-300 transition-all shadow-xs hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-slate-200 cursor-pointer"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-semibold text-stone-700 bg-white hover:bg-amber-50/60 hover:text-orange-700 border border-stone-300 transition-all shadow-xs hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-amber-200 cursor-pointer"
               >
-                <FileText className="w-4 h-4 text-indigo-600" />
+                <FileText className="w-4 h-4 text-orange-600" />
                 <span>Download Resume</span>
               </button>
 
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 transition-all border border-slate-200"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-stone-600 hover:text-orange-700 hover:bg-amber-50/60 transition-all border border-stone-200"
               >
                 <span>Get in Touch</span>
               </a>
@@ -199,41 +199,41 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
           {/* Right Column: Interactive 3D Canvas & System Telemetry Console */}
           <div className="lg:col-span-5">
             <TiltCard
-              glareColor="rgba(255, 255, 255, 0.7)"
-              className="rounded-3xl bg-white/95 p-6 sm:p-7 border border-slate-200/90 shadow-sm overflow-hidden"
+              glareColor="rgba(254, 243, 199, 0.75)"
+              className="rounded-3xl bg-white/95 p-6 sm:p-7 border border-amber-200/80 shadow-xs overflow-hidden"
             >
               
               {/* Terminal Title Bar */}
-              <div className="flex items-center justify-between pb-4 border-b border-slate-200 tilt-pop">
+              <div className="flex items-center justify-between pb-4 border-b border-amber-100 tilt-pop">
                 <div className="flex items-center gap-2.5">
                   <div className="w-3.5 h-3.5 rounded-full bg-rose-500 shadow-xs" />
                   <div className="w-3.5 h-3.5 rounded-full bg-amber-500 shadow-xs" />
                   <div className="w-3.5 h-3.5 rounded-full bg-emerald-500 shadow-xs" />
-                  <span className="ml-2 text-sm font-mono font-bold text-slate-800 flex items-center gap-2">
-                    <Terminal className="w-4 h-4 text-indigo-600" />
+                  <span className="ml-2 text-sm font-mono font-bold text-stone-800 flex items-center gap-2">
+                    <Terminal className="w-4 h-4 text-orange-600" />
                     engine-telemetry.sys
                   </span>
                 </div>
                 
                 {/* Console Mode Switcher */}
-                <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-mono">
+                <div className="flex items-center gap-1 bg-stone-100 p-1 rounded-xl border border-stone-200/80 text-xs font-mono">
                   <button
                     onClick={() => setActiveConsoleTab('3d')}
                     className={`px-3 py-1.5 rounded-lg transition-all font-semibold cursor-pointer flex items-center gap-1 ${
                       activeConsoleTab === '3d'
-                        ? 'bg-white text-slate-900 border border-slate-200 shadow-xs'
-                        : 'text-slate-600 hover:text-slate-900'
+                        ? 'bg-amber-50 text-amber-950 font-bold border border-amber-300 shadow-xs'
+                        : 'text-stone-600 hover:text-stone-900'
                     }`}
                   >
-                    <Box className="w-3.5 h-3.5 text-indigo-600" />
+                    <Box className="w-3.5 h-3.5 text-orange-600" />
                     <span>3D Core</span>
                   </button>
                   <button
                     onClick={() => setActiveConsoleTab('topology')}
                     className={`px-3 py-1.5 rounded-lg transition-all font-semibold cursor-pointer ${
                       activeConsoleTab === 'topology'
-                        ? 'bg-white text-slate-900 border border-slate-200 shadow-xs'
-                        : 'text-slate-600 hover:text-slate-900'
+                        ? 'bg-amber-50 text-amber-950 font-bold border border-amber-300 shadow-xs'
+                        : 'text-stone-600 hover:text-stone-900'
                     }`}
                   >
                     Topology
@@ -242,8 +242,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                     onClick={() => setActiveConsoleTab('cli')}
                     className={`px-3 py-1.5 rounded-lg transition-all font-semibold cursor-pointer ${
                       activeConsoleTab === 'cli'
-                        ? 'bg-white text-slate-900 border border-slate-200 shadow-xs'
-                        : 'text-slate-600 hover:text-slate-900'
+                        ? 'bg-amber-50 text-amber-950 font-bold border border-amber-300 shadow-xs'
+                        : 'text-stone-600 hover:text-stone-900'
                     }`}
                   >
                     CLI
@@ -252,8 +252,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                     onClick={() => setActiveConsoleTab('code')}
                     className={`px-3 py-1.5 rounded-lg transition-all font-semibold cursor-pointer ${
                       activeConsoleTab === 'code'
-                        ? 'bg-white text-slate-900 border border-slate-200 shadow-xs'
-                        : 'text-slate-600 hover:text-slate-900'
+                        ? 'bg-amber-50 text-amber-950 font-bold border border-amber-300 shadow-xs'
+                        : 'text-stone-600 hover:text-stone-900'
                     }`}
                   >
                     Pattern
@@ -264,18 +264,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               {/* Console Body Tab 0: Interactive 3D WebGL Engine */}
               {activeConsoleTab === '3d' && (
                 <div className="pt-3.5 space-y-3 tilt-pop">
-                  <div className="flex items-center justify-between text-xs font-mono text-slate-600">
-                    <span className="font-bold flex items-center gap-1.5 text-slate-800">
-                      <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
+                  <div className="flex items-center justify-between text-xs font-mono text-stone-600">
+                    <span className="font-bold flex items-center gap-1.5 text-stone-800">
+                      <Sparkles className="w-3.5 h-3.5 text-orange-500" />
                       INTERACTIVE 3D WEBGL CORE
                     </span>
-                    <span className="text-emerald-700 flex items-center gap-1 font-semibold">
-                      <Activity className="w-3 h-3 animate-pulse text-emerald-600" /> 60 FPS Orbit
+                    <span className="text-amber-700 flex items-center gap-1 font-semibold text-[11px]">
+                      <Activity className="w-3 h-3 animate-pulse text-amber-500" /> 60 FPS Orbit
                     </span>
                   </div>
 
                   {/* 3D WebGL Viewport */}
-                  <div className="relative w-full h-[320px] rounded-2xl bg-slate-50/90 border border-slate-200/90 overflow-hidden shadow-inner flex flex-col">
+                  <div className="relative w-full h-[320px] rounded-2xl bg-amber-50/20 border border-amber-200/60 overflow-hidden shadow-inner flex flex-col">
                     <ThreeCanvas
                       className="w-full h-full"
                       interactive={true}

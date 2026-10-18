@@ -59,38 +59,38 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
           {/* Brand Monogram & Name */}
           <a
             href="#hero"
-            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-slate-400 rounded-lg p-1"
+            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-amber-400 rounded-lg p-1"
             aria-label="Nigam Kumar Portfolio Home"
           >
-            <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center font-mono font-bold text-white group-hover:scale-105 transition-all shadow-xs">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 border border-amber-300/40 flex items-center justify-center font-mono font-bold text-white group-hover:scale-105 transition-all shadow-xs">
               NK
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-slate-900 text-sm tracking-tight flex items-center gap-2 group-hover:text-slate-700 transition-colors">
+              <span className="font-bold text-stone-900 text-sm tracking-tight flex items-center gap-2 group-hover:text-orange-600 transition-colors">
                 {personal.name}
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" title="Available for Opportunities" />
               </span>
-              <span className="text-[11px] font-mono text-slate-500">
+              <span className="text-[11px] font-mono text-stone-500">
                 CSE @ IIST '27
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 bg-slate-100/90 border border-slate-200/90 rounded-full px-3 py-1 backdrop-blur-md shadow-xs">
+          <nav className="hidden lg:flex items-center gap-1 bg-stone-100/90 border border-stone-200/90 rounded-full px-3 py-1 backdrop-blur-md shadow-xs">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 className={`text-xs font-medium px-3 py-1.5 rounded-full transition-all relative flex items-center gap-1.5 ${
                   link.highlight
-                    ? 'text-slate-900 bg-white shadow-xs font-semibold border border-slate-200/80'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                    ? 'text-orange-700 bg-amber-50/80 shadow-xs font-semibold border border-amber-200/80'
+                    : 'text-stone-600 hover:text-stone-900 hover:bg-white/70'
                 }`}
               >
                 {link.label}
                 {link.badge && (
-                  <span className="text-[10px] font-mono px-1.5 py-0.2 rounded-full bg-slate-200 text-slate-700">
+                  <span className="text-[10px] font-mono px-1.5 py-0.2 rounded-full bg-amber-100 text-amber-800">
                     {link.badge}
                   </span>
                 )}
@@ -102,16 +102,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
           <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={onOpenResume}
-              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 transition-all shadow-xs focus:outline-none focus:ring-2 focus:ring-slate-400"
+              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-lg text-stone-700 bg-white hover:bg-amber-50/60 border border-stone-300 transition-all shadow-xs focus:outline-none focus:ring-2 focus:ring-amber-400 cursor-pointer"
               aria-label="View and Download Resume"
             >
-              <FileText className="w-3.5 h-3.5 text-slate-600" />
+              <FileText className="w-3.5 h-3.5 text-stone-600" />
               <span>Resume</span>
             </button>
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-lg text-white bg-slate-900 hover:bg-slate-800 transition-all shadow-xs focus:outline-none focus:ring-2 focus:ring-slate-900"
+              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-lg text-white bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all shadow-xs focus:outline-none focus:ring-2 focus:ring-orange-400"
             >
               <Send className="w-3.5 h-3.5" />
               <span>Let's Connect</span>
